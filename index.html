@@ -6,18 +6,22 @@
 <meta name="keywords" content="budgeting, personal finance, zero-based budget, money management, saving money, debt payoff, financial freedom, FIRE, frugal living">
 <title>Zero Budgeting — Master Your Money, Transform Your Life</title>
 <meta name="description" content="Master Your Money, Transform Your Life — curated guides, tools, and systems to help you level up.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta property="og:title" content="Zero Budgeting — Master Your Money, Transform Your Life">
 <meta property="og:description" content="Master Your Money, Transform Your Life — curated guides, tools, and systems to help you level up.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://dogeking.us">
+<meta property="og:url" content="https://zerobudgeting.com">
 <meta property="og:image" content="https://zerobudgeting.com/assets/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zero Budgeting — Master Your Money, Transform Your Life">
 <meta name="twitter:description" content="Master Your Money, Transform Your Life — curated guides, tools, and systems to help you level up.">
-<link rel="canonical" href="https://dogeking.us">
+<link rel="canonical" href="https://zerobudgeting.com">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/crown-design-system.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
@@ -26,6 +30,13 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-8CVE2X8R5L');
+<!-- GA4 Conversion Tracking -->
+document.addEventListener('click',function(e){
+  var t=e.target.closest('a[href*="gumroad.com"],a[href*="kit.com/forms"]');
+  if(!t)return;
+  var label=t.href.includes('gumroad')?'Gumroad Product Click':'Kit Form Click';
+  gtag('event','conversion',{send_to:'G-8CVE2X8R5L',event_category:'Outbound',event_label:label,value:1});
+});
 </script>
 <style>
 :root {
@@ -42,6 +53,7 @@ gtag('config', 'G-8CVE2X8R5L');
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
+/* Zero Budgeting theme: Emerald accent */
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { font-family:var(--font-body); background:var(--surface-dark); color:var(--text-body); line-height:1.6; -webkit-font-smoothing:antialiased; }
@@ -98,11 +110,18 @@ footer .container { display:flex; justify-content:space-between; align-items:cen
 .footer-links a:hover { color:var(--text-primary); }
 .footer-copy { color:var(--text-muted); font-size:0.85rem; }
 
+/* Mobile Navigation Toggle */
+.nav-toggle { display:none; background:none; border:none; color:var(--text-primary); font-size:1.5rem; cursor:pointer; padding:4px 8px; }
+
 @media(max-width:768px) {
+  .nav-toggle { display:block; }
+  .nav-links, .nav-search { display:none; flex-direction:column; width:100%; gap:4px; }
+  .nav-links.open { display:flex; }
+  nav .container { flex-wrap:wrap; }
+  .nav-links.open + .nav-search { display:flex; }
   .hero h1 { font-size:2rem; }
   .stats { grid-template-columns:repeat(2,1fr); }
   .article-grid { grid-template-columns:1fr; }
-  nav .container { flex-direction:column; gap:8px; }
   footer .container { flex-direction:column; gap:12px; }
 }
 </style>
@@ -123,11 +142,22 @@ footer .container { display:flex; justify-content:space-between; align-items:cen
 <input type="text" placeholder="Search articles..." id="nav-search-input" oninput="if(window._setFilter)window._setFilter(this.value)">
 <button onclick="document.getElementById('nav-search-input').focus()">🔍</button>
 </div>
-<button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+<button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open');var s=document.querySelector('.nav-search');if(s)s.classList.toggle('open')" aria-label="Toggle navigation menu">☰</button>
 </div>
 </nav>
 </header>
 <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">🏠 Zero Budgeting</a></nav>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Zero Budgeting",
+  "url": "https://zerobudgeting.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://zerobudgeting.com/all-articles.html?search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -140,6 +170,8 @@ footer .container { display:flex; justify-content:space-between; align-items:cen
     }
   ]
 }</script>
+<!-- Live article count updater -->
+<script>document.addEventListener('DOMContentLoaded',function(){if(typeof articles!=='undefined'){var c=articles.length;var e1=document.getElementById('stat-articles');var e2=document.getElementById('stat-articles-2');var e3=document.getElementById('article-count');if(e1)e1.textContent=c+'+';if(e2)e2.textContent=c+'+';if(e3)e3.textContent=c}});</script>
 
 <section class="hero">
 <div class="container">
@@ -152,10 +184,10 @@ footer .container { display:flex; justify-content:space-between; align-items:cen
 <section class="section">
 <div class="container">
 <div class="stats">
-<div class="stat-card"><div class="stat-number">383+</div><div class="stat-label">Articles & Guides</div></div>
-<div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Topic Categories</div></div>
+<div class="stat-card"><div class="stat-number" id="stat-articles">372+</div><div class="stat-label">Articles & Guides</div></div>
+<div class="stat-card"><div class="stat-number" id="stat-categories">3</div><div class="stat-label">Topic Categories</div></div>
 <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Free Content</div></div>
-<div class="stat-card"><div class="stat-number">383+</div><div class="stat-label">Up-to-Date Guides</div></div>
+<div class="stat-card"><div class="stat-number" id="stat-articles-2">372+</div><div class="stat-label">Up-to-Date Guides</div></div>
 </div>
 </div>
 </section>
@@ -164,7 +196,7 @@ footer .container { display:flex; justify-content:space-between; align-items:cen
     <div class="container">
         <h2 class="section-title">📚 All Articles</h2>
         <p style="text-align:center;color:var(--text-muted);margin-bottom:8px;">
-            Showing <strong id="article-count">383</strong> articles
+            Showing <strong id="article-count">372</strong> articles
         </p>
         <div class="article-controls">
             <input type="text" id="search-articles" placeholder="🔍 Search articles..." />
@@ -195,16 +227,19 @@ footer .container { display:flex; justify-content:space-between; align-items:cen
 <div class="footer-links">
 <a href="/privacy.html">Privacy</a>
 <a href="/contact.html">Contact</a>
+<a href="https://lifesystemos.com" target="_blank" rel="noopener">⚙️ Life System OS</a>
+<a href="https://resumeprotips.com" target="_blank" rel="noopener">📄 Resume Pro Tips</a>
+<a href="https://remoteworkhub.net" target="_blank" rel="noopener">🌍 Remote Work Hub</a>
 </div>
 </div>
 
 <div class="kit-subscribe-wrapper" style="max-width:500px;margin:2rem auto;">
-  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:#2d6a4f;padding:2rem;border-radius:8px;color:white;max-width:500px;margin:2rem auto;">
-    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:#f59e0b;">Get the Free Weekly Budget Tracker</h3>
-    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth.</p>
-    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
-    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
-    <button type="submit" style="background:#f59e0b;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;font-weight:bold;cursor:pointer;width:100%;font-size:1rem;">Send My Free Tracker</button>
+  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:var(--surface-light);padding:2rem;border-radius:12px;color:white;max-width:500px;margin:2rem auto;border:1px solid var(--accent-light);">
+    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:var(--accent);">💰 Get the Free Weekly Budget Tracker</h3>
+    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth. Free instant download.</p>
+    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid var(--accent);border-radius:6px;margin-bottom:0.75rem;box-sizing:border-box;background:var(--surface-dark);color:var(--text-primary);font-size:1rem;">
+    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid var(--accent);border-radius:6px;margin-bottom:0.75rem;box-sizing:border-box;background:var(--surface-dark);color:var(--text-primary);font-size:1rem;">
+    <button type="submit" style="background:var(--accent);color:#fff;padding:0.85rem 2rem;border:none;border-radius:8px;font-weight:700;cursor:pointer;width:100%;font-size:1.05rem;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">Send My Free Tracker →</button>
     <p style="font-size:0.75rem;opacity:0.7;margin:0.5rem 0 0;">No spam. Unsubscribe anytime.</p>
   </form>
 </div></footer>

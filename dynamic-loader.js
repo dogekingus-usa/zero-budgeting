@@ -1,3 +1,4 @@
+// v1.0.2 - encoding fix - 2026-06-04
 // Dynamic Article Loader v2 - Crown DS
 // Handles pagination, search, category filter, and dynamic article rendering
 (function() {
@@ -137,7 +138,7 @@
                     <div class="article-card-icon">${icon}</div>
                     <div class="article-card-content">
                         <h3>${escapeHtml(title)}</h3>
-                        <div class="meta">${a.readTime || '5 min read'}</div>
+                        <div class="meta">${a.date || '2026'} &middot; ${a.readTime || '5 min read'}</div>
                         <p>${escapeHtml(excerpt.substring(0, 120))}</p>
                         <span class="article-tag">${escapeHtml(tag)}</span>
                     </div>
@@ -233,7 +234,7 @@
     
     function escapeHtml(str) {
         if (!str) return '';
-        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/`/g,'&#96;');
     }
     
     // Init on DOM ready

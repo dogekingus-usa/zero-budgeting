@@ -1,9 +1,9 @@
 /*
-  Cache-Control: public, max-age=3600, s-maxage=86400
+  Cache-Control: public, max-age=300, s-maxage=1800
   X-Content-Type-Options: nosniff
 
 /*.html
-  Cache-Control: public, max-age=3600, s-maxage=86400
+  Cache-Control: public, max-age=300, s-maxage=1800
 
 /articles/*
   Cache-Control: public, max-age=7200, s-maxage=604800
@@ -19,6 +19,12 @@
 
 *.css
   Cache-Control: public, max-age=31536000, immutable
+
+/articles-data.js
+  Cache-Control: no-cache, must-revalidate
+
+/dynamic-loader.js
+  Cache-Control: no-cache, must-revalidate
 
 *.js
   Cache-Control: public, max-age=31536000, immutable
