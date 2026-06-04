@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-zerobudgeting">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Zero Budgeting</title>
+<meta name="description" content="Get in touch with Zero Budgeting. We'd love to hear from you.">
+<link rel="canonical" href="https://zerobudgeting.com/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/crown-design-system.css">
+<style>
+.contact-section { max-width: 680px; margin: 120px auto 60px; padding: 0 20px; }
+.contact-section h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+.contact-section p { color: var(--text-secondary); margin-bottom: 32px; }
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.contact-form label { font-weight: 500; font-size: 0.9rem; }
+.contact-form input, .contact-form textarea { 
+  padding: 12px 16px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--bg-card); color: var(--text-primary); font-family: inherit;
+  transition: border-color 0.2s;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--primary); }
+.contact-form button {
+  padding: 14px 28px; background: var(--primary); color: #fff; border: none;
+  border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s;
+}
+.contact-form button:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--primary-glow); }
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <div class="nav-container">
+    <a href="/" class="nav-brand">💰 Zero Budgeting</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/all-articles.html">Articles</a>
+      <a href="/store.html">Store</a>
+    </div>
+  </div>
+</nav>
+</header>
+<div class="contact-section">
+  <h1>Contact Us</h1>
+  <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you.</p>
+  <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="How can we help you?" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/all-articles.html">Articles</a>
+      <a href="/store.html">Store</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms-of-service.html">Terms</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Zero Budgeting. All rights reserved.</p>
+  </div>
+
+<div class="kit-subscribe-wrapper" style="max-width:500px;margin:2rem auto;">
+  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:#2d6a4f;padding:2rem;border-radius:8px;color:white;max-width:500px;margin:2rem auto;">
+    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:#f59e0b;">Get the Free Weekly Budget Tracker</h3>
+    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth.</p>
+    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <button type="submit" style="background:#f59e0b;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;font-weight:bold;cursor:pointer;width:100%;font-size:1rem;">Send My Free Tracker</button>
+    <p style="font-size:0.75rem;opacity:0.7;margin:0.5rem 0 0;">No spam. Unsubscribe anytime.</p>
+  </form>
+</div></footer>
+</body>
+</html>

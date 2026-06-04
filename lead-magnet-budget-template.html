@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero-Based Budget Template · ZeroBudgeting</title>
+  <link rel="canonical" href="https://zerobudgeting.com/lead-magnet-budget-template">
+  
+  <style>
+    @page { size: A4; margin: 12mm; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #1a1a2e;
+      background: #f0f5f0;
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .page {
+      max-width: 210mm; min-height: 297mm;
+      margin: 0 auto; background: #fff;
+      border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      padding: 32px 36px;
+      display: flex; flex-direction: column;
+    }
+    .header { text-align: center; margin-bottom: 16px; }
+    .header .badge {
+      display: inline-block; background: #e6f4ea; color: #1e7e34;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 8px;
+    }
+    .header h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
+    .header h1 span { color: #1e7e34; }
+    .header p { font-size: 14px; color: #555; margin-top: 4px; }
+    .subtitle { font-size: 12px; color: #888; border-bottom: 2px solid #eef5ee; padding-bottom: 10px; margin-bottom: 14px; text-align: center; }
+
+    .formula-banner {
+      background: #f0faf0; border-radius: 8px; padding: 10px 16px;
+      text-align: center; font-size: 14px; font-weight: 700;
+      margin-bottom: 14px; color: #1e7e34;
+    }
+    .formula-banner span { background: #fff; padding: 3px 10px; border-radius: 6px; border: 1px solid #c8e6c9; }
+
+    .budget-grid { display: flex; gap: 20px; flex: 1; }
+    .budget-col { flex: 1; }
+
+    .section { margin-bottom: 12px; }
+    .section-title {
+      font-size: 13px; font-weight: 700;
+      padding-left: 8px; margin-bottom: 6px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .section-title.income { color: #1e7e34; border-left: 4px solid #1e7e34; }
+    .section-title.fixed { color: #d93025; border-left: 4px solid #d93025; }
+    .section-title.variable { color: #e37400; border-left: 4px solid #e37400; }
+    .section-title.savings { color: #1a73e8; border-left: 4px solid #1a73e8; }
+
+    .row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 5px 6px; border-bottom: 1px solid #f0f0f0; font-size: 13px;
+    }
+    .row:last-child { border-bottom: none; }
+    .row .amt {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 12px; font-weight: 600; color: #333;
+    }
+    .row.total {
+      font-weight: 700; border-top: 2px solid #333; border-bottom: 2px solid #333;
+      margin-top: 4px; padding-top: 4px; font-size: 14px;
+    }
+    .row.total.green { color: #1e7e34; }
+    .row.total.red { color: #d93025; }
+    .row.total.blue { color: #1a73e8; }
+
+    .dollar {
+      background: #f5f5f5; border-radius: 4px; padding: 2px 8px;
+      font-family: 'SF Mono', monospace; font-size: 12px; color: #999;
+    }
+
+    .rules { margin-top: 12px; }
+    .rule {
+      display: flex; align-items: flex-start; gap: 8px;
+      padding: 3px 0; font-size: 11px; color: #555;
+    }
+    .rule .num {
+      min-width: 20px; height: 20px; background: #1e7e34; color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700; flex-shrink: 0;
+    }
+
+    .footer-form {
+      margin-top: 14px; padding-top: 12px;
+      border-top: 2px dashed #dde;
+      text-align: center;
+    }
+    .footer-form h3 { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+    .footer-form p { font-size: 12px; color: #666; margin-bottom: 8px; }
+    .form-placeholder {
+      background: #f5fbf5; border: 2px dashed #b8d8b8;
+      border-radius: 8px; padding: 14px 20px;
+      font-size: 12px; color: #666;
+    }
+    .form-placeholder .kit-code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      background: #fff; border: 1px solid #c8e6c9;
+      border-radius: 4px; padding: 4px 8px; font-size: 11px;
+    }
+    .footer-meta { margin-top: 8px; font-size: 10px; color: #aaa; text-align: center; }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; border-radius: 0; padding: 20px 24px; }
+      .form-placeholder { border: 1px solid #ccc; }
+    }
+  
+    /* ===== SITE-WIDE NAV & FOOTER COMPONENTS ===== */
+    :root {
+      --nav-height: 64px;
+      --nav-bg: rgba(11, 15, 26, 0.88);
+      --footer-bg: #0a0d16;
+      --footer-border: rgba(255,255,255,0.06);
+    }
+    nav#site-nav {
+      position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border, rgba(79,70,229,0.15));
+      animation: navSlideDown 0.5s ease-out;
+    }
+    @keyframes navSlideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .nav-inner {
+      max-width: var(--container-max, 1280px); margin: 0 auto; padding: 0 var(--container-padding, 1rem);
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-weight: 700; font-size: 1.2rem; color: var(--color-text, #f1f5f9); text-decoration: none;
+    }
+    .nav-logo span { background: linear-gradient(135deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo .gold { background: none; -webkit-text-fill-color: var(--gold, #d4a017); }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links a { color: #94a3b8; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.3s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); transition: width 0.3s; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a:hover, .nav-links a.active { color: #e2e8f0; }
+    .hamburger { display: none; background: none; border: 1px solid rgba(255,255,255,0.15); color: #94a3b8; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: all 0.3s; }
+    .hamburger:hover { border-color: var(--color-primary, #4f46e5); }
+    .hamburger span { display: block; width: 18px; height: 2px; background: #94a3b8; border-radius: 2px; transition: all 0.3s; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 3rem 0 1.5rem;
+      border-top: 1px solid var(--footer-border);
+      background: var(--footer-bg);
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .footer-brand h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text, #f1f5f9); }
+    .footer-brand h3 span { background: linear-gradient(135deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .footer-brand .gold { background: none; -webkit-text-fill-color: var(--gold, #d4a017); }
+    .footer-brand p { font-size: 0.813rem; color: #64748b; line-height: 1.6; }
+    .footer-col h4 { font-size: 0.813rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.875rem; color: #64748b; margin-bottom: 0.5rem; transition: color 0.3s; text-decoration: none; }
+    .footer-col a:hover { color: var(--color-primary-light, #6366f1); }
+    .footer-bottom { border-top: 1px solid var(--footer-border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom p { font-size: 0.75rem; color: #475569; }
+
+    /* ===== MOBILE NAV ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: fixed; top: var(--nav-height); left: 0; right: 0; background: rgba(11,15,26,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 1rem; gap: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .nav-links.mobile-open { display: flex; }
+      .nav-links a { padding: 0.75rem 1rem; border-radius: 8px; width: 100%; }
+      .nav-links a:hover { background: rgba(255,255,255,0.05); }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* SPACING FOR ARTICLES (offset for fixed nav) */
+    body { padding-top: var(--nav-height); }
+</style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%232d6a4f%22/><text x=%2216%22 y=%2222%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-family=%22Inter,sans-serif%22 font-weight=%22700%22 font-size=%2216%22>ZB</text></svg>">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#2d6a4f"/><path d="M14 7v14M7 14h14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <span>ZeroBudgeting</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/#articles">Articles</a>
+        <a href="/store.html">Store</a>
+        <a href="/tools-comparison.html">Tools</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+<div class="page">
+  <div class="header">
+    <div class="badge">Free Download · ZeroBudgeting.com</div>
+    <h1>💰 The <span>Zero-Based Budget</span> Template</h1>
+    <p>Every dollar assigned. Every month balanced. No exceptions.</p>
+  </div>
+  <div class="subtitle">Income − Expenses − Savings = $0.00 ← That's the whole system.</div>
+
+  <div class="formula-banner">
+    <span>💰 TOTAL INCOME</span> − <span>📊 TOTAL EXPENSES</span> − <span>🏦 SAVINGS</span> = <span style="color:#d93025;">$0.00</span>
+  </div>
+
+  <div class="budget-grid">
+    <!-- LEFT COL -->
+    <div class="budget-col">
+      <div class="section">
+        <div class="section-title income">💵 Income (Monthly)</div>
+        <div class="row"><span>Salary / Wages (after tax)</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Side Hustle / Freelance</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Passive / Investments</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Other Income</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row total green"><span>💰 Total Income</span><span class="amt">$ 0.00</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title fixed">🏠 Fixed Expenses</div>
+        <div class="row"><span>Rent / Mortgage</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Electricity / Gas / Water</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Internet & Phone</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Insurance (health, car, rent)</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Loan / Credit Card Minimums</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Subscriptions (Netflix, gym…)</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row total red"><span>📌 Fixed Total</span><span class="amt">$ 0.00</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="budget-col">
+      <div class="section">
+        <div class="section-title variable">🛒 Variable Expenses</div>
+        <div class="row"><span>Groceries</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Dining Out / Takeout</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Transport / Gas / Tolls</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Shopping / Personal Care</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Entertainment / Hobbies</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Healthcare / Medications</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row total"><span>📌 Variable Total</span><span class="amt">$ 0.00</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title savings">🏦 Savings & Goals</div>
+        <div class="row"><span>Emergency Fund</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Retirement (IRA/401k)</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Travel / Big Purchase</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row"><span>Debt Snowball (extra)</span><span class="amt dollar">$ ____,____</span></div>
+        <div class="row total blue"><span>🏆 Savings Total</span><span class="amt">$ 0.00</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rules">
+    <div class="rule"><span class="num">1</span> <span><strong>Assign every dollar</strong> — If income is $4,200 and expenses + savings = $4,150, assign that extra $50 somewhere (coffee fund? extra debt payment?). Zero balance.</span></div>
+    <div class="rule"><span class="num">2</span> <span><strong>Savings are a line item</strong> — Pay yourself first. Savings isn't "whatever is left." It's a fixed assignment.</span></div>
+    <div class="rule"><span class="num">3</span> <span><strong>Roll with the punches</strong> — Overspent on groceries? Move $20 from "dining out." No guilt, just reassign.</span></div>
+  </div>
+
+  <div class="footer-form">
+    <h3>📥 Download the Interactive Spreadsheet</h3>
+    <p>Auto-calculating Google Sheets version with charts, rollover tracking, and 12-month planner.</p>
+    <div class="form-placeholder">
+      ⬇️ <strong>Kit (ConvertKit) Embed:</strong><br>
+      <span class="kit-code">&lt;script src="https://assets.kit.com/forms/YOUR_FORM_ID/index.js" async&gt;&lt;/script&gt;</span>
+      <br><span style="font-size:11px;color:#999;">→ Replace <code>YOUR_FORM_ID</code> with your Kit form ID.</span>
+    </div>
+  </div>
+  <div class="footer-meta">ZeroBudgeting.com · © 2025 · Zero-Based Budget Template v1.0</div>
+</div>
+<div style="margin-top:40px;padding:20px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;text-align:center;color:white">
+<h3>Get the Full Guide</h3>
+<p>Turn this knowledge into action. Download the complete PDF guide with templates, worksheets, and step-by-step checklists.</p>
+<a href="https://dogeking0.gumroad.com/l/ptfzf" style="display:inline-block;padding:14px 35px;background:#fff;color:#667eea;border-radius:8px;font-weight:bold;text-decoration:none;font-size:18px">Buy Now - $9.99</a>
+</div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span>ZeroBudgeting</span></h3>
+          <p>Every dollar has a purpose. Master zero-based budgeting, pay off debt, and achieve financial freedom with our expert guides.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="/">Home</a>
+          <a href="/#articles">Articles</a>
+          <a href="/store.html">Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/tools-comparison.html">Tools</a>
+          <a href="/ultimate-guide.html">Ultimate Guide</a>
+          <a href="/checklist.html">Checklist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="/#articles">Budget Tips</a>
+          <a href="/#articles">Debt Payoff</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ZeroBudgeting. All rights reserved.</p>
+        <p>Every dollar has a purpose</p>
+      </div>
+    </div>
+  
+<div class="kit-subscribe-wrapper" style="max-width:500px;margin:2rem auto;">
+  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:#2d6a4f;padding:2rem;border-radius:8px;color:white;max-width:500px;margin:2rem auto;">
+    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:#f59e0b;">Get the Free Weekly Budget Tracker</h3>
+    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth.</p>
+    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <button type="submit" style="background:#f59e0b;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;font-weight:bold;cursor:pointer;width:100%;font-size:1rem;">Send My Free Tracker</button>
+    <p style="font-size:0.75rem;opacity:0.7;margin:0.5rem 0 0;">No spam. Unsubscribe anytime.</p>
+  </form>
+</div></footer>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('navLinks');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('mobile-open');
+      });
+    }
+  });
+  </script>
+
+
+    <div class="highlight-box" style="margin:30px 0">
+      <p><strong>Recommended Resource:</strong> Get the complete system with our proven <a href="https://www.amazon.com/dp/1250075934?tag=dogeking03-20" target="_blank" rel="nofollow sponsored">job search guide</a> and <a href="https://www.amazon.com/dp/1453639322?tag=dogeking03-20" target="_blank" rel="nofollow sponsored">resume writing playbook</a>. These resources complement our free templates perfectly.</p>
+    </div>
+
+<script src="/scripts/related-articles.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8CVE2X8R5L');</script>
+
+
+<script src="/scripts/affiliate-banner.js"></script>
+</body>
+</html>

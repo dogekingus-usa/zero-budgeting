@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+.openclaw/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+*.log

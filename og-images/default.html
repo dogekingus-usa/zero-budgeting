@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, height=630, initial-scale=1.0">
+<title>Zero Budgeting &mdash; Transform Your Life</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    background: linear-gradient(135deg, #0a0f0a 0%, #1a2a0d 40%, #0a0f0a 100%);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    position: relative;
+  }
+  .accent-stripe {
+    position: absolute; left: 0; top: 0; width: 12px; height: 100%;
+    background: linear-gradient(180deg, #F0B90B 0%, #D4A017 50%, #B8860B 100%);
+    box-shadow: 2px 0 20px rgba(240, 185, 11, 0.3);
+  }
+  .corner-tl, .corner-br {
+    position: absolute; width: 60px; height: 60px;
+    border-color: rgba(240, 185, 11, 0.15); border-style: solid;
+  }
+  .corner-tl { top: 20px; left: 20px; border-width: 2px 0 0 2px; }
+  .corner-br { bottom: 20px; right: 20px; border-width: 0 2px 2px 0; }
+  .watermark {
+    position: absolute; right: 30px; bottom: 120px;
+    font-size: 140px; opacity: 0.04; color: #F0B90B; user-select: none;
+  }
+  .grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(240, 185, 11, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(240, 185, 11, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .glow-1 {
+    position: absolute; width: 350px; height: 350px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(240, 185, 11, 0.08) 0%, transparent 70%);
+    top: -120px; right: -100px;
+  }
+  .glow-2 {
+    position: absolute; width: 250px; height: 250px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 160, 23, 0.1) 0%, transparent 70%);
+    bottom: -80px; left: -80px;
+  }
+  .brand {
+    position: absolute; top: 30px; left: 30px; display: flex; align-items: center; gap: 10px;
+  }
+  .brand-icon { font-size: 36px; line-height: 1; }
+  .brand-text {
+    font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700;
+    color: #F0B90B; letter-spacing: 0.5px;
+  }
+  .brand-text span { color: rgba(255,255,255,0.4); font-weight: 400; font-size: 17px; margin-left: 6px; }
+  .title-icon { font-size: 80px; margin-bottom: 10px; }
+  .main-title {
+    font-size: 64px; font-weight: 700; color: #FFFFFF;
+    line-height: 1.1; text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    margin-bottom: 12px;
+  }
+  .main-title .gold { color: #F0B90B; }
+  .subtitle {
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 18px; color: rgba(255,255,255,0.5);
+    letter-spacing: 4px; text-transform: uppercase; font-weight: 300;
+  }
+  .divider {
+    width: 80px; height: 2px;
+    background: linear-gradient(90deg, transparent, #F0B90B, transparent);
+    margin: 16px auto; opacity: 0.5;
+  }
+  .url-bar {
+    position: absolute; bottom: 28px; left: 0; right: 0; text-align: center;
+    font-family: 'Inter', 'Arial', sans-serif; font-size: 13px;
+    color: rgba(255,255,255,0.3); letter-spacing: 3px; text-transform: uppercase;
+  }
+  .url-bar::before { content: '💰'; margin-right: 8px; }
+  .url-bar::after { content: '💰'; margin-left: 8px; }
+</style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="accent-stripe"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="watermark">💰</div>
+
+  <div class="brand">
+    <span class="brand-icon">💰</span>
+    <span class="brand-text">Zero Budgeting<span>| Money Mastery</span></span>
+  </div>
+
+  <div class="title-icon">💰</div>
+  <div class="main-title">
+    Master Your Money,<br><span class="gold">Transform Your Life</span>
+  </div>
+  <div class="divider"></div>
+  <div class="subtitle">zerobudgeting.com</div>
+
+  <div class="url-bar">ZERO-BASED BUDGETING</div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8CVE2X8R5L');</script>
+
+<script src="/scripts/affiliate-banner.js"></script>
+</body>
+</html>

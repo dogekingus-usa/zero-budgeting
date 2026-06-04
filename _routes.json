@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/assets/*",
+    "/images/*",
+    "/scripts/*",
+    "/crown-design-system.css",
+    "/dynamic-loader.js",
+    "/favicon*"
+  ]
+}

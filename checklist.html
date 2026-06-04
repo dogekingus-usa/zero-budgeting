@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="theme-zerobudgeting" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Complete Zero-Based Budget Setup Checklist — zerobudgeting.com</title>
+<meta name="description" content="Everything you need to start budgeting from zero — and stick with it. Downloadable interactive checklist for zerobudgeting.com.">
+<link rel="canonical" href="https://zerobudgeting.com/checklist.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{--primary:#2d6a4f;--bg:#0a1a0e;--surface:#0d2818;--surface2:#1a3a2e;--text:#f1f5f9;--text-muted:#94a3b8;--heading-font:'Inter', sans-serif;--body-font:'Inter', sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}img{max-width:100%;height:auto}
+body{font-family:var(--body-font);background:var(--bg);color:var(--text);line-height:1.6}
+header{background:linear-gradient(135deg, #0a1a0e 0%, #0d2818 40%, #2d6a4f 100%);padding:70px 20px 40px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.08)}
+header h1{font-family:var(--heading-font);font-size:2.2em;margin-bottom:10px}
+header p{color:var(--text-muted);max-width:600px;margin:0 auto}
+.container{max-width:800px;margin:0 auto;padding:30px 20px 60px}
+.checklist-section{background:var(--surface);border-radius:16px;padding:24px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.06)}
+.checklist-section h3{font-size:1.2em;margin-bottom:16px;color:var(--primary)}
+.checklist-section ul{list-style:none}
+.checklist-section li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.checklist-section li:last-child{border:none}
+.checklist-section label{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:0.95em;color:var(--text)}
+.checklist-section input[type="checkbox"]{margin-top:3px;accent-color:#2d6a4f;width:18px;height:18px;cursor:pointer}
+.checklist-section input[type="checkbox"]:checked + span{text-decoration:line-through;color:var(--text-muted);opacity:0.6}
+.progress-bar{background:var(--surface2);border-radius:20px;height:10px;margin:20px 0;overflow:hidden}
+.progress-fill{background:linear-gradient(135deg, #2d6a4f, #40916c);height:100%;width:0%;border-radius:20px;transition:width 0.3s}
+.progress-text{text-align:center;font-size:0.85em;color:var(--text-muted);margin-bottom:10px}
+.progress-text span{color:var(--primary);font-weight:600}
+.btn-reset{background:var(--surface2);color:var(--text-muted);border:1px solid rgba(255,255,255,0.1);padding:8px 20px;border-radius:8px;cursor:pointer;font-size:0.85em;margin-top:12px;transition:all 0.2s}
+.btn-reset:hover{background:var(--primary);color:#fff}
+.print-btn{background:var(--surface2);color:var(--text-muted);border:1px solid rgba(255,255,255,0.1);padding:8px 20px;border-radius:8px;cursor:pointer;font-size:0.85em;margin-top:12px;transition:all 0.2s;margin-left:8px}
+.print-btn:hover{background:var(--primary);color:#fff}
+.footer{text-align:center;padding:30px;color:#444;font-size:0.8em}
+@media(max-width:600px){header h1{font-size:1.5em}}
+</style>
+<meta property="og:title" content="The Complete Zero-Based Budget Setup Checklist — zerobudgeting.com" />
+<meta property="og:description" content="Everything you need to start budgeting from zero — and stick with it. Downloadable interactive checklist for zerobudgeting.com." />
+<meta property="og:url" content="https://zerobudgeting.com/checklist.html" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://zerobudgeting.com/og-images/default.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Complete Zero-Based Budget Setup Checklist — zerobudgeting.com" />
+<meta name="twitter:description" content="Everything you need to start budgeting from zero — and stick with it. Downloadable interactive checklist for zerobudgeting.com." />
+  <link rel="stylesheet" href="/crown-design-system.css">
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Zero Budgeting</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/all-articles.html">Articles</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+    <h1>✅ The Complete Zero-Based Budget Setup Checklist</h1>
+    <p>Everything you need to start budgeting from zero — and stick with it</p>
+</header>
+<div class="container">
+    <div class="progress-text">Progress: <span id="progressCount">0</span> / <span id="totalCount">0</span> completed</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    
+        <div class="checklist-section">
+            <h3>💰 Getting Started</h3>
+            <ul><li><label><input type="checkbox" class="check-item"><span>Gather all income sources (pay stubs, side hustles, passive income)</span></label></li><li><label><input type="checkbox" class="check-item"><span>List ALL monthly expenses (fixed + variable)</span></label></li><li><label><input type="checkbox" class="check-item"><span>Download a budgeting app or spreadsheet</span></label></li><li><label><input type="checkbox" class="check-item"><span>Set up a dedicated budgeting day (weekly/bi-weekly)</span></label></li><li><label><input type="checkbox" class="check-item"><span>Create your first zero-based budget</span></label></li></ul>
+        </div>
+        <div class="checklist-section">
+            <h3>📊 Budget Categories</h3>
+            <ul><li><label><input type="checkbox" class="check-item"><span>Housing (rent/mortgage, utilities, insurance)</span></label></li><li><label><input type="checkbox" class="check-item"><span>Food (groceries, dining out, meal prep)</span></label></li><li><label><input type="checkbox" class="check-item"><span>Transportation (gas, maintenance, public transit)</span></label></li><li><label><input type="checkbox" class="check-item"><span>Debt payments (credit cards, loans, minimums)</span></label></li><li><label><input type="checkbox" class="check-item"><span>Savings (emergency fund, goals, investments)</span></label></li></ul>
+        </div>
+        <div class="checklist-section">
+            <h3>🏦 Debt Management</h3>
+            <ul><li><label><input type="checkbox" class="check-item"><span>List all debts with interest rates</span></label></li><li><label><input type="checkbox" class="check-item"><span>Choose debt payoff strategy (snowball or avalanche)</span></label></li><li><label><input type="checkbox" class="check-item"><span>Set up automatic minimum payments</span></label></li><li><label><input type="checkbox" class="check-item"><span>Allocate extra cash to highest-priority debt</span></label></li><li><label><input type="checkbox" class="check-item"><span>Track debt reduction progress monthly</span></label></li></ul>
+        </div>
+        <div class="checklist-section">
+            <h3>🌱 Savings & Growth</h3>
+            <ul><li><label><input type="checkbox" class="check-item"><span>Build $1,000 starter emergency fund</span></label></li><li><label><input type="checkbox" class="check-item"><span>Save 3-6 months of expenses</span></label></li><li><label><input type="checkbox" class="check-item"><span>Open a high-yield savings account</span></label></li><li><label><input type="checkbox" class="check-item"><span>Set up automatic transfers on payday</span></label></li><li><label><input type="checkbox" class="check-item"><span>Create sinking funds for irregular expenses</span></label></li></ul>
+        </div>
+        <div class="checklist-section">
+            <h3>📈 Long-term Success</h3>
+            <ul><li><label><input type="checkbox" class="check-item"><span>Review budget weekly for first 3 months</span></label></li><li><label><input type="checkbox" class="check-item"><span>Track every dollar (every expense counts)</span></label></li><li><label><input type="checkbox" class="check-item"><span>Do a monthly financial audit</span></label></li><li><label><input type="checkbox" class="check-item"><span>Adjust categories as lifestyle changes</span></label></li><li><label><input type="checkbox" class="check-item"><span>Celebrate milestones (every $1,000 saved)</span></label></li></ul>
+        </div>
+    <div style="text-align:center;margin-top:20px">
+        <button class="btn-reset" onclick="resetChecklist()">🔄 Reset All</button>
+        <button class="print-btn" onclick="window.print()">🖨️ Print Checklist</button>
+    </div>
+    <div style="text-align:center;margin-top:30px">
+        <p style="color:var(--text-muted);font-size:0.85em">💡 <a href="https://zerobudgeting.com/store.html" style="color:var(--primary)">Get the complete toolkit</a> with printable PDFs and tracking spreadsheets.</p>
+    </div>
+</div>
+<footer class="footer"><p>© 2026 zerobudgeting.com</p>
+<div class="kit-subscribe-wrapper" style="max-width:500px;margin:2rem auto;">
+  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:#2d6a4f;padding:2rem;border-radius:8px;color:white;max-width:500px;margin:2rem auto;">
+    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:#f59e0b;">Get the Free Weekly Budget Tracker</h3>
+    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth.</p>
+    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <button type="submit" style="background:#f59e0b;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;font-weight:bold;cursor:pointer;width:100%;font-size:1rem;">Send My Free Tracker</button>
+    <p style="font-size:0.75rem;opacity:0.7;margin:0.5rem 0 0;">No spam. Unsubscribe anytime.</p>
+  </form>
+</div></footer>
+<script>
+function updateProgress(){const items=document.querySelectorAll('.check-item');const checked=document.querySelectorAll('.check-item:checked');const total=items.length;const done=checked.length;document.getElementById('progressCount').textContent=done;document.getElementById('totalCount').textContent=total;document.getElementById('progressFill').style.width=(total>0?(done/total*100):0)+'%';localStorage.setItem('checklist_zero-budgeting',JSON.stringify(Array.from(items).map(i=>i.checked)))}
+function resetChecklist(){document.querySelectorAll('.check-item').forEach(c=>{c.checked=false});updateProgress()}
+document.addEventListener('DOMContentLoaded',function(){const items=document.querySelectorAll('.check-item');items.forEach(c=>c.addEventListener('change',updateProgress));try{const saved=JSON.parse(localStorage.getItem('checklist_zero-budgeting'));if(saved&&saved.length===items.length){items.forEach((c,i)=>c.checked=saved[i])}}catch(e){}updateProgress()})
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-8CVE2X8R5L");</script>
+
+<script src="/scripts/affiliate-banner.js"></script>
+</body>
+</html>

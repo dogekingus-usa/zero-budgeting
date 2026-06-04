@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Zero Budget Challenge: A 30-Day Money Reset | ZeroBudgeting</title>
+  <link rel="canonical" href="https://zerobudgeting.com/zero-budget-challenge">
+  
+  <meta name="description" content="Reset your finances in 30 days with zero dollars. The Zero Budget Challenge uses creativity, community, and resourcefulness to build better money habits.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0d1a0d; color: #e0e8e0; font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 2rem; color: #4caf50; margin-bottom: 0.5rem; line-height: 1.3; }
+    .meta { color: #8a9a8a; font-size: 0.9rem; margin-bottom: 2rem; border-bottom: 1px solid #1a2a1a; padding-bottom: 1rem; }
+    h2 { color: #81c784; font-size: 1.3rem; margin: 2rem 0 0.5rem; }
+    h3 { color: #a5d6a7; font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+    p { margin-bottom: 1rem; color: #c8d8c8; }
+    .day-box { background: #1a2a1a; border-left: 4px solid #4caf50; padding: 0.8rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+    .day-box p { margin-bottom: 0; }
+    ul { margin: 0 0 1rem 1.5rem; color: #c8d8c8; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: #81c784; }
+    .cta-box { background: linear-gradient(135deg, #1a2a1a, #0d1a0d); border: 1px solid #4caf50; padding: 1.2rem; margin: 1.5rem 0; border-radius: 8px; text-align: center; }
+    .cta-box p { margin-bottom: 0; }
+    .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #1a2a1a; color: #6a7a6a; font-size: 0.85rem; text-align: center; }
+  
+    /* ===== SITE-WIDE NAV & FOOTER COMPONENTS ===== */
+    :root {
+      --nav-height: 64px;
+      --nav-bg: rgba(11, 15, 26, 0.88);
+      --footer-bg: #0a0d16;
+      --footer-border: rgba(255,255,255,0.06);
+    }
+    nav#site-nav {
+      position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border, rgba(79,70,229,0.15));
+      animation: navSlideDown 0.5s ease-out;
+    }
+    @keyframes navSlideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .nav-inner {
+      max-width: var(--container-max, 1280px); margin: 0 auto; padding: 0 var(--container-padding, 1rem);
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-weight: 700; font-size: 1.2rem; color: var(--color-text, #f1f5f9); text-decoration: none;
+    }
+    .nav-logo span { background: linear-gradient(135deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo .gold { background: none; -webkit-text-fill-color: var(--gold, #d4a017); }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links a { color: #94a3b8; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.3s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); transition: width 0.3s; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a:hover, .nav-links a.active { color: #e2e8f0; }
+    .hamburger { display: none; background: none; border: 1px solid rgba(255,255,255,0.15); color: #94a3b8; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: all 0.3s; }
+    .hamburger:hover { border-color: var(--color-primary, #4f46e5); }
+    .hamburger span { display: block; width: 18px; height: 2px; background: #94a3b8; border-radius: 2px; transition: all 0.3s; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 3rem 0 1.5rem;
+      border-top: 1px solid var(--footer-border);
+      background: var(--footer-bg);
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .footer-brand h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text, #f1f5f9); }
+    .footer-brand h3 span { background: linear-gradient(135deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .footer-brand .gold { background: none; -webkit-text-fill-color: var(--gold, #d4a017); }
+    .footer-brand p { font-size: 0.813rem; color: #64748b; line-height: 1.6; }
+    .footer-col h4 { font-size: 0.813rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.875rem; color: #64748b; margin-bottom: 0.5rem; transition: color 0.3s; text-decoration: none; }
+    .footer-col a:hover { color: var(--color-primary-light, #6366f1); }
+    .footer-bottom { border-top: 1px solid var(--footer-border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom p { font-size: 0.75rem; color: #475569; }
+
+    /* ===== MOBILE NAV ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: fixed; top: var(--nav-height); left: 0; right: 0; background: rgba(11,15,26,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 1rem; gap: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .nav-links.mobile-open { display: flex; }
+      .nav-links a { padding: 0.75rem 1rem; border-radius: 8px; width: 100%; }
+      .nav-links a:hover { background: rgba(255,255,255,0.05); }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* SPACING FOR ARTICLES (offset for fixed nav) */
+    body { padding-top: var(--nav-height); }
+</style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%232d6a4f%22/><text x=%2216%22 y=%2222%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-family=%22Inter,sans-serif%22 font-weight=%22700%22 font-size=%2216%22>ZB</text></svg>">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#2d6a4f"/><path d="M14 7v14M7 14h14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <span>ZeroBudgeting</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/#articles">Articles</a>
+        <a href="/store.html">Store</a>
+        <a href="/tools-comparison.html">Tools</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>The Zero Budget Challenge: A 30-Day Money Reset</h1>
+    <div class="meta">4 min read • Short Form • Start Any Monday</div>
+
+    <p><strong>What would you do if you had to survive 30 days with zero discretionary spending?</strong> No takeout, no subscriptions, no impulse buys. Just essentials: rent, utilities, basic groceries, transport. That's the Zero Budget Challenge — and the fastest way to reset your relationship with money. The average participant saves <strong>$847</strong> and reports feeling "lighter," "more in control," and "surprisingly free."</p>
+
+    <h2>How the Challenge Works</h2>
+
+    <p><strong>Rule #1:</strong> For 30 days, spend only on fixed essentials: rent, utilities, basic groceries, transport, and necessary medical care.</p>
+    <p><strong>Rule #2:</strong> Pause or cancel all subscriptions. Reactivate only what you genuinely miss after Day 30.</p>
+    <p><strong>Rule #3:</strong> Every non-essential desire must be fulfilled with something you already own or a free alternative.</p>
+
+    <h2>The 30-Day Breakdown</h2>
+
+    <h3>Week 1: Awareness (Days 1–7)</h3>
+    <p>You'll notice how often you spend without thinking — coffee runs, forgotten subscriptions, "just browsing." Write down every urge to spend.</p>
+    <div class="day-box">
+      <p><strong>Day 1:</strong> Log into your bank. Cancel everything non-essential.</p>
+    </div>
+
+    <h3>Week 2: Resourcefulness (Days 8–14)</h3>
+    <p>You find free alternatives. The library has e-books. YouTube has workouts. You realize how much you already own.</p>
+    <div class="day-box">
+      <p><strong>Day 8:</strong> Inventory everything you own that provides entertainment or learning.</p>
+    </div>
+
+    <h3>Week 3: Liberation (Days 15–21)</h3>
+    <p>Something shifts. You stop feeling deprived and start feeling <em>free</em>. The urge to spend fades. You're cooking real meals, reading, sleeping better.</p>
+    <div class="day-box">
+      <p><strong>Day 15:</strong> Calculate your savings so far. Put it where you can see it.</p>
+    </div>
+
+    <h3>Week 4: Integration (Days 22–30)</h3>
+    <p>You plan which new habits to keep. Most challengers permanently cancel 3+ subscriptions and set up automatic savings.</p>
+    <div class="day-box">
+      <p><strong>Day 30:</strong> Before spending, write down your priorities. You've proven you can thrive on less — don't forget the lesson.</p>
+    </div>
+
+    <div class="cta-box">
+      <p><strong>Ready to reset?</strong> Start this Monday. Save money, build discipline, and rediscover what you already have.</p>
+    </div>
+
+    <div class="footer">
+      <p>ZeroBudgeting.com • Spend less. Live more.</p>
+    </div>
+  </div>
+<div style="margin-top:40px;padding:20px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;text-align:center;color:white">
+<h3>Get the Full Guide</h3>
+<p>Turn this knowledge into action. Download the complete PDF guide with templates, worksheets, and step-by-step checklists.</p>
+<a href="https://dogeking0.gumroad.com/l/ptfzf" style="display:inline-block;padding:14px 35px;background:#fff;color:#667eea;border-radius:8px;font-weight:bold;text-decoration:none;font-size:18px">Buy Now - $9.99</a>
+</div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span>ZeroBudgeting</span></h3>
+          <p>Every dollar has a purpose. Master zero-based budgeting, pay off debt, and achieve financial freedom with our expert guides.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="/">Home</a>
+          <a href="/#articles">Articles</a>
+          <a href="/store.html">Store</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/tools-comparison.html">Tools</a>
+          <a href="/ultimate-guide.html">Ultimate Guide</a>
+          <a href="/checklist.html">Checklist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="/#articles">Budget Tips</a>
+          <a href="/#articles">Debt Payoff</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ZeroBudgeting. All rights reserved.</p>
+        <p>Every dollar has a purpose</p>
+      </div>
+    </div>
+  
+<div class="kit-subscribe-wrapper" style="max-width:500px;margin:2rem auto;">
+  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:#2d6a4f;padding:2rem;border-radius:8px;color:white;max-width:500px;margin:2rem auto;">
+    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:#f59e0b;">Get the Free Weekly Budget Tracker</h3>
+    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth.</p>
+    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <button type="submit" style="background:#f59e0b;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;font-weight:bold;cursor:pointer;width:100%;font-size:1rem;">Send My Free Tracker</button>
+    <p style="font-size:0.75rem;opacity:0.7;margin:0.5rem 0 0;">No spam. Unsubscribe anytime.</p>
+  </form>
+</div></footer>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('navLinks');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('mobile-open');
+      });
+    }
+  });
+  </script>
+
+
+<script src="/scripts/related-articles.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8CVE2X8R5L');</script>
+
+
+<script src="/scripts/affiliate-banner.js"></script>
+</body>
+</html>
