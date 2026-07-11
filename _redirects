@@ -1,10 +1,12 @@
-# www -> non-www redirect
-https://www.zerobudgeting.com/* https://zerobudgeting.com/:splat 301
-
-# Security - block leaked files
+# Security - block leaked files and directory listings
+/.env /404 404
+/.git/* /404 404
+/node_modules/* /404 404
 /*.py /404 404
 /*.bat /404 404
 /*.sh /404 404
 /*.ps1 /404 404
-/*.key 404
-/*.pem 404
+/*.key /404 404
+/*.pem /404 404
+/*.sql /404 404
+/*.log /404 404
