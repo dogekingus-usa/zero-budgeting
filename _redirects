@@ -1,0 +1,10 @@
+# www -> non-www redirect
+https://www.zerobudgeting.com/* https://zerobudgeting.com/:splat 301
+
+# Security - block leaked files
+/*.py /404 404
+/*.bat /404 404
+/*.sh /404 404
+/*.ps1 /404 404
+/*.key 404
+/*.pem 404
