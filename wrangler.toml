@@ -1,6 +1,0 @@
-# Wrangler Configuration - Zero Budgeting
-name = "zero-budgeting"
-pages_build_output_dir = "."
-compatibility_date = "2026-07-01"
-account_id = "cfcfc918b8458ddd915566e2ece86320"
-
