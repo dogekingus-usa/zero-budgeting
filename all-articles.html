@@ -13,12 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>:root{--accent:#059669;--accent-dark:#059669cc;--accent-light:#05966944;--surface-dark:#0a0a1a;--surface-mid:#12122e;--surface-light:#1a1a3e;--text-primary:#f5f5ff;--text-body:#c0c0e0;--text-muted:#8080a0;--font-heading:'Playfair Display',serif;--font-body:'Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-8CVE2X8R5L');
-</script>
+
 <link rel="stylesheet" href="/crown-design-system.css">
 </head>
 <body>
@@ -116,5 +111,17 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 <!-- Amazon Associates Tag -->
 <div style="display:none;"><img src="https://ir-na.amazon-adsystem.com/e/ir?t=dogekingus20-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important;margin:0!important;" /></div>
+
+
+<script>
+window.addEventListener('DOMContentLoaded',function(){
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-8CVE2X8R5L');
+document.addEventListener('click',function(e){
+var t=e.target.closest('a[href*="gumroad.com"],a[href*="kit.com/forms"]');if(!t)return;
+var label=t.href.includes('gumroad')?'Gumroad Product Click':'Kit Form Click';
+gtag('event','conversion',{send_to:'G-8CVE2X8R5L',event_category:'Outbound',event_label:label,value:1});});
+});
+</script>
 </body>
 </html>
