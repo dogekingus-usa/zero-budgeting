@@ -1,41 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-zerobudgeting">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="keywords" content="budgeting, personal finance, zero-based budget, money management, articles">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Articles -- Zero Budgeting</title>
-<meta property="og:image" content="https://zerobudgeting.com/assets/og-image.svg" />
-<meta name="description" content="Browse all 372 articles on Zero Budgeting">
-    <meta property="og:title" content="All Articles -- Zero Budgeting">
+<title>All Articles — Zero Budgeting</title>
+<meta property="og:image" content="https://zerobudgeting.com/og-images/default.html" />
+<meta name="description" content="Browse all 368 articles on Zero Budgeting">
 <link rel="canonical" href="https://zerobudgeting.com/all-articles.html">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-<style>:root{--accent:#059669;--accent-dark:#059669cc;--accent-light:#05966944;--surface-dark:#0a0a1a;--surface-mid:#12122e;--surface-light:#1a1a3e;--text-primary:#f5f5ff;--text-body:#c0c0e0;--text-muted:#8080a0;--font-heading:'Playfair Display',serif;--font-body:'Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace}</style>
+<style>/* All styles from Crown DS */</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
-
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8CVE2X8R5L');
+</script>
 <link rel="stylesheet" href="/crown-design-system.css">
-<style>
-
-/* === A11Y: TOUCH TARGETS === */
-@media (max-width: 768px) {
-  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
-  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
-}
-.buy-btn, .bundle-btn, .cta, .btn-primary, button {
-  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
-}
-footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
-a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
-}
-.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
-.skip-nav:focus { top: 0; }
-
-</style>
 </head>
 <body>
-<a href="#main-content" class="skip-nav">Skip to main content</a>
 <header>
 <nav>
 <div class="container">
@@ -48,7 +32,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 </div>
 </nav>
 </header>
-<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">🏠 Zero Budgeting</a><span>'</span><a href="/all-articles.html">All Articles</a></nav>
+<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">🏠 Zero Budgeting</a><span>›</span><a href="/all-articles.html">All Articles</a></nav>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -69,9 +53,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }</script>
 <div class="container">
 <h1>All Articles</h1>
-<p style="text-align:center;color:var(--text-muted);margin-bottom:2rem;">All personal finance and budgeting articles in one place.</p><div class="article-controls" style="margin-bottom:24px;">
+<p style="text-align:center;color:var(--text<div class="article-controls" style="margin-bottom:24px;">
     <input type="text" placeholder="🔍 Search articles..." />
-    <select class="category-filter" id="category-filter">
+    <select class="category-filter">
         <option value="all">All Categories</option>
     </select>
     <select class="sort-filter">
@@ -82,65 +66,23 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     </select>
 </div>
 <div id="article-grid" class="article-grid" style="margin-bottom:40px;"></div>
-<div id="pagination" class="pagination" style="margin-bottom:60px;"></div>
-
-<!-- Dynamic category population -->
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  if(typeof articles!=='undefined'){
-    var cats={};
-    articles.forEach(function(a){var c=a.category||'uncategorized';cats[c]=(cats[c]||0)+1});
-    var sel=document.getElementById('category-filter');
-    if(sel){
-      Object.keys(cats).sort().forEach(function(c){
-        var opt=document.createElement('option');
-        opt.value=c;
-        opt.textContent=c.charAt(0).toUpperCase()+c.slice(1).replace(/-/g,' ')+' ('+cats[c]+')';
-        sel.appendChild(opt);
-      });
-    }
-    var ac=document.getElementById('article-count');
-    if(ac)ac.textContent=articles.length;
-  }
-});
-</script>
-
-<footer>>The Zero Budget Challenge: A 30-Day Money Reset | ZeroBudgeting</span><span class="article-arrow">-></span></a>
+<div id="pagination" class="pagination" style="margin-bottom:60px;"></div>-title">The Zero Budget Challenge: A 30-Day Money Reset | ZeroBudgeting</span><span class="article-arrow">→</span></a>
 </div>
 </div>
 <footer>© 2026 Zero Budgeting. All rights reserved. | <a href="/privacy.html" style="color:#8080a0;">Privacy</a>
 <div class="kit-subscribe-wrapper" style="max-width:500px;margin:2rem auto;">
-  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:var(--surface-light);padding:2rem;border-radius:12px;color:white;max-width:500px;margin:2rem auto;border:1px solid var(--accent-light);">
-    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:var(--accent);">💰 Get the Free Weekly Budget Tracker</h3>
-    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth. Free instant download.</p>
-    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid var(--accent);border-radius:6px;margin-bottom:0.75rem;box-sizing:border-box;background:var(--surface-dark);color:var(--text-primary);font-size:1rem;">
-    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid var(--accent);border-radius:6px;margin-bottom:0.75rem;box-sizing:border-box;background:var(--surface-dark);color:var(--text-primary);font-size:1rem;">
-    <button type="submit" style="background:var(--accent);color:#fff;padding:0.85rem 2rem;border:none;border-radius:8px;font-weight:700;cursor:pointer;width:100%;font-size:1.05rem;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">Send My Free Tracker -></button>
+  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:#2d6a4f;padding:2rem;border-radius:8px;color:white;max-width:500px;margin:2rem auto;">
+    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:#f59e0b;">Get the Free Weekly Budget Tracker</h3>
+    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth.</p>
+    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
+    <button type="submit" style="background:#f59e0b;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;font-weight:bold;cursor:pointer;width:100%;font-size:1rem;">Send My Free Tracker</button>
     <p style="font-size:0.75rem;opacity:0.7;margin:0.5rem 0 0;">No spam. Unsubscribe anytime.</p>
   </form>
 </div></footer>
 <script src="/articles-data.js"></script>
 <script src="/dynamic-loader.js"></script>
-<!-- Amazon Affiliate Banner -->
-<div class="amazon-affiliate-banner" style="background:linear-gradient(135deg,#232f3e,#131921);color:white;padding:20px;margin:20px auto;max-width:800px;border-radius:10px;text-align:center;font-family:Arial,sans-serif;">
-  <p style="margin:0 0 10px;font-size:14px;opacity:0.9;">📦 <strong>Support Our Site -- Shop on Amazon</strong></p>
-  <p style="margin:0 0 15px;font-size:13px;opacity:0.7;">We earn a small commission at no extra cost to you when you shop through our links.</p>
-  <a href="https://www.amazon.com/?tag=dogekingus20-20" target="_blank" rel="nofollow sponsored" style="display:inline-block;background:#ff9900;color:#232f3e;padding:12px 30px;border-radius:25px;font-weight:bold;font-size:15px;text-decoration:none;">🛒 Shop on Amazon -></a>
-  <p style="margin:10px 0 0;font-size:11px;opacity:0.5;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-<!-- Amazon Associates Tag -->
-<div style="display:none;"><img src="https://ir-na.amazon-adsystem.com/e/ir?t=dogekingus20-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important;margin:0!important;" /></div>
 
-
-<script>
-window.addEventListener('DOMContentLoaded',function(){
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-8CVE2X8R5L');
-document.addEventListener('click',function(e){
-var t=e.target.closest('a[href*="gumroad.com"],a[href*="kit.com/forms"]');if(!t)return;
-var label=t.href.includes('gumroad')?'Gumroad Product Click':'Kit Form Click';
-gtag('event','conversion',{send_to:'G-8CVE2X8R5L',event_category:'Outbound',event_label:label,value:1});});
-});
-</script>
+<script src="/scripts/affiliate-banner.js"></script>
 </body>
 </html>
