@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="theme-zerobudgeting">
 <head>
   <meta charset="UTF-8">
+<meta name="keywords" content="budgeting, personal finance, zero-based budget, money management, meal, planning, zero, based">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Budget-Friendly Meal Planning on a Zero-Based Budget | ZeroBudgeting</title>
   <link rel="canonical" href="https://zerobudgeting.com/meal-planning-zero-based-budget">
   
   <meta name="description" content="Learn how to plan budget-friendly meals using zero-based budgeting principles. Cut grocery costs, reduce food waste, and eat well without breaking the bank.">
+    <meta property="og:title" content="Budget-Friendly Meal Planning on a Zero-Based Budget | ZeroBudgeting">
+    <meta property="og:description" content="Learn how to plan budget-friendly meals using zero-based budgeting principles. Cut grocery costs, reduce food waste, and eat well without breaking the bank.">
+    <meta property="og:image" content="https://zerobudgeting.com/og/default.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #f8fafc; color: #1e293b; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; line-height: 1.8; }
     .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
     h1 { font-size: 2.2rem; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.3; }
-    .meta { color: #64748b; font-size: 0.9rem; margin-bottom: 2rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 1rem; }
+    .meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 2rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 1rem; }
     h2 { color: #0f172a; font-size: 1.5rem; margin: 2rem 0 1rem; border-left: 4px solid #0891b2; padding-left: 0.8rem; }
     h3 { color: #1e293b; font-size: 1.2rem; margin: 1.5rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; color: #334155; }
@@ -23,7 +27,7 @@
     strong { color: #0f172a; }
     a { color: #0891b2; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid #e2e8f0; color: #94a3b8; font-size: 0.85rem; text-align: center; }
+    .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid #e2e8f0; color: #cbd5e1; font-size: 0.85rem; text-align: center; }
     .recipe-box { background: #f1f5f9; border-radius: 8px; padding: 1.2rem; margin: 1.2rem 0; border: 1px solid #e2e8f0; }
     .recipe-box h3 { margin-top: 0; color: #0891b2; }
     .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
@@ -61,13 +65,13 @@
     .nav-logo span { background: linear-gradient(135deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .nav-logo .gold { background: none; -webkit-text-fill-color: var(--gold, #d4a017); }
     .nav-links { display: flex; align-items: center; gap: 1.5rem; }
-    .nav-links a { color: #94a3b8; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.3s; position: relative; }
+    .nav-links a { color: #cbd5e1; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.3s; position: relative; }
     .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); transition: width 0.3s; }
     .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
     .nav-links a:hover, .nav-links a.active { color: #e2e8f0; }
-    .hamburger { display: none; background: none; border: 1px solid rgba(255,255,255,0.15); color: #94a3b8; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: all 0.3s; }
+    .hamburger { display: none; background: none; border: 1px solid rgba(255,255,255,0.15); color: #cbd5e1; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: all 0.3s; }
     .hamburger:hover { border-color: var(--color-primary, #4f46e5); }
-    .hamburger span { display: block; width: 18px; height: 2px; background: #94a3b8; border-radius: 2px; transition: all 0.3s; }
+    .hamburger span { display: block; width: 18px; height: 2px; background: #cbd5e1; border-radius: 2px; transition: all 0.3s; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -79,12 +83,12 @@
     .footer-brand h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text, #f1f5f9); }
     .footer-brand h3 span { background: linear-gradient(135deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .footer-brand .gold { background: none; -webkit-text-fill-color: var(--gold, #d4a017); }
-    .footer-brand p { font-size: 0.813rem; color: #64748b; line-height: 1.6; }
-    .footer-col h4 { font-size: 0.813rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
-    .footer-col a { display: block; font-size: 0.875rem; color: #64748b; margin-bottom: 0.5rem; transition: color 0.3s; text-decoration: none; }
+    .footer-brand p { font-size: 0.813rem; color: #94a3b8; line-height: 1.6; }
+    .footer-col h4 { font-size: 0.813rem; font-weight: 600; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; transition: color 0.3s; text-decoration: none; }
     .footer-col a:hover { color: var(--color-primary-light, #6366f1); }
     .footer-bottom { border-top: 1px solid var(--footer-border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-    .footer-bottom p { font-size: 0.75rem; color: #475569; }
+    .footer-bottom p { font-size: 0.75rem; color: #94a3b8; }
 
     /* ===== MOBILE NAV ===== */
     @media (max-width: 768px) {
@@ -105,8 +109,28 @@
     body { padding-top: var(--nav-height); }
 </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%232d6a4f%22/><text x=%2216%22 y=%2222%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-family=%22Inter,sans-serif%22 font-weight=%22700%22 font-size=%2216%22>ZB</text></svg>">
+  <link rel="stylesheet" href="crown-design-system.css">
+<style>
+
+/* === A11Y: TOUCH TARGETS === */
+@media (max-width: 768px) {
+  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
+  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
+}
+.buy-btn, .bundle-btn, .cta, .btn-primary, button {
+  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
+}
+footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
+}
+.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
+.skip-nav:focus { top: 0; }
+
+</style>
 </head>
 <body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
 
   <!-- ===== NAVIGATION ===== -->
   <nav id="site-nav">
@@ -131,29 +155,29 @@
     <h1>Budget-Friendly Meal Planning on a Zero-Based Budget</h1>
     <div class="meta">Published: May 2026 | 9 min read</div>
 
-    <p>Food is one of the most flexible categories in any budget — and also one of the easiest places to overspend. If you follow a zero-based budget (where every dollar is assigned a purpose before the month begins), meal planning isn't just a nice-to-have. It's an essential tool that makes your budget work. Without a plan, trips to the grocery store become reactive, impulse-driven, and expensive. With a plan, you give your food dollars clear assignments, just like every other category in your budget.</p>
+    <p>Food is one of the most flexible categories in any budget Ã¢EUR" and also one of the easiest places to overspend. If you follow a zero-based budget (where every dollar is assigned a purpose before the month begins), meal planning isn't just a nice-to-have. It's an essential tool that makes your budget work. Without a plan, trips to the grocery store become reactive, impulse-driven, and expensive. With a plan, you give your food dollars clear assignments, just like every other category in your budget.</p>
 
     <p>In this guide, we'll show you exactly how to apply zero-based budgeting principles to your meal planning, cut your grocery bill by 25-40%, reduce food waste, and still eat delicious, satisfying meals.</p>
 
     <h2>Why Meal Planning Is the Perfect Partner for Zero-Based Budgeting</h2>
     <p>Zero-based budgeting and meal planning share the same core philosophy: <strong>intentionality</strong>. Just as ZBB requires you to assign every dollar a job before the month starts, meal planning requires you to assign every meal a purpose before the week starts. When you combine the two, you eliminate the two biggest budget killers: impulse spending and food waste.</p>
-    <p>The numbers speak for themselves. The average American household spends roughly $475 per month on groceries, according to 2025 USDA data. Of that, an estimated $150 per month is lost to food waste — food that's bought but never eaten. For a family using zero-based budgeting, that's money that could have been assigned to savings, debt repayment, or investments. Meal planning closes that leak.</p>
+    <p>The numbers speak for themselves. The average American household spends roughly $475 per month on groceries, according to 2025 USDA data. Of that, an estimated $150 per month is lost to food waste Ã¢EUR" food that's bought but never eaten. For a family using zero-based budgeting, that's money that could have been assigned to savings, debt repayment, or investments. Meal planning closes that leak.</p>
 
     <div class="highlight-box">
-      <p><strong>Quick Math:</strong> A family that reduces food waste by 75% (from $150/month to $37.50/month) saves $1,350 per year. If that $1,350 were invested annually in an index fund earning 8% over 20 years, it would grow to over $66,000. Meal planning isn't just about dinner — it's about building wealth.</p>
+      <p><strong>Quick Math:</strong> A family that reduces food waste by 75% (from $150/month to $37.50/month) saves $1,350 per year. If that $1,350 were invested annually in an index fund earning 8% over 20 years, it would grow to over $66,000. Meal planning isn't just about dinner Ã¢EUR" it's about building wealth.</p>
     </div>
 
     <h2>Step 1: Set Your Monthly Grocery Budget</h2>
     <p>Before you plan a single meal, you need to know how much you're working with. In a zero-based budget, your grocery category gets a specific dollar amount each month. Here's how to set a realistic number:</p>
     <ul>
-      <li><strong>Track your current spending</strong> — Review the last three months of grocery receipts. What did you actually spend? Be honest about takeout, coffee runs, and convenience store stops too.</li>
-      <li><strong>Use the USDA Food Plans as a benchmark</strong> — The USDA publishes monthly food plans at four cost levels (thrifty, low-cost, moderate-cost, and liberal). The "thrifty" plan for a family of four is roughly $650-$700 per month in 2026. Adjust based on your household size and dietary needs.</li>
-      <li><strong>Set a target that stretches you</strong> — If you're currently spending $800/month and the USDA thrifty plan suggests $650, set a target of $700. A 12% reduction is achievable without extreme sacrifice.</li>
-      <li><strong>Include all food spending</strong> — Your grocery budget should cover groceries, household essentials bought at the grocery store, and a reasonable amount for dining out. Many ZBB practitioners create separate subcategories: "Groceries," "Dining Out," and "Household Supplies."</li>
+      <li><strong>Track your current spending</strong> Ã¢EUR" Review the last three months of grocery receipts. What did you actually spend? Be honest about takeout, coffee runs, and convenience store stops too.</li>
+      <li><strong>Use the USDA Food Plans as a benchmark</strong> Ã¢EUR" The USDA publishes monthly food plans at four cost levels (thrifty, low-cost, moderate-cost, and liberal). The "thrifty" plan for a family of four is roughly $650-$700 per month in 2026. Adjust based on your household size and dietary needs.</li>
+      <li><strong>Set a target that stretches you</strong> Ã¢EUR" If you're currently spending $800/month and the USDA thrifty plan suggests $650, set a target of $700. A 12% reduction is achievable without extreme sacrifice.</li>
+      <li><strong>Include all food spending</strong> Ã¢EUR" Your grocery budget should cover groceries, household essentials bought at the grocery store, and a reasonable amount for dining out. Many ZBB practitioners create separate subcategories: "Groceries," "Dining Out," and "Household Supplies."</li>
     </ul>
 
     <div class="highlight-box">
-      <p><strong>Zero-Based Budgeting Rule:</strong> When you set your grocery budget at $600, that number becomes a hard ceiling — not a target. Every dollar not spent on groceries can be reassigned to another category. At the end of the month, if you only spent $540, the remaining $60 goes toward your savings goal or debt payoff.</p>
+      <p><strong>Zero-Based Budgeting Rule:</strong> When you set your grocery budget at $600, that number becomes a hard ceiling Ã¢EUR" not a target. Every dollar not spent on groceries can be reassigned to another category. At the end of the month, if you only spent $540, the remaining $60 goes toward your savings goal or debt payoff.</p>
     </div>
 
     <h2>Step 2: Plan Your Meals Around Sales and Seasonality</h2>
@@ -161,11 +185,11 @@
 
     <h3>Weekly Meal Planning Routine</h3>
     <ol>
-      <li><strong>Check the weekly ads</strong> — On Thursday or Friday, pull up the digital flyers for your local grocery stores. Note the proteins, produce, and staples that are on deep discount.</li>
-      <li><strong>Inventory your pantry</strong> — Before you buy anything, check what you already have. Half a bag of rice, a can of beans, frozen vegetables — these should shape your menu.</li>
-      <li><strong>Build meals around loss leaders</strong> — If chicken thighs are $0.99/lb, plan 3-4 chicken-based meals for the week. If bell peppers are on sale, add them to stir-fries, salads, and fajitas.</li>
-      <li><strong>Write your menu for the week</strong> — Plan breakfast, lunch, dinner, and snacks. Include at least 2 "use-up" meals that incorporate leftovers and pantry items nearing expiration.</li>
-      <li><strong>Create your shopping list</strong> — Organize by store section (produce, meat, dairy, dry goods). A written list prevents impulse buys and keeps you focused.</li>
+      <li><strong>Check the weekly ads</strong> Ã¢EUR" On Thursday or Friday, pull up the digital flyers for your local grocery stores. Note the proteins, produce, and staples that are on deep discount.</li>
+      <li><strong>Inventory your pantry</strong> Ã¢EUR" Before you buy anything, check what you already have. Half a bag of rice, a can of beans, frozen vegetables Ã¢EUR" these should shape your menu.</li>
+      <li><strong>Build meals around loss leaders</strong> Ã¢EUR" If chicken thighs are $0.99/lb, plan 3-4 chicken-based meals for the week. If bell peppers are on sale, add them to stir-fries, salads, and fajitas.</li>
+      <li><strong>Write your menu for the week</strong> Ã¢EUR" Plan breakfast, lunch, dinner, and snacks. Include at least 2 "use-up" meals that incorporate leftovers and pantry items nearing expiration.</li>
+      <li><strong>Create your shopping list</strong> Ã¢EUR" Organize by store section (produce, meat, dairy, dry goods). A written list prevents impulse buys and keeps you focused.</li>
     </ol>
 
     <h2>Step 3: Master the Art of Low-Cost, High-Nutrition Meals</h2>
@@ -173,26 +197,26 @@
 
     <h3>Budget-Friendly Protein Sources</h3>
     <ul>
-      <li><strong>Eggs</strong> — $0.20-$0.35 per serving. One of the cheapest complete proteins available.</li>
-      <li><strong>Beans and lentils</strong> — $0.10-$0.25 per serving. Dried beans are cheaper than canned; cook a batch on Sunday and use throughout the week.</li>
-      <li><strong>Chicken thighs and drumsticks</strong> — Often $0.99-$1.49/lb, compared to boneless skinless chicken breasts at $2.99-$3.99/lb.</li>
-      <li><strong>Canned tuna and sardines</strong> — $0.50-$1.00 per can. Excellent for quick lunches.</li>
-      <li><strong>Ground turkey or beef</strong> — Buy in bulk when on sale (under $2.99/lb) and freeze in 1-lb portions.</li>
-      <li><strong>Greek yogurt and cottage cheese</strong> — $0.50-$0.80 per serving. High protein, versatile for breakfast or snacks.</li>
+      <li><strong>Eggs</strong> Ã¢EUR" $0.20-$0.35 per serving. One of the cheapest complete proteins available.</li>
+      <li><strong>Beans and lentils</strong> Ã¢EUR" $0.10-$0.25 per serving. Dried beans are cheaper than canned; cook a batch on Sunday and use throughout the week.</li>
+      <li><strong>Chicken thighs and drumsticks</strong> Ã¢EUR" Often $0.99-$1.49/lb, compared to boneless skinless chicken breasts at $2.99-$3.99/lb.</li>
+      <li><strong>Canned tuna and sardines</strong> Ã¢EUR" $0.50-$1.00 per can. Excellent for quick lunches.</li>
+      <li><strong>Ground turkey or beef</strong> Ã¢EUR" Buy in bulk when on sale (under $2.99/lb) and freeze in 1-lb portions.</li>
+      <li><strong>Greek yogurt and cottage cheese</strong> Ã¢EUR" $0.50-$0.80 per serving. High protein, versatile for breakfast or snacks.</li>
     </ul>
 
     <h3>Budget-Friendly Produce</h3>
     <ul>
-      <li><strong>Frozen vegetables</strong> — Often cheaper than fresh and just as nutritious. Stock up on broccoli, spinach, mixed vegetables, and peas.</li>
-      <li><strong>Seasonal produce</strong> — In-season fruits and vegetables can be 30-50% cheaper than out-of-season options.</li>
-      <li><strong>Root vegetables</strong> — Potatoes, sweet potatoes, carrots, onions, and cabbage are consistently cheap and versatile.</li>
-      <li><strong>Bananas and apples</strong> — The cheapest fresh fruits, often under $0.60/lb.</li>
+      <li><strong>Frozen vegetables</strong> Ã¢EUR" Often cheaper than fresh and just as nutritious. Stock up on broccoli, spinach, mixed vegetables, and peas.</li>
+      <li><strong>Seasonal produce</strong> Ã¢EUR" In-season fruits and vegetables can be 30-50% cheaper than out-of-season options.</li>
+      <li><strong>Root vegetables</strong> Ã¢EUR" Potatoes, sweet potatoes, carrots, onions, and cabbage are consistently cheap and versatile.</li>
+      <li><strong>Bananas and apples</strong> Ã¢EUR" The cheapest fresh fruits, often under $0.60/lb.</li>
     </ul>
 
     <div class="recipe-box">
       <h3>Sample Budget Meal: Lentil & Vegetable Soup (Serves 6, ~$1.25/serving)</h3>
       <p><strong>Ingredients:</strong> 1 cup dried lentils ($0.30), 2 carrots ($0.20), 2 celery stalks ($0.20), 1 onion ($0.30), 2 cloves garlic ($0.10), 1 can crushed tomatoes ($0.85), 6 cups vegetable broth ($1.20), spices ($0.10).</p>
-      <p><strong>Total cost: ~$7.50 for 6 servings</strong> — This is a complete meal with protein, fiber, and vegetables. Make a double batch and freeze half.</p>
+      <p><strong>Total cost: ~$7.50 for 6 servings</strong> Ã¢EUR" This is a complete meal with protein, fiber, and vegetables. Make a double batch and freeze half.</p>
     </div>
 
     <h2>Step 4: Use a Weekly Meal Plan Template</h2>
@@ -258,20 +282,20 @@
     <h2>Step 5: Shop Strategically (Not Emotionally)</h2>
     <p>Your meal plan is only as good as your shopping trip. Here's how to execute without blowing your budget:</p>
     <ul>
-      <li><strong>Shop with cash or a dedicated debit card</strong> — If your weekly grocery budget is $150, take only $150. When it's gone, it's gone.</li>
-      <li><strong>Never shop hungry</strong> — Shopping on an empty stomach adds 15-25% to your total, according to multiple studies.</li>
-      <li><strong>Stick to the perimeter</strong> — The outer aisles of most grocery stores contain whole foods (produce, meat, dairy). The center aisles are where the processed, higher-margin items live.</li>
-      <li><strong>Buy store brands</strong> — Store brands are often identical to name brands but cost 20-30% less. In blind taste tests, most people can't tell the difference.</li>
-      <li><strong>Use a price book</strong> — Track the best prices for your staple items. When chicken breast drops below $2.99/lb or rice below $0.50/lb, stock up.</li>
+      <li><strong>Shop with cash or a dedicated debit card</strong> Ã¢EUR" If your weekly grocery budget is $150, take only $150. When it's gone, it's gone.</li>
+      <li><strong>Never shop hungry</strong> Ã¢EUR" Shopping on an empty stomach adds 15-25% to your total, according to multiple studies.</li>
+      <li><strong>Stick to the perimeter</strong> Ã¢EUR" The outer aisles of most grocery stores contain whole foods (produce, meat, dairy). The center aisles are where the processed, higher-margin items live.</li>
+      <li><strong>Buy store brands</strong> Ã¢EUR" Store brands are often identical to name brands but cost 20-30% less. In blind taste tests, most people can't tell the difference.</li>
+      <li><strong>Use a price book</strong> Ã¢EUR" Track the best prices for your staple items. When chicken breast drops below $2.99/lb or rice below $0.50/lb, stock up.</li>
     </ul>
 
     <h2>Step 6: Reduce Food Waste to Free Up Budget Dollars</h2>
     <p>Food waste is literally throwing money in the trash. In a zero-based budget mindset, waste represents dollars that could have been assigned to your goals. Here are the most effective waste-reduction strategies:</p>
     <ul>
-      <li><strong>Plan use-up meals</strong> — Designate one meal per week as a "clean out the fridge" meal. Stir-fries, frittatas, and soups are perfect for this.</li>
-      <li><strong>Freeze before it spoils</strong> — If you bought too much bread, milk, or berries, freeze them. Frozen broccoli and spinach work great in cooked dishes.</li>
-      <li><strong>Practice FIFO in your pantry</strong> — First In, First Out. When you buy new groceries, move older items to the front so they get used first.</li>
-      <li><strong>Compost scraps you can't use</strong> — Vegetable peels, eggshells, and coffee grounds can become nutrient-rich soil for a garden. Even a small herb garden on your windowsill can save you $2-$3 per week on fresh herbs.</li>
+      <li><strong>Plan use-up meals</strong> Ã¢EUR" Designate one meal per week as a "clean out the fridge" meal. Stir-fries, frittatas, and soups are perfect for this.</li>
+      <li><strong>Freeze before it spoils</strong> Ã¢EUR" If you bought too much bread, milk, or berries, freeze them. Frozen broccoli and spinach work great in cooked dishes.</li>
+      <li><strong>Practice FIFO in your pantry</strong> Ã¢EUR" First In, First Out. When you buy new groceries, move older items to the front so they get used first.</li>
+      <li><strong>Compost scraps you can't use</strong> Ã¢EUR" Vegetable peels, eggshells, and coffee grounds can become nutrient-rich soil for a garden. Even a small herb garden on your windowsill can save you $2-$3 per week on fresh herbs.</li>
     </ul>
 
     <h2>Step 7: Adjust and Optimize Each Month</h2>
@@ -284,12 +308,12 @@
     </ul>
 
     <div class="highlight-box">
-      <p><strong>The Bottom Line:</strong> Meal planning and zero-based budgeting are a match made in financial heaven. Both require intentionality, both reward preparation, and both put you in control. By planning your meals around your grocery budget — rather than the other way around — you ensure that every dollar you spend on food works as hard as every other dollar in your budget. Start this week. Pick one day, write down your meals, make your list, and stick to it. Your wallet — and your waistline — will thank you.</p>
+      <p><strong>The Bottom Line:</strong> Meal planning and zero-based budgeting are a match made in financial heaven. Both require intentionality, both reward preparation, and both put you in control. By planning your meals around your grocery budget Ã¢EUR" rather than the other way around Ã¢EUR" you ensure that every dollar you spend on food works as hard as every other dollar in your budget. Start this week. Pick one day, write down your meals, make your list, and stick to it. Your wallet Ã¢EUR" and your waistline Ã¢EUR" will thank you.</p>
     </div>
 
     <div class="footer">
       <p><em>Disclaimer: Prices and budget figures are estimates based on 2026 average U.S. costs. Actual prices vary by location, season, and store. Adjust these guidelines based on your local market.</em></p>
-      <p>&copy; 2026 ZeroBudgeting.com — Meal Planning Guide</p>
+      <p>&copy; 2026 ZeroBudgeting.com Ã¢EUR" Meal Planning Guide</p>
     </div>
   </div>
 <div style="margin-top:40px;padding:20px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;text-align:center;color:white">
@@ -301,8 +325,8 @@
   
     <div class="highlight-box">
       <p><strong>Recommended Reading:</strong> Supercharge your savings with
-      <a href="https://www.amazon.com/dp/1533667926?tag=dogeking03-20" target="_blank" rel="nofollow sponsored">"The Simple Path to Wealth" by JL Collins</a> — the straightforward guide to financial freedom. Also check out
-      <a href="https://www.amazon.com/dp/0857197681?tag=dogeking03-20" target="_blank" rel="nofollow sponsored">"The Psychology of Money" by Morgan Housel</a> for the mindset shifts that make saving natural.</p>
+      <a href="https://www.amazon.com/dp/1533667926?tag=dogekingus20-20" target="_blank" rel="nofollow sponsored">"The Simple Path to Wealth" by JL Collins</a> Ã¢EUR" the straightforward guide to financial freedom. Also check out
+      <a href="https://www.amazon.com/dp/0857197681?tag=dogekingus20-20" target="_blank" rel="nofollow sponsored">"The Psychology of Money" by Morgan Housel</a> for the mindset shifts that make saving natural.</p>
     </div>
 
 <!-- ===== FOOTER ===== -->
@@ -367,9 +391,28 @@
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8CVE2X8R5L');</script>
 
 
-<script src="/scripts/affiliate-banner.js"></script>
+<!-- Amazon Affiliate Banner -->
+<div class="amazon-affiliate-banner" style="background:linear-gradient(135deg,#232f3e,#131921);color:white;padding:20px;margin:20px auto;max-width:800px;border-radius:10px;text-align:center;font-family:Arial,sans-serif;">
+  <p style="margin:0 0 10px;font-size:14px;opacity:0.9;">ðŸ“¦ <strong>Support Our Site -- Shop on Amazon</strong></p>
+  <p style="margin:0 0 15px;font-size:13px;opacity:0.7;">We earn a small commission at no extra cost to you when you shop through our links.</p>
+  <a href="https://www.amazon.com/?tag=dogekingus20-20" target="_blank" rel="nofollow sponsored" style="display:inline-block;background:#ff9900;color:#232f3e;padding:12px 30px;border-radius:25px;font-weight:bold;font-size:15px;text-decoration:none;">ðŸ›’ Shop on Amazon -></a>
+  <p style="margin:10px 0 0;font-size:11px;opacity:0.5;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+<!-- Amazon Associates Tag -->
+<div style="display:none;"><img src="https://ir-na.amazon-adsystem.com/e/ir?t=dogekingus20-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important;margin:0!important;" /></div>
+
+
+<script>
+window.addEventListener('DOMContentLoaded',function(){
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-8CVE2X8R5L');
+document.addEventListener('click',function(e){
+var t=e.target.closest('a[href*="gumroad.com"],a[href*="kit.com/forms"]');if(!t)return;
+var label=t.href.includes('gumroad')?'Gumroad Product Click':'Kit Form Click';
+gtag('event','conversion',{send_to:'G-8CVE2X8R5L',event_category:'Outbound',event_label:label,value:1});});
+});
+</script>
 </body>
 </html>

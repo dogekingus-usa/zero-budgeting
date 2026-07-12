@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Complete Zero-Based Budget Walkthrough | ZeroBudgeting.com</title>
-  <link rel="canonical" href="https://zerobudgeting.com/complete-zero-based-budget-walkthrough">
-  
   <meta name="description" content="Master zero-based budgeting with our complete step-by-step walkthrough. Learn how to give every dollar a job, track spending, build sinking funds, and automate your ZBB system in 2026.">
+  <link rel="canonical" href="https://zerobudgeting.com/complete-zero-based-budget-walkthrough.html">
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,13 +90,13 @@
     .nav-logo span { background: linear-gradient(135deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .nav-logo .gold { background: none; -webkit-text-fill-color: var(--gold, #d4a017); }
     .nav-links { display: flex; align-items: center; gap: 1.5rem; }
-    .nav-links a { color: #94a3b8; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.3s; position: relative; }
+    .nav-links a { color: #cbd5e1; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.3s; position: relative; }
     .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); transition: width 0.3s; }
     .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
     .nav-links a:hover, .nav-links a.active { color: #e2e8f0; }
-    .hamburger { display: none; background: none; border: 1px solid rgba(255,255,255,0.15); color: #94a3b8; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: all 0.3s; }
+    .hamburger { display: none; background: none; border: 1px solid rgba(255,255,255,0.15); color: #cbd5e1; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: all 0.3s; }
     .hamburger:hover { border-color: var(--color-primary, #4f46e5); }
-    .hamburger span { display: block; width: 18px; height: 2px; background: #94a3b8; border-radius: 2px; transition: all 0.3s; }
+    .hamburger span { display: block; width: 18px; height: 2px; background: #cbd5e1; border-radius: 2px; transition: all 0.3s; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -108,12 +108,12 @@
     .footer-brand h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-text, #f1f5f9); }
     .footer-brand h3 span { background: linear-gradient(135deg, var(--color-primary, #4f46e5), var(--color-primary-light, #6366f1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .footer-brand .gold { background: none; -webkit-text-fill-color: var(--gold, #d4a017); }
-    .footer-brand p { font-size: 0.813rem; color: #64748b; line-height: 1.6; }
-    .footer-col h4 { font-size: 0.813rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
-    .footer-col a { display: block; font-size: 0.875rem; color: #64748b; margin-bottom: 0.5rem; transition: color 0.3s; text-decoration: none; }
+    .footer-brand p { font-size: 0.813rem; color: #94a3b8; line-height: 1.6; }
+    .footer-col h4 { font-size: 0.813rem; font-weight: 600; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; transition: color 0.3s; text-decoration: none; }
     .footer-col a:hover { color: var(--color-primary-light, #6366f1); }
     .footer-bottom { border-top: 1px solid var(--footer-border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-    .footer-bottom p { font-size: 0.75rem; color: #475569; }
+    .footer-bottom p { font-size: 0.75rem; color: #94a3b8; }
 
     /* ===== MOBILE NAV ===== */
     @media (max-width: 768px) {
@@ -134,8 +134,27 @@
     body { padding-top: var(--nav-height); }
 </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%232d6a4f%22/><text x=%2216%22 y=%2222%22 text-anchor=%22middle%22 fill=%22%23fff%22 font-family=%22Inter,sans-serif%22 font-weight=%22700%22 font-size=%2216%22>ZB</text></svg>">
+<style>
+
+/* === A11Y: TOUCH TARGETS === */
+@media (max-width: 768px) {
+  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
+  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
+}
+.buy-btn, .bundle-btn, .cta, .btn-primary, button {
+  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
+}
+footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
+}
+.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
+.skip-nav:focus { top: 0; }
+
+</style>
 </head>
 <body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
 
   <!-- ===== NAVIGATION ===== -->
   <nav id="site-nav">
@@ -162,21 +181,21 @@
 
     <p>Let's be honest for a moment. You've probably tried budgeting before. Maybe you downloaded an app, filled in some numbers for a week, got busy, and then... nothing. The budget sat untouched. You felt guilty every time you opened your bank account. And eventually you just stopped checking altogether.</p>
 
-    <p>Here's the thing: most budgeting methods fail because they're too vague (like the 50/30/20 rule) or too overwhelming (like tracking every receipt manually). <strong>Zero-based budgeting (ZBB)</strong> sits in the sweet spot between the two — it gives you precision without paralysis. And when you understand the complete system — not just the concept, but the actual step-by-step implementation — it becomes the single most powerful financial tool you'll ever use.</p>
+    <p>Here's the thing: most budgeting methods fail because they're too vague (like the 50/30/20 rule) or too overwhelming (like tracking every receipt manually). <strong>Zero-based budgeting (ZBB)</strong> sits in the sweet spot between the two Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â it gives you precision without paralysis. And when you understand the complete system Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â not just the concept, but the actual step-by-step implementation Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â it becomes the single most powerful financial tool you'll ever use.</p>
 
     <p>This is that complete walkthrough. By the time you finish reading, you'll know exactly how to set up, run, and maintain a zero-based budget that works for your life in 2026.</p>
 
     <div class="highlight-box">
-      <p><strong>What Is Zero-Based Budgeting?</strong> ZBB is a method where your income minus your expenses equals zero. Every single dollar of income is assigned a specific job — whether that's rent, groceries, savings, debt repayment, or even a "fun money" category. Nothing is left unassigned. Nothing is wasted. Every dollar works for you.</p>
+      <p><strong>What Is Zero-Based Budgeting?</strong> ZBB is a method where your income minus your expenses equals zero. Every single dollar of income is assigned a specific job Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â whether that's rent, groceries, savings, debt repayment, or even a "fun money" category. Nothing is left unassigned. Nothing is wasted. Every dollar works for you.</p>
     </div>
 
     <h2>Why Zero-Based Budgeting Works Better Than Alternatives</h2>
-    <p>The 50/30/20 rule gives you a solid guideline, but it doesn't tell you exactly where your money should go. Percentage-based budgets assume your spending patterns fit into neat buckets — and in 2026, with subscription fatigue, gig economy income, and rising costs, most people's finances are far messier than simple percentages can handle.</p>
+    <p>The 50/30/20 rule gives you a solid guideline, but it doesn't tell you exactly where your money should go. Percentage-based budgets assume your spending patterns fit into neat buckets Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â and in 2026, with subscription fatigue, gig economy income, and rising costs, most people's finances are far messier than simple percentages can handle.</p>
     <p>ZBB forces you to confront every spending decision. That's uncomfortable at first, but it's exactly what makes it so effective. A 2025 study by the Journal of Consumer Finance found that households using zero-based budgeting saved an average of <strong>23% more</strong> in their first six months compared to those using percentage-based methods. The reason is simple: when you have to explicitly allocate every dollar, you naturally find waste and redirect it to your goals.</p>
 
     <div class="step-box">
       <div class="step-num">Step 1: Calculate Your True Monthly Income</div>
-      <p>Your starting point. If you have a stable salary, this is straightforward — take your monthly take-home pay after taxes, health insurance, and retirement contributions. If you have variable income (freelancers, commission-based, gig workers), use your <strong>average monthly income over the last 3 months</strong>.</p>
+      <p>Your starting point. If you have a stable salary, this is straightforward Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â take your monthly take-home pay after taxes, health insurance, and retirement contributions. If you have variable income (freelancers, commission-based, gig workers), use your <strong>average monthly income over the last 3 months</strong>.</p>
       <p><strong>For variable income specifically:</strong></p>
       <ul>
         <li>Add up your total net income for the last 3 months</li>
@@ -189,27 +208,27 @@
     </div>
 
     <div class="step-box">
-      <div class="step-num">Step 2: List Every Single Expense — No Matter How Small</div>
-      <p>This is where most people fail at ZBB. They list the big expenses (rent, car payment, insurance) but ignore the small ones (the daily coffee, the forgotten subscription, the occasional Uber ride). Those small expenses add up to hundreds — sometimes thousands — of dollars per month.</p>
+      <div class="step-num">Step 2: List Every Single Expense Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â No Matter How Small</div>
+      <p>This is where most people fail at ZBB. They list the big expenses (rent, car payment, insurance) but ignore the small ones (the daily coffee, the forgotten subscription, the occasional Uber ride). Those small expenses add up to hundreds Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â sometimes thousands Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â of dollars per month.</p>
       <p><strong>How to find every expense:</strong></p>
       <ul>
         <li>Pull 3 months of bank and credit card statements</li>
-        <li>Categorize every single transaction — yes, every one</li>
+        <li>Categorize every single transaction Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â yes, every one</li>
         <li>Look for annual or quarterly expenses (Amazon Prime, Costco membership, car registration) and divide by 12 to get the monthly cost</li>
         <li>Don't forget: haircuts, pet supplies, gifts, home maintenance, car repairs, medical copays</li>
       </ul>
       <p><strong>Create these standard categories:</strong></p>
       <table>
         <tr><th>Category</th><th>Example Items</th><th>Typical % of Income</th></tr>
-        <tr><td>Housing</td><td>Rent/mortgage, property tax, insurance, HOA</td><td>25–35%</td></tr>
-        <tr><td>Utilities</td><td>Electricity, gas, water, internet, phone</td><td>5–10%</td></tr>
-        <tr><td>Food</td><td>Groceries, dining out, coffee, meal kits</td><td>10–15%</td></tr>
-        <tr><td>Transportation</td><td>Car payment, gas, insurance, public transit, parking</td><td>10–15%</td></tr>
-        <tr><td>Insurance</td><td>Health, dental, vision, life, disability</td><td>5–10%</td></tr>
-        <tr><td>Debt Payments</td><td>Credit cards, student loans, personal loans</td><td>5–20%</td></tr>
-        <tr><td>Savings & Investments</td><td>Emergency fund, retirement, brokerage, sinking funds</td><td>10–20%</td></tr>
-        <tr><td>Personal & Discretionary</td><td>Entertainment, shopping, hobbies, subscriptions, gifts</td><td>5–15%</td></tr>
-        <tr><td>Miscellaneous</td><td>Medical, home maintenance, pet care, travel</td><td>5–10%</td></tr>
+        <tr><td>Housing</td><td>Rent/mortgage, property tax, insurance, HOA</td><td>25Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“35%</td></tr>
+        <tr><td>Utilities</td><td>Electricity, gas, water, internet, phone</td><td>5Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“10%</td></tr>
+        <tr><td>Food</td><td>Groceries, dining out, coffee, meal kits</td><td>10Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“15%</td></tr>
+        <tr><td>Transportation</td><td>Car payment, gas, insurance, public transit, parking</td><td>10Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“15%</td></tr>
+        <tr><td>Insurance</td><td>Health, dental, vision, life, disability</td><td>5Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“10%</td></tr>
+        <tr><td>Debt Payments</td><td>Credit cards, student loans, personal loans</td><td>5Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“20%</td></tr>
+        <tr><td>Savings & Investments</td><td>Emergency fund, retirement, brokerage, sinking funds</td><td>10Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“20%</td></tr>
+        <tr><td>Personal & Discretionary</td><td>Entertainment, shopping, hobbies, subscriptions, gifts</td><td>5Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“15%</td></tr>
+        <tr><td>Miscellaneous</td><td>Medical, home maintenance, pet care, travel</td><td>5Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“10%</td></tr>
       </table>
     </div>
 
@@ -218,20 +237,20 @@
       <p>Sinking funds are what separate a basic ZBB from a truly bulletproof financial system. A sinking fund is money set aside each month for an irregular but predictable expense. Instead of scrambling when your car needs new tires or your annual insurance bill arrives, you've been quietly saving for it all year.</p>
       <p><strong>Essential sinking funds for 2026:</strong></p>
       <ul>
-        <li><strong>Car maintenance & repairs:</strong> $100–$200/month (tires, oil changes, unexpected repairs)</li>
-        <li><strong>Medical expenses:</strong> $50–$150/month (copays, prescriptions, dental work)</li>
-        <li><strong>Home maintenance:</strong> 1% of home value ÷ 12 months (for homeowners)</li>
-        <li><strong>Holiday gifts:</strong> Budget total ÷ 12 (e.g., $600 for gifts = $50/month)</li>
-        <li><strong>Annual subscriptions:</strong> Total annual cost ÷ 12</li>
-        <li><strong>Vacation/travel:</strong> Whatever you want to spend ÷ months until trip</li>
-        <li><strong>Pet care:</strong> $50–$100/month (vet visits, food, supplies)</li>
+        <li><strong>Car maintenance & repairs:</strong> $100Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“$200/month (tires, oil changes, unexpected repairs)</li>
+        <li><strong>Medical expenses:</strong> $50Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“$150/month (copays, prescriptions, dental work)</li>
+        <li><strong>Home maintenance:</strong> 1% of home value Æ’Ã†'*Ã¢EUR(TM)Æ’Ã¢EURÅ¡' Â· 12 months (for homeowners)</li>
+        <li><strong>Holiday gifts:</strong> Budget total Æ’Ã†'*Ã¢EUR(TM)Æ’Ã¢EURÅ¡' Â· 12 (e.g., $600 for gifts = $50/month)</li>
+        <li><strong>Annual subscriptions:</strong> Total annual cost Æ’Ã†'*Ã¢EUR(TM)Æ’Ã¢EURÅ¡' Â· 12</li>
+        <li><strong>Vacation/travel:</strong> Whatever you want to spend Æ’Ã†'*Ã¢EUR(TM)Æ’Ã¢EURÅ¡' Â· months until trip</li>
+        <li><strong>Pet care:</strong> $50Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“$100/month (vet visits, food, supplies)</li>
       </ul>
-      <p>Add each sinking fund as a separate line item in your budget. They're non-negotiable — just as important as your rent payment.</p>
+      <p>Add each sinking fund as a separate line item in your budget. They're non-negotiable Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â just as important as your rent payment.</p>
     </div>
 
     <div class="step-box">
       <div class="step-num">Step 4: Assign Every Dollar Until You Reach Zero</div>
-      <p>Now the core of ZBB. Take your total monthly income (from Step 1) and subtract every single expense and sinking fund contribution (from Steps 2 & 3). Your goal: <strong>Income − Expenses = $0</strong>.</p>
+      <p>Now the core of ZBB. Take your total monthly income (from Step 1) and subtract every single expense and sinking fund contribution (from Steps 2 & 3). Your goal: <strong>Income Æ’Ã†'' Â¢Æ’Ã¢EURÂ¹Â¢Ã¢'Â¬ Â Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬Â¢Ã¢EURÅ¾ Â¢ Expenses = $0</strong>.</p>
       <p><strong>Example:</strong></p>
       <p>Monthly income: $5,200</p>
       <table>
@@ -253,33 +272,33 @@
         <tr><td>Sinking: Car Maintenance</td><td>$100</td></tr>
         <tr><td>Sinking: Holiday Gifts</td><td>$60</td></tr>
         <tr><td><strong>Total</strong></td><td><strong>$5,200</strong></td></tr>
-        <tr><td><strong>Remaining</strong></td><td><strong>$0 ✅</strong></td></tr>
+        <tr><td><strong>Remaining</strong></td><td><strong>$0 Æ’Ã†'' Â¢Æ’Ã¢EURÂ¦Â¢Ã¢'Â¬Ã…"Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â¦</strong></td></tr>
       </table>
-      <p>Every dollar has a job. Nothing is left ambiguous. If you had $50 remaining, you'd need to assign it — to savings, an extra debt payment, or a sinking fund.</p>
+      <p>Every dollar has a job. Nothing is left ambiguous. If you had $50 remaining, you'd need to assign it Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â to savings, an extra debt payment, or a sinking fund.</p>
     </div>
 
     <div class="step-box">
       <div class="step-num">Step 5: Choose Your Tracking Method</div>
       <p>ZBB requires ongoing tracking. You can't "set and forget." Choose one of these methods based on your personality:</p>
-      <h3>Option A: YNAB (You Need A Budget) — Best Overall</h3>
+      <h3>Option A: YNAB (You Need A Budget) Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Best Overall</h3>
       <p>YNAB is purpose-built for zero-based budgeting. It automatically syncs with your bank accounts, you assign every dollar as it comes in, and it handles sinking funds beautifully with its "Targets" feature. Cost: $14.99/month or $99/year. The 34-day free trial gives you plenty of time to decide.</p>
-      <h3>Option B: EveryDollar — Best Free Option</h3>
+      <h3>Option B: EveryDollar Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Best Free Option</h3>
       <p>Dave Ramsey's EveryDollar app follows the ZBB philosophy exactly. The free version is manual entry only; the premium version ($12.99/month) adds bank sync. If you prefer Dave Ramsey's "baby steps" philosophy alongside your ZBB, this is the natural fit.</p>
-      <h3>Option C: Spreadsheet — Most Customizable</h3>
+      <h3>Option C: Spreadsheet Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Most Customizable</h3>
       <p>Google Sheets or Excel with a ZBB template. Free, fully customizable, and no bank syncing (some people prefer manual entry for awareness). We have a free ZBB template on ZeroBudgeting.com that includes automatic rollover for sinking funds.</p>
-      <h3>Option D: Cash Envelopes — Best for Overspenders</h3>
+      <h3>Option D: Cash Envelopes Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Best for Overspenders</h3>
       <p>Take your budget categories, withdraw cash for each, and put it in labeled envelopes. When the envelope is empty, you stop spending in that category. It's analog, but for people who struggle with credit card overspending, it's the most effective method by far.</p>
     </div>
 
     <div class="step-box">
       <div class="step-num">Step 6: Set Up Your Weekly Review Routine</div>
-      <p>This is the habit that makes ZBB stick. Every week — we recommend Sunday mornings — spend 20–30 minutes on your budget:</p>
+      <p>This is the habit that makes ZBB stick. Every week Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â we recommend Sunday mornings Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â spend 20Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“30 minutes on your budget:</p>
       <ol>
-        <li><strong>Reconcile your accounts</strong> — Match every transaction in your budget app against your bank statement. Categorize any uncategorized transactions.</li>
-        <li><strong>Check category balances</strong> — Are you on track in each category? If you've already spent 80% of your dining out budget with two weeks left, you need to adjust.</li>
-        <li><strong>Roll with the punches</strong> — ZBB isn't about perfection. If you overspend in one category, move money from another category to cover it. The key is that it's intentional — not accidental.</li>
-        <li><strong>Fund next week's bills</strong> — If you have bills due early next week, make sure the money is available. Move it to the right account if needed.</li>
-        <li><strong>Celebrate progress</strong> — Did you stay under budget in groceries? Put that surplus toward debt or savings. ZBB rewards good behavior.</li>
+        <li><strong>Reconcile your accounts</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Match every transaction in your budget app against your bank statement. Categorize any uncategorized transactions.</li>
+        <li><strong>Check category balances</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Are you on track in each category? If you've already spent 80% of your dining out budget with two weeks left, you need to adjust.</li>
+        <li><strong>Roll with the punches</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â ZBB isn't about perfection. If you overspend in one category, move money from another category to cover it. The key is that it's intentional Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â not accidental.</li>
+        <li><strong>Fund next week's bills</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â If you have bills due early next week, make sure the money is available. Move it to the right account if needed.</li>
+        <li><strong>Celebrate progress</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Did you stay under budget in groceries? Put that surplus toward debt or savings. ZBB rewards good behavior.</li>
       </ol>
     </div>
 
@@ -297,51 +316,51 @@
 
     <div class="step-box">
       <div class="step-num">Step 8: Automate Where Possible</div>
-      <p>Once your ZBB is stable (after 2–3 months), automate as much as you can to reduce manual effort:</p>
+      <p>Once your ZBB is stable (after 2Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“3 months), automate as much as you can to reduce manual effort:</p>
       <ul>
-        <li><strong>Automatic transfers to sinking funds</strong> — Set up recurring transfers from checking to separate savings accounts for each sinking fund. Many banks (Ally, SoFi, Capital One) allow multiple "buckets."</li>
-        <li><strong>Automatic bill pay</strong> — Fixed expenses (rent, subscriptions, insurance) on autopay. Just ensure the money is always there on the right date.</li>
-        <li><strong>Automatic investment contributions</strong> — Roth IRA, 401k, and brokerage contributions should be automated on payday.</li>
-        <li><strong>Automatic debt payments</strong> — Set up minimum payments automatically. For extra payments, do a manual transfer each month so you stay engaged with the progress.</li>
+        <li><strong>Automatic transfers to sinking funds</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Set up recurring transfers from checking to separate savings accounts for each sinking fund. Many banks (Ally, SoFi, Capital One) allow multiple "buckets."</li>
+        <li><strong>Automatic bill pay</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Fixed expenses (rent, subscriptions, insurance) on autopay. Just ensure the money is always there on the right date.</li>
+        <li><strong>Automatic investment contributions</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Roth IRA, 401k, and brokerage contributions should be automated on payday.</li>
+        <li><strong>Automatic debt payments</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Set up minimum payments automatically. For extra payments, do a manual transfer each month so you stay engaged with the progress.</li>
       </ul>
-      <p>The goal of automation isn't to stop thinking about money — it's to reduce decision fatigue so you can focus your mental energy on the big financial decisions that actually matter.</p>
+      <p>The goal of automation isn't to stop thinking about money Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â it's to reduce decision fatigue so you can focus your mental energy on the big financial decisions that actually matter.</p>
     </div>
 
     <div class="step-box">
       <div class="step-num">Step 9: Do a Monthly Zero-Balance Review</div>
-      <p>Once a month, do a deeper review (30–45 minutes):</p>
+      <p>Once a month, do a deeper review (30Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“45 minutes):</p>
       <ul>
-        <li><strong>Reconcile all sinking funds</strong> — Did you spend from any? Replenish them. Are any fully funded? Start a new one or redirect the money.</li>
-        <li><strong>Review annual expenses</strong> — Check if any annual bills are coming up (insurance, subscriptions, taxes) and ensure you're funding them monthly.</li>
-        <li><strong>Evaluate your categories</strong> — Are your estimates accurate after 30 days of tracking? Adjust line items for next month based on real data.</li>
-        <li><strong>Track net worth</strong> — Update your net worth spreadsheet. Seeing the line go up (even slowly) is incredibly motivating.</li>
-        <li><strong>Set next month's budget</strong> — Before the month starts, set up all categories with your refined amounts. This takes 15 minutes and saves you from budgeting under time pressure.</li>
+        <li><strong>Reconcile all sinking funds</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Did you spend from any? Replenish them. Are any fully funded? Start a new one or redirect the money.</li>
+        <li><strong>Review annual expenses</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Check if any annual bills are coming up (insurance, subscriptions, taxes) and ensure you're funding them monthly.</li>
+        <li><strong>Evaluate your categories</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Are your estimates accurate after 30 days of tracking? Adjust line items for next month based on real data.</li>
+        <li><strong>Track net worth</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Update your net worth spreadsheet. Seeing the line go up (even slowly) is incredibly motivating.</li>
+        <li><strong>Set next month's budget</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Before the month starts, set up all categories with your refined amounts. This takes 15 minutes and saves you from budgeting under time pressure.</li>
       </ul>
     </div>
 
     <div class="step-box">
       <div class="step-num">Step 10: Scale and Optimize Over Time</div>
-      <p>After 3–6 months on ZBB, you'll notice patterns. Use them to optimize:</p>
+      <p>After 3Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“6 months on ZBB, you'll notice patterns. Use them to optimize:</p>
       <ul>
-        <li><strong>Audit subscriptions quarterly</strong> — Cancel unused services. In 2026, the average household has 12 subscriptions. Most people use only 6–7.</li>
-        <li><strong>Negotiate fixed costs annually</strong> — Call your insurance provider, internet company, and phone carrier every 12 months. Loyalty discounts don't exist — you have to ask.</li>
-        <li><strong>Increase savings rate gradually</strong> — Every time you get a raise, allocate 50% to savings/investments and 50% to lifestyle. This prevents lifestyle creep while still rewarding yourself.</li>
-        <li><strong>Build a 3–6 month emergency fund</strong> — Once your sinking funds are stable, direct all extra money to your emergency fund until you have 3–6 months of essential expenses saved.</li>
-        <li><strong>Start "fun sinking funds"</strong> — Once the essentials are covered, create sinking funds for things you actually enjoy: travel, hobbies, dining experiences. ZBB shouldn't feel like deprivation — it should feel like intentional allocation.</li>
+        <li><strong>Audit subscriptions quarterly</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Cancel unused services. In 2026, the average household has 12 subscriptions. Most people use only 6Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“7.</li>
+        <li><strong>Negotiate fixed costs annually</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Call your insurance provider, internet company, and phone carrier every 12 months. Loyalty discounts don't exist Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â you have to ask.</li>
+        <li><strong>Increase savings rate gradually</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Every time you get a raise, allocate 50% to savings/investments and 50% to lifestyle. This prevents lifestyle creep while still rewarding yourself.</li>
+        <li><strong>Build a 3Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“6 month emergency fund</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Once your sinking funds are stable, direct all extra money to your emergency fund until you have 3Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“6 months of essential expenses saved.</li>
+        <li><strong>Start "fun sinking funds"</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Once the essentials are covered, create sinking funds for things you actually enjoy: travel, hobbies, dining experiences. ZBB shouldn't feel like deprivation Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â it should feel like intentional allocation.</li>
       </ul>
     </div>
 
     <h2>Common Zero-Based Budgeting Mistakes (And How to Avoid Them)</h2>
     <ul>
-      <li><strong>Setting unrealistic categories</strong> — If you've been spending $600/month on dining out, don't set your budget at $200. You'll fail and feel guilty. Start at $500, then reduce by $50 each month.</li>
-      <li><strong>Forgetting irregular expenses</strong> — Car registration, annual subscriptions, birthday gifts. If it happens less than monthly but more than once, it needs a sinking fund.</li>
-      <li><strong>Being too rigid</strong> — If you overspend on groceries, don't abandon the whole budget. Move money from entertainment. The budget is a guide, not a prison.</li>
-      <li><strong>Not budgeting for fun</strong> — Allocating $0 to entertainment or hobbies guarantees failure. You're human. Budget for joy. It's financially sustainable and psychologically necessary.</li>
-      <li><strong>Giving up after one bad month</strong> — Every ZBB user has a month where everything goes wrong. The car breaks down. You get sick. Travel happens. Roll with it, reset next month, and keep going.</li>
+      <li><strong>Setting unrealistic categories</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â If you've been spending $600/month on dining out, don't set your budget at $200. You'll fail and feel guilty. Start at $500, then reduce by $50 each month.</li>
+      <li><strong>Forgetting irregular expenses</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Car registration, annual subscriptions, birthday gifts. If it happens less than monthly but more than once, it needs a sinking fund.</li>
+      <li><strong>Being too rigid</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â If you overspend on groceries, don't abandon the whole budget. Move money from entertainment. The budget is a guide, not a prison.</li>
+      <li><strong>Not budgeting for fun</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Allocating $0 to entertainment or hobbies guarantees failure. You're human. Budget for joy. It's financially sustainable and psychologically necessary.</li>
+      <li><strong>Giving up after one bad month</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Every ZBB user has a month where everything goes wrong. The car breaks down. You get sick. Travel happens. Roll with it, reset next month, and keep going.</li>
     </ul>
 
     <div class="verdict">
-      <p><strong>Final Verdict:</strong> Zero-based budgeting is the most powerful personal finance tool for people who want complete control over their money. It takes more work than percentage-based methods — expect 30 minutes per week and 45 minutes per month — but the payoff is extraordinary: you'll know exactly where every dollar goes, you'll save 20–30% more than with alternative methods, and you'll eliminate financial anxiety because there are no surprises. Your money has a plan. And so do you.</p>
+      <p><strong>Final Verdict:</strong> Zero-based budgeting is the most powerful personal finance tool for people who want complete control over their money. It takes more work than percentage-based methods Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â expect 30 minutes per week and 45 minutes per month Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â but the payoff is extraordinary: you'll know exactly where every dollar goes, you'll save 20Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“30% more than with alternative methods, and you'll eliminate financial anxiety because there are no surprises. Your money has a plan. And so do you.</p>
     </div>
 
     <h2>Getting Started Today (Your 7-Day Action Plan)</h2>
@@ -356,13 +375,13 @@
     </ol>
 
     <div class="cta-box">
-      <h3>📊 Get Your Free Zero-Based Budget Template</h3>
+      <h3>Æ’Ã†'' Â°Æ’Ã¢EURÂ¦' Â¸Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬...Ã¢EURÅ“Æ’Ã¢EURÂ¦' Â  Get Your Free Zero-Based Budget Template</h3>
       <p>Download our <strong>complete ZBB spreadsheet</strong> with automatic calculations, sinking fund trackers, monthly rollover, and a net worth dashboard. Pre-built for Google Sheets and Excel. Start budgeting right now.</p>
-      <a href="https://zerobudgeting.com/lead-magnets/zero-budgeting-lead-magnet.html">Download Free Template →</a>
+      <a href="https://zerobudgeting.com/lead-magnets/zero-budgeting-lead-magnet.html">Download Free Template Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬Â¢Ã¢EURÅ¾ Â¢</a>
     </div>
 
     <div class="footer">
-      <p><strong>ZeroBudgeting.com</strong> — Master your money with smart budgeting strategies. Take control of your finances today.</p>
+      <p><strong>ZeroBudgeting.com</strong> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â Master your money with smart budgeting strategies. Take control of your finances today.</p>
     </div>
   </div>
 <div style="margin-top:40px;padding:20px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;text-align:center;color:white">
@@ -374,8 +393,8 @@
   
     <div class="highlight-box">
       <p><strong>Recommended Reading:</strong> Follow a proven financial plan with
-      <a href="https://www.amazon.com/dp/1595555277?tag=dogeking03-20" target="_blank" rel="nofollow sponsored">"The Total Money Makeover" by Dave Ramsey</a> — the step-by-step system that has helped millions get out of debt. For the bigger picture,
-      <a href="https://www.amazon.com/dp/0857197681?tag=dogeking03-20" target="_blank" rel="nofollow sponsored">"The Psychology of Money" by Morgan Housel</a> completes the picture with the behavioral side of wealth building.</p>
+      <a href="https://www.amazon.com/dp/1595555277?tag=dogekingus20-20" target="_blank" rel="nofollow sponsored">"The Total Money Makeover" by Dave Ramsey</a> Æ’Ã†'' Â¢Æ’ Â¢Â¢Ã¢'Â¬Ã…Â¡' Â¬Æ’ Â¢Â¢Ã¢EURÅ¡ Â¬' Â the step-by-step system that has helped millions get out of debt. For the bigger picture,
+      <a href="https://www.amazon.com/dp/0857197681?tag=dogekingus20-20" target="_blank" rel="nofollow sponsored">"The Psychology of Money" by Morgan Housel</a> completes the picture with the behavioral side of wealth building.</p>
     </div>
 
 <!-- ===== FOOTER ===== -->
@@ -409,17 +428,7 @@
         <p>Every dollar has a purpose</p>
       </div>
     </div>
-  
-<div class="kit-subscribe-wrapper" style="max-width:500px;margin:2rem auto;">
-  <form action="https://app.kit.com/forms/40518970b8/subscribe" method="POST" class="kit-subscribe" style="background:#2d6a4f;padding:2rem;border-radius:8px;color:white;max-width:500px;margin:2rem auto;">
-    <h3 style="margin:0 0 0.5rem;font-size:1.25rem;color:#f59e0b;">Get the Free Weekly Budget Tracker</h3>
-    <p style="margin:0 0 1rem;font-size:0.9rem;opacity:0.9;">Track every dollar. Find leaks. Build wealth.</p>
-    <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
-    <input type="text" name="first_name" placeholder="First name" style="width:100%;padding:0.75rem;border:1px solid #f59e0b;border-radius:4px;margin-bottom:0.75rem;box-sizing:border-box;">
-    <button type="submit" style="background:#f59e0b;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;font-weight:bold;cursor:pointer;width:100%;font-size:1rem;">Send My Free Tracker</button>
-    <p style="font-size:0.75rem;opacity:0.7;margin:0.5rem 0 0;">No spam. Unsubscribe anytime.</p>
-  </form>
-</div></footer>
+  </footer>
 
 
   <script>
@@ -435,14 +444,17 @@
   </script>
 
 
-  <div class="cta-section" style="background:linear-gradient(135deg,#059669,#065f46);border-radius:12px;padding:30px;margin:40px 0;text-align:center;color:#fff;"><h3 style="font-size:1.5em;margin-bottom:10px;">Take Control of Your Finances</h3><p style="font-size:1.1em;margin-bottom:15px;color:#a7f3d0;">Get the Zero Budgeting Blueprint - track every dollar, eliminate debt, build savings</p><a href="https://dogeking0.gumroad.com/l/ptfzf" style="display:inline-block;background:#f59e0b;color:#fff;font-size:1.2em;font-weight:700;padding:14px 40px;border-radius:50px;text-decoration:none;">Get Your Copy Now -></a><p style="font-size:0.85em;margin-top:12px;color:#a7f3d0;">Instant PDF download - 50+ pages</p></div>
-<script src="/scripts/related-articles.js"></script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8CVE2X8R5L');</script>
-
-
-<script src="/scripts/affiliate-banner.js"></script>
+  <div class="cta-section" style="background:linear-gradient(135deg,#059669,#065f46);border-radius:12px;padding:30px;margin:40px 0;text-align:center;color:#fff;"><h3 style="font-size:1.5em;margin-bottom:10px;">Take Control of Your Finances</h3><p style="font-size:1.1em;margin-bottom:15px;color:#a7f3d0;">Get the Zero Budgeting Blueprint - track every dollar, eliminate debt, build savings</p><a href="https://dogeking0.gumroad.com/l/ptfzf" style="display:inline-block;background:#f59e0b;color:#fff;font-size:1.2em;font-weight:700;padding:14px 40px;border-radius:50px;text-decoration:none;">Get Your Copy Now -></a><p style="font-size:0.85em;margin-top:12px;color:#a7f3d0;">Instant PDF download - 50+ pages</p></div><div class="affiliate-disclosure" style="border-top:1px solid #e2e8f0;margin-top:2.5rem;padding-top:1rem;font-size:0.85rem;color:#94a3b8;">
+  <p><em>Disclosure: Some links in this article are affiliate links. We may earn a small commission at no extra cost to you if you make a purchase through them. We only recommend products and services we believe in.</em></p>
+</div>
+<div class="cta-section" style="background:linear-gradient(135deg,#1e293b,#334155);border-radius:12px;padding:30px;margin:30px 0 20px;text-align:center;color:#fff;">
+  <h3 style="font-size:1.3em;margin-bottom:8px;color:#f1f5f9;">Get More Tips Like This</h3>
+  <p style="font-size:0.95em;margin-bottom:15px;color:#cbd5e1;">Join our newsletter for exclusive content, updates, and resources delivered to your inbox.</p>
+  <form action="#" method="post" style="display:flex;gap:8px;max-width:400px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+    <input type="email" placeholder="Your email address" required style="padding:10px 16px;border-radius:8px;border:none;font-size:0.9rem;flex:1;min-width:200px;background:#0f172a;color:#f1f5f9;">
+    <button type="submit" style="padding:10px 24px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-weight:600;font-size:0.9rem;cursor:pointer;">Subscribe</button>
+  </form>
+  <p style="font-size:0.75rem;margin-top:10px;color:#94a3b8;">No spam. Unsubscribe anytime.</p>
+</div>
 </body>
 </html>
