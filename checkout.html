@@ -99,7 +99,7 @@ footer .container { display:flex; justify-content:space-between; align-items:cen
 .checkout-page { max-width:800px; margin:60px auto; padding:0 20px; text-align:center; }
 .checkout-page h1 { font-family:var(--font-heading); font-size:2.5rem; font-weight:700; color:var(--text-primary); margin-bottom:24px; }
 .checkout-page p { font-size:1.1rem; color:var(--text-muted); margin-bottom:32px; line-height:1.6; }
-.gumroad-embed { max-width:600px; margin:0 auto; }
+
 </style>
 <link rel="stylesheet" href="/crown-design-system.css">
 <style>
@@ -126,7 +126,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 <header>
 <nav>
 <div class="container">
-<a href="/" class="nav-logo">💰 Zero Budgeting</a>
+<a href="/" class="nav-logo">ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢Ãƒâ€šÃ‚Â° Zero Budgeting</a>
 <div class="nav-links">
 <a href="/">Home</a>
 <a href="/all-articles.html">Articles</a>
@@ -137,7 +137,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 </div>
 </nav>
 </header>
-<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">🏠 Zero Budgeting</a><span>'</span><a href="/checkout.html">Checkout</a></nav>
+<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â  Zero Budgeting</a><span>'</span><a href="/checkout.html">Checkout</a></nav>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -158,15 +158,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }</script>
 <div class="container checkout-page">
 <h1>Checkout</h1>
-<p>You are being redirected to our secure checkout page. Your payment is processed securely through Gumroad.</p>
-<div class="gumroad-embed">
-<script src="https://gumroad.com/js/gumroad-embed.js"></script>
-<div class="gumroad-product-embed" data-gumroad-product-id="zerobudgetingcom"><a href="https://dogeking0.gumroad.com/l/zerobudgetingcom">Loading checkout...</a></div>
+<p>You are being redirected to our secure checkout page. Your payment is processed securely through Stripe.</p>
+<div >
+
+<div ><a 
+            $slug = $matches[1]
+            href="#" data-stripe-pending="true"
+        >Loading checkout...</a></div>
 </div>
 </div>
 <footer>
 <div class="container">
-<div class="footer-copy">© 2026 Zero Budgeting. All rights reserved.</div>
+<div class="footer-copy">ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2026 Zero Budgeting. All rights reserved.</div>
 <div class="footer-links">
 <a href="/privacy.html">Privacy</a>
 <a href="/contact.html">Contact</a>
@@ -185,9 +188,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 </div></footer>
 <!-- Amazon Affiliate Banner -->
 <div class="amazon-affiliate-banner" style="background:linear-gradient(135deg,#232f3e,#131921);color:white;padding:20px;margin:20px auto;max-width:800px;border-radius:10px;text-align:center;font-family:Arial,sans-serif;">
-  <p style="margin:0 0 10px;font-size:14px;opacity:0.9;">📦 <strong>Support Our Site -- Shop on Amazon</strong></p>
+  <p style="margin:0 0 10px;font-size:14px;opacity:0.9;">ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒâ€šÃ‚Â¦ <strong>Support Our Site -- Shop on Amazon</strong></p>
   <p style="margin:0 0 15px;font-size:13px;opacity:0.7;">We earn a small commission at no extra cost to you when you shop through our links.</p>
-  <a href="https://www.amazon.com/?tag=dogekingus20-20" target="_blank" rel="nofollow sponsored" style="display:inline-block;background:#ff9900;color:#232f3e;padding:12px 30px;border-radius:25px;font-weight:bold;font-size:15px;text-decoration:none;">🛒 Shop on Amazon -></a>
+  <a href="https://www.amazon.com/?tag=dogekingus20-20" target="_blank" rel="nofollow sponsored" style="display:inline-block;background:#ff9900;color:#232f3e;padding:12px 30px;border-radius:25px;font-weight:bold;font-size:15px;text-decoration:none;">ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂºÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Shop on Amazon -></a>
   <p style="margin:10px 0 0;font-size:11px;opacity:0.5;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 <!-- Amazon Associates Tag -->
@@ -199,8 +202,8 @@ window.addEventListener('DOMContentLoaded',function(){
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-8CVE2X8R5L');
 document.addEventListener('click',function(e){
-var t=e.target.closest('a[href*="gumroad.com"],a[href*="kit.com/forms"]');if(!t)return;
-var label=t.href.includes('gumroad')?'Gumroad Product Click':'Kit Form Click';
+var t=e.target.closest('a[href*="stripe.com"],a[href*="kit.com/forms"]');if(!t)return;
+var label=t.href.includes('stripe.com')?'Stripe Product Click':'Kit Form Click';
 gtag('event','conversion',{send_to:'G-8CVE2X8R5L',event_category:'Outbound',event_label:label,value:1});});
 });
 </script>
