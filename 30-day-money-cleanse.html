@@ -9,14 +9,15 @@
 <meta name="description" content="A month-long challenge to break bad spending habits and build awareness around financial decisions.">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The 30-Day Money Cleanse: Reset Your Spending Habits","description":"A month-long challenge to break bad spending habits and build awareness around financial decisions.","datePublished":"2026-05-13"}</script>
-<style>
-body{font-family:system-ui,sans-serif;line-height:1.7;max-width:800px;margin:0 auto;padding:20px;color:#1a1a2e;background:#f8f9fa}
-h1{color:#2d6a4f;border-bottom:3px solid #2d6a4f;padding-bottom:10px}
-h2{color:#16213e;margin-top:30px}
-.content{background:white;padding:30px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
-.back{display:inline-block;margin:20px 0;color:#2d6a4f;text-decoration:none;font-weight:bold}
-@media(max-width:600px){body{padding:10px}.content{padding:15px}}
-</style>
+
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVE2X8R5L"></script>
@@ -27,24 +28,15 @@ h2{color:#16213e;margin-top:30px}
     <meta property="og:image" content="https://zerobudgeting.com/og/default.png">
 <meta property="og:type" content="article">
   <link rel="stylesheet" href="/crown-design-system.css">
-<style>
 
-/* === A11Y: TOUCH TARGETS === */
-@media (max-width: 768px) {
-  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
-  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
-}
-.buy-btn, .bundle-btn, .cta, .btn-primary, button {
-  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
-}
-footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
-a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
-}
-.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
-.skip-nav:focus { top: 0; }
-
-</style>
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>

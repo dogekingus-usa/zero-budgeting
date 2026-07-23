@@ -16,86 +16,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --accent: #059669;
-  --accent-dark: #059669cc;
-  --accent-light: #05966944;
-  --surface-dark: #0a0a1a;
-  --surface-mid: #12122e;
-  --surface-light: #1a1a3e;
-  --text-primary: #f5f5ff;
-  --text-body: #c0c0e0;
-  --text-muted: #8080a0;
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { font-family:var(--font-body); background:var(--surface-dark); color:var(--text-body); line-height:1.6; -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column; }
-a { color:var(--accent); text-decoration:none; transition:color 0.2s; }
-a:hover { color:var(--text-primary); }
-.container { max-width:1200px; margin:0 auto; padding:0 20px; }
 
-/* Nav */
-nav { position:sticky; top:0; z-index:100; background:rgba(10,10,26,0.9); backdrop-filter:blur(20px); border-bottom:1px solid rgba(255,255,255,0.05); padding:12px 0; }
-nav .container { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
-.nav-logo { font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:var(--text-primary); display:flex; align-items:center; gap:8px; }
-.nav-links { display:flex; gap:4px; align-items:center; flex-wrap:wrap; }
-.nav-links a { padding:8px 16px; border-radius:8px; color:var(--text-muted); font-size:0.9rem; font-weight:500; transition:all 0.2s; }
-.nav-links a:hover { background:var(--accent-light); color:var(--text-primary); }
-
-/* Error */
-.error-section { flex:1; display:flex; align-items:center; justify-content:center; text-align:center; padding:80px 20px; }
-.error-code { font-size:8rem; font-weight:800; font-family:var(--font-heading); background:linear-gradient(135deg,var(--accent),#34d399); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; margin-bottom:8px; }
-.error-label { font-size:1.2rem; color:var(--text-muted); margin-bottom:16px; text-transform:uppercase; letter-spacing:3px; }
-.error-message { font-size:1.15rem; color:var(--text-body); margin-bottom:32px; max-width:500px; margin-left:auto; margin-right:auto; }
-.error-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
-.btn { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:8px; font-weight:600; font-size:0.95rem; text-decoration:none; transition:all 0.2s; }
-.btn-primary { background:var(--accent); color:#000; }
-.btn-primary:hover { transform:translateY(-2px); box-shadow:0 4px 20px var(--accent-light); color:#000; }
-.btn-secondary { background:var(--surface-light); color:var(--text-primary); border:1px solid rgba(255,255,255,0.1); }
-.btn-secondary:hover { border-color:var(--accent); transform:translateY(-2px); }
-
-/* Search */
-.search-box { margin:0 auto 48px; max-width:480px; }
-.search-box input { width:100%; padding:14px 18px; border:1px solid rgba(255,255,255,0.1); border-radius:10px; background:var(--surface-mid); color:var(--text-primary); font-size:1rem; outline:none; transition:border-color 0.2s; }
-.search-box input:focus { border-color:var(--accent); }
-
-/* Popular */
-.popular-section { padding:40px 0 60px; border-top:1px solid rgba(255,255,255,0.05); }
-.popular-title { font-family:var(--font-heading); font-size:1.5rem; font-weight:700; color:var(--text-primary); text-align:center; margin-bottom:32px; }
-.article-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:900px; margin:0 auto; }
-.article-card { background:var(--surface-mid); border:1px solid rgba(255,255,255,0.05); border-radius:12px; padding:20px; transition:all 0.3s; text-align:left; }
-.article-card:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,0,0,0.3); }
-.article-card h3 { font-size:0.95rem; font-weight:600; color:var(--text-primary); margin-bottom:6px; line-height:1.4; }
-.article-card .article-category { font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
-.article-card .read-more { font-size:0.85rem; color:var(--accent); font-weight:500; }
-
-/* CTA */
-.cta-section { background:linear-gradient(135deg, var(--surface-mid), var(--surface-light)); border-top:1px solid rgba(255,255,255,0.05); text-align:center; padding:60px 20px; }
-.cta-section h2 { font-family:var(--font-heading); font-size:1.8rem; font-weight:700; color:var(--text-primary); margin-bottom:12px; }
-.cta-section p { color:var(--text-muted); margin-bottom:24px; font-size:1.05rem; max-width:600px; margin-left:auto; margin-right:auto; }
-.cta-button { display:inline-block; padding:14px 36px; background:var(--accent); color:#000; font-weight:600; border-radius:10px; font-size:1rem; transition:all 0.3s; }
-.cta-button:hover { transform:translateY(-2px); box-shadow:0 8px 30px var(--accent-light); color:#000; }
-
-/* Footer */
-footer { border-top:1px solid rgba(255,255,255,0.05); padding:32px 0; text-align:center; margin-top:auto; }
-footer .container { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
-.footer-links { display:flex; gap:16px; flex-wrap:wrap; }
-.footer-links a { color:var(--text-muted); font-size:0.85rem; }
-.footer-links a:hover { color:var(--text-primary); }
-.footer-copy { color:var(--text-muted); font-size:0.85rem; }
-
-@media(max-width:768px) {
-  .nav-links { display:none; }
-  .error-code { font-size:5rem; }
-  .article-grid { grid-template-columns:1fr; max-width:400px; }
-  .error-actions { flex-direction:column; align-items:center; }
-  footer .container { flex-direction:column; }
-}
-</style>
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 </head>
 <body>
 

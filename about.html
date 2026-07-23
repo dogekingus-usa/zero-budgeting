@@ -15,43 +15,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root {--accent:#059669;--accent-dark:#059669cc;--accent-light:#05966944;--surface-dark:#0a0a1a;--surface-mid:#12122e;--surface-light:#1a1a3e;--text-primary:#f5f5ff;--text-body:#c0c0e0;--text-muted:#8080a0;--font-heading:'Playfair Display',serif;--font-body:'Inter',system-ui,sans-serif;}
-* {margin:0;padding:0;box-sizing:border-box;}
-body {background:var(--surface-dark);color:var(--text-body);font-family:var(--font-body);line-height:1.6;}
-.container {max-width:800px;margin:0 auto;padding:0 20px;}
-nav {position:sticky;top:0;z-index:100;background:rgba(10,10,26,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);padding:12px 0;}
-nav .container {display:flex;justify-content:space-between;align-items:center;max-width:1100px;}
-.nav-logo {font-family:var(--font-heading);font-size:1.3rem;font-weight:700;color:var(--text-primary);text-decoration:none;}
-.nav-links a {color:var(--text-muted);padding:6px 12px;border-radius:6px;font-size:0.9rem;text-decoration:none;transition:all 0.2s;}
-.nav-links a:hover {background:rgba(255,255,255,0.05);color:var(--text-primary);}
-h1 {font-family:var(--font-heading);font-size:2rem;color:var(--text-primary);margin:48px 0 8px;}
-.breadcrumbs {font-size:0.85rem;color:var(--text-muted);margin:16px 0;}
-.breadcrumbs a {color:var(--accent);text-decoration:none;}
-footer {background:var(--surface-mid);border-top:1px solid rgba(255,255,255,0.05);padding:24px 0;margin-top:60px;text-align:center;font-size:0.85rem;color:var(--text-muted);}
-.footer-links {display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
-.footer-links a {color:var(--text-muted);text-decoration:none;}
-.footer-links a:hover {color:var(--accent);}
-@media(max-width:768px) {h1 {font-size:1.5rem;} .nav-links a {font-size:0.8rem;padding:4px 8px;}}
-</style>
-<style>
 
-/* === A11Y: TOUCH TARGETS === */
-@media (max-width: 768px) {
-  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
-  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
-}
-.buy-btn, .bundle-btn, .cta, .btn-primary, button {
-  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
-}
-footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
-a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
-}
-.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
-.skip-nav:focus { top: 0; }
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 
-</style>
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>

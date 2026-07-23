@@ -9,43 +9,26 @@
 <link rel="canonical" href="https://zerobudgeting.com/disclaimer.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#0a1210;color:#f1f5f9;line-height:1.8;padding:2rem}
-.container{max-width:800px;margin:0 auto}
-h1{font-size:2.5rem;margin-bottom:1rem}
-h1 span{background:linear-gradient(135deg,#2d6a4f,#40916c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-h2{color:#40916c;margin:2rem 0 0.75rem;font-size:1.2rem}
-p{color:#cbd5e1;margin-bottom:1rem;font-size:0.938rem}
-a{color:#40916c}
-.back{margin-bottom:2rem;display:inline-block;color:#40916c;text-decoration:none}
-.back:hover{text-decoration:underline}
-ul{margin:1rem 0;padding-left:1.5rem}
-li{color:#cbd5e1;margin-bottom:0.5rem;font-size:0.938rem}
-strong{color:#e2e8f0}
-.warning-box{background:rgba(45,106,79,0.08);border-left:4px solid #40916c;padding:1.25rem 1.5rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
-.warning-box p{margin:0.25rem 0;font-size:0.875rem}
-</style>
+
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 <!-- Site deployed by OPENCLAW - Commander's fleet -->
 <meta name="openclaw-deploy" content="zerobudgeting.com-2026-06-30">
-<style>
 
-/* === A11Y: TOUCH TARGETS === */
-@media (max-width: 768px) {
-  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
-  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
-}
-.buy-btn, .bundle-btn, .cta, .btn-primary, button {
-  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
-}
-footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
-a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
-}
-.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
-.skip-nav:focus { top: 0; }
-
-</style>
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>

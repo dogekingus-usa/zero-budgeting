@@ -18,55 +18,25 @@
 <meta name="twitter:image" content="https://zerobudgeting.com/og-images/default.html">
 <link rel="canonical" href="https://zerobudgeting.com/subscription-fatigue-invisible-tax-2026">
 <meta name="keywords" content="subscription fatigue, invisible tax subscriptions, cancel unused subscriptions, subscription audit, monthly subscription cost, streaming services cost 2026, how to save money on subscriptions, subscription budget cut, app subscriptions costing money, software subscription cost, subscription creep, digital declutter">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f0f1a; color: #e0e0e0; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px; }
-h1 { color: #b388ff; font-size: 2.2em; line-height: 1.3; border-bottom: 3px solid #b388ff; padding-bottom: 15px; }
-h2 { color: #ce93d8; margin-top: 35px; font-size: 1.5em; border-left: 4px solid #b388ff; padding-left: 12px; }
-h3 { color: #e1bee7; font-size: 1.2em; margin-top: 20px; }
-p { margin: 15px 0; }
-.meta { color: #888; font-size: 0.9em; border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 25px; }
-.highlight-box { background: linear-gradient(135deg, #1a1030, #2a1a40); border-left: 4px solid #b388ff; padding: 20px; margin: 20px 0; border-radius: 8px; }
-.key-takeaway { background: linear-gradient(135deg, #0a2a1a, #0d3b2a); border-left: 4px solid #4caf50; padding: 20px; margin: 20px 0; border-radius: 8px; }
-.alert-box { background: linear-gradient(135deg, #2a0a0a, #3b0d0d); border-left: 4px solid #ff4444; padding: 20px; margin: 20px 0; border-radius: 8px; }
-.data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-.data-table th { background: #7c4dff; color: white; padding: 12px; text-align: left; font-weight: 700; }
-.data-table td { padding: 10px; border-bottom: 1px solid #333; }
-.data-table tr:nth-child(even) { background: #1a1030; }
-.data-table tr:nth-child(odd) { background: #0f0f1a; }
-ul, ol { margin: 15px 0; padding-left: 25px; }
-li { margin: 8px 0; }
-.toc { background: #1a1030; border: 1px solid #333; border-radius: 8px; padding: 20px; margin: 20px 0; }
-.toc h3 { margin-top: 0; }
-.toc ul { list-style: none; padding: 0; }
-.toc li { margin: 6px 0; }
-.toc a { color: #b388ff; text-decoration: none; }
-.toc a:hover { text-decoration: underline; }
-.cta-section { background: linear-gradient(135deg, #1a1030, #2a1a40); border: 1px solid #b388ff; padding: 25px; border-radius: 8px; margin: 30px 0; text-align: center; }
-.cta-section h3 { color: #ce93d8; font-size: 1.3em; margin-top: 0; }
-.step-box { background: #1a1030; border: 1px solid #444; border-radius: 8px; padding: 20px; margin: 15px 0; }
-.step-box h3 { margin-top: 0; color: #b388ff; }
-@media (max-width: 600px) { body { padding: 12px; } h1 { font-size: 1.5em; } .data-table { font-size: 0.85em; } }
-</style>
+
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
   <link rel="stylesheet" href="crown-design-system.css">
-<style>
 
-/* === A11Y: TOUCH TARGETS === */
-@media (max-width: 768px) {
-  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
-  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
-}
-.buy-btn, .bundle-btn, .cta, .btn-primary, button {
-  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
-}
-footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
-a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
-}
-.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
-.skip-nav:focus { top: 0; }
-
-</style>
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>

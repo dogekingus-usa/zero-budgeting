@@ -15,44 +15,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<style>
-:root{--primary:#2d6a4f;--bg:#0a1a0e;--surface:#0d2818;--secondary:#f59e0b;--text:#f1f5f9;--text-muted:#cbd5e1;--heading-font:'Inter', sans-serif;--body-font:'Inter', sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}img{max-width:100%;height:auto}
-body{font-family:var(--body-font);background:var(--bg);color:var(--text);line-height:1.6}
-header{background:linear-gradient(135deg, #0a1a0e 0%, #0d2818 40%, #2d6a4f 100%);padding:70px 20px 40px;text-align:center}
-header h1{font-family:var(--heading-font);font-size:2.2em;margin-bottom:10px}
-header p{color:var(--text-muted);max-width:600px;margin:0 auto}
-.container{max-width:900px;margin:0 auto;padding:30px 20px 60px}
-.tool-card{background:var(--surface);border-radius:16px;padding:24px;margin-bottom:16px;border:1px solid rgba(255,255,255,0.06);transition:all 0.2s}
-.tool-card:hover{border-color:var(--primary);transform:translateY(-2px)}
-.tool-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.tool-header h3{font-size:1.2em;font-weight:600}
-.tool-rating{background:var(--primary);color:#fff;padding:4px 12px;border-radius:20px;font-size:0.8em;font-weight:600;font-family:'JetBrains Mono',monospace}
-.tool-best,.tool-detail,.tool-price{font-size:0.9em;color:var(--text-muted);padding:4px 0}
-.tool-best span,.tool-detail span{color:var(--text);font-weight:500}
-.tool-price{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);font-size:1em;font-weight:600}
-.footer{text-align:center;padding:30px;color:#444;font-size:0.8em}
-@media(max-width:600px){header h1{font-size:1.5em}}
-</style>
+
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
   <link rel="stylesheet" href="/crown-design-system.css">
-<style>
 
-/* === A11Y: TOUCH TARGETS === */
-@media (max-width: 768px) {
-  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
-  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
-}
-.buy-btn, .bundle-btn, .cta, .btn-primary, button {
-  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
-}
-footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
-a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
-}
-.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
-.skip-nav:focus { top: 0; }
-
-</style>
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>

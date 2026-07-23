@@ -29,40 +29,26 @@
 <meta name="twitter:title" content="Thank You | Zero Budgeting">
 <meta name="twitter:description" content="Thank you for subscribing to Zero Budgeting.">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}img{max-width:100%;height:auto}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.container{max-width:600px;padding:40px 20px;text-align:center}
-.icon{font-size:4em;margin-bottom:20px}
-h1{font-size:2.5em;color:#059669;margin-bottom:15px}
-p{color:#999;font-size:1.1em;line-height:1.6;margin-bottom:10px}
-.cta{display:inline-block;margin-top:25px;padding:14px 32px;background:#059669;color:white;text-decoration:none;border-radius:30px;font-weight:600;font-size:1em;transition:opacity 0.2s}
-.cta:hover{opacity:0.85}
-.back{margin-top:30px;color:#666;font-size:0.9em}
-.back a{color:#059669;text-decoration:none}
-.back a:hover{text-decoration:underline}
-@media(max-width:600px){h1{font-size:1.8em}}
-</style>
+
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 
 <link rel="stylesheet" href="/crown-design-system.css">
-<style>
 
-/* === A11Y: TOUCH TARGETS === */
-@media (max-width: 768px) {
-  .nav-links a { min-height: 44px; padding: 12px 16px; display: flex; align-items: center; }
-  .hamburger, button.hamburger { min-width: 44px; min-height: 44px; }
-}
-.buy-btn, .bundle-btn, .cta, .btn-primary, button {
-  min-height: 44px; padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
-}
-footer a { display: inline-block; min-height: 44px; padding: 8px 0; line-height: 1.4; }
-a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #818cf8; outline-offset: 2px; border-radius: 4px;
-}
-.skip-nav { position: absolute; top: -9999px; left: 0; z-index: 10000; padding: 12px 16px; background: #1e293b; color: #f1f5f9; font-size: 0.875rem; font-weight: 600; text-decoration: none; min-height: 44px; }
-.skip-nav:focus { top: 0; }
-
-</style>
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>

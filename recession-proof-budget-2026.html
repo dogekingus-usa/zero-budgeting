@@ -13,38 +13,15 @@
   <meta property="og:url" content="https://zerobudgeting.com/recession-proof-budget-2026.html"/>
   <meta property="og:site_name" content="ZeroBudgeting"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}img{max-width:100%;height:auto}
-    body{background:#0c0a1d;color:#e0e0e0;font-family:'Segoe UI',system-ui,sans-serif;line-height:1.8}
-    .container{max-width:800px;margin:0 auto;padding:2rem 1.5rem}
-    h1{font-size:2.2rem;color:#22c55e;margin-bottom:0.5rem;line-height:1.3}
-    .meta{color:#888;font-size:0.9rem;margin-bottom:2rem;border-bottom:1px solid #1a1a2e;padding-bottom:1rem}
-    h2{color:#22c55e;font-size:1.5rem;margin:2rem 0 1rem}
-    h3{color:#16a34a;font-size:1.2rem;margin:1.5rem 0 0.8rem}
-    p{margin-bottom:1.2rem;color:#c0c0c0}
-    ul,ol{margin:0 0 1.2rem 1.5rem;color:#c0c0c0}
-    li{margin-bottom:0.5rem}
-    .highlight-box{background:linear-gradient(135deg,#0a2e1a,#0c3a22);border-left:4px solid #22c55e;padding:1.2rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
-    .highlight-box p{margin-bottom:0;color:#b0f0c0}
-    .warning-box{background:linear-gradient(135deg,#2e1a1a,#3e1621);border-left:4px solid #FF4444;padding:1.2rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
-    .warning-box p{margin-bottom:0;color:#ffb0b0}
-    .checklist{background:#12122e;padding:1.2rem;border-radius:8px;margin:1.5rem 0;border:1px solid #2a2a3e}
-    .checklist li{list-style:none;padding-left:1.5rem;position:relative}
-    .checklist li:before{content:"✅";color:#22c55e;position:absolute;left:0;font-weight:bold}
-    .cta-box{background:linear-gradient(135deg,#0a2e1a,#0f4628);border:1px solid #22c55e;padding:1.5rem;margin:2rem 0;border-radius:12px;text-align:center}
-    .cta-box h3{color:#22c55e;margin-top:0;margin-bottom:0.5rem;font-size:1.3rem}
-    .cta-box p{color:#c0c0c0;margin-bottom:1rem}
-    .cta-button{display:inline-block;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;padding:0.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:bold;font-size:1.05rem;transition:transform 0.2s}
-    .cta-button:hover{transform:scale(1.05);text-decoration:none}
-    strong{color:#22c55e}
-    a{color:#22c55e;text-decoration:none}
-    a:hover{text-decoration:underline}
-    table{width:100%;border-collapse:collapse;margin:1.5rem 0}
-    th{background:#22c55e;color:#fff;padding:0.8rem;text-align:left}
-    td{padding:0.8rem;border-bottom:1px solid #2a2a3e;color:#c0c0c0}
-    tr:nth-child(even){background:#12122e}
-    .footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #1a1a2e;color:#666;font-size:0.85rem;text-align:center}
-  </style>
+  
+            param($m)
+            $css = $m.Groups[2].Value
+            $css = $css -replace '/\*.*?\*/', ''
+            $css = $css -replace '\s+', ' '
+            $css = $css -replace '\s*([{}:;,])\s*', '<style>'
+            $css = $css -replace ';\}', '}'
+            $m.Groups[1].Value + $css + $m.Groups[3].Value
+        
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Recession-Proof Budget 2026: How to Protect Your Finances During a Market Crash","description":"Complete recession-proof budget guide for 2026. Protect your finances during the June 2026 market crash with zero-based budgeting and income diversification strategies.","url":"https://zerobudgeting.com/recession-proof-budget-2026.html","mainEntityOfPage":"https://zerobudgeting.com/recession-proof-budget-2026.html","author":{"@type":"Person","name":"ZeroBudgeting"},"publisher":{"@type":"Organization","name":"ZeroBudgeting","url":"https://zerobudgeting.com"},"datePublished":"2026-07-15","dateModified":"2026-07-15"}
 </script>
