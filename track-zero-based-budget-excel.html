@@ -151,22 +151,22 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     <h1>How to Track Your Zero-Based Budget in Excel</h1>
     <div class="meta">Published: May 17, 2026 | Updated: May 17, 2026 | 11 min read</div>
 
-    <p>Zero-based budgeting is one of the most effective personal finance systems ever created. The concept is simple: every dollar you earn gets assigned a specific job Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â rent, groceries, savings, investments Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â until your income minus your expenses equals exactly zero. But implementing ZBB requires consistent tracking, and that's where most people struggle.</p>
+    <p>Zero-based budgeting is one of the most effective personal finance systems ever created. The concept is simple: every dollar you earn gets assigned a specific job ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  rent, groceries, savings, investments ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  until your income minus your expenses equals exactly zero. But implementing ZBB requires consistent tracking, and that's where most people struggle.</p>
 
     <p>You could use an app like YNAB or EveryDollar, but those cost money and lock you into their system. A well-built Excel spreadsheet gives you complete control, zero subscription fees, and total customization. In this guide, I'll walk you through exactly how to build a zero-based budget tracker in Excel that you can use month after month.</p>
 
     <div class="highlight-box">
-      <p><strong>Why Excel?</strong> Spreadsheets are the most flexible budgeting tool available. You can customize categories, add formulas, create charts, and adapt as your financial situation changes Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â all without paying a monthly subscription or trusting your financial data to a third-party app.</p>
+      <p><strong>Why Excel?</strong> Spreadsheets are the most flexible budgeting tool available. You can customize categories, add formulas, create charts, and adapt as your financial situation changes ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  all without paying a monthly subscription or trusting your financial data to a third-party app.</p>
     </div>
 
     <h2>Step 1: Set Up Your Spreadsheet Framework</h2>
 
     <p>Open a new Excel workbook. Create the following sheets (tabs) at the bottom:</p>
     <ul>
-      <li><strong>Dashboard</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â A high-level overview of your monthly finances</li>
-      <li><strong>Budget</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Your planned allocations for the current month</li>
-      <li><strong>Transactions</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Every expense recorded in real time</li>
-      <li><strong>Monthly Summary</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Historical data for tracking progress over time</li>
+      <li><strong>Dashboard</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  A high-level overview of your monthly finances</li>
+      <li><strong>Budget</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Your planned allocations for the current month</li>
+      <li><strong>Transactions</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Every expense recorded in real time</li>
+      <li><strong>Monthly Summary</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Historical data for tracking progress over time</li>
     </ul>
 
     <p>This four-sheet structure keeps your budget organized without being overwhelming. Let's build each sheet step by step.</p>
@@ -177,13 +177,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 
     <table>
       <tr><th>A: Category</th><th>B: Planned</th><th>C: Spent</th><th>D: Remaining</th><th>E: Status</th></tr>
-      <tr><td>Income</td><td>$5,000</td><td>$5,000</td><td>$0</td><td>Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ÃƒÂ¢EURÃ‚Â¦Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦"Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ</td></tr>
-      <tr><td>Housing (Rent)</td><td>$1,400</td><td>$1,400</td><td>$0</td><td>Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ÃƒÂ¢EURÃ‚Â¦Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦"Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ</td></tr>
-      <tr><td>Utilities</td><td>$250</td><td>$230</td><td>$20</td><td>Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ÃƒÂ¢EURÃ‚Â¦Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦"Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ</td></tr>
-      <tr><td>Groceries</td><td>$600</td><td>$420</td><td>$180</td><td>Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ÃƒÂ¢EURÃ‚Â¦Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦"Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ</td></tr>
-      <tr><td>Transportation</td><td>$300</td><td>$275</td><td>$25</td><td>Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ÃƒÂ¢EURÃ‚Â¦Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦"Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ</td></tr>
-      <tr><td>Savings</td><td>$500</td><td>$500</td><td>$0</td><td>Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ÃƒÂ¢EURÃ‚Â¦Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦"Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ</td></tr>
-      <tr><td>Investments</td><td>$500</td><td>$500</td><td>$0</td><td>Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ÃƒÂ¢EURÃ‚Â¦Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦"Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ</td></tr>
+      <tr><td>Income</td><td>$5,000</td><td>$5,000</td><td>$0</td><td>ƒÆ'' ¢ƒâEUR¦¢â'¬Å"ƒ ¢¢âEURš ¬...âEURœ</td></tr>
+      <tr><td>Housing (Rent)</td><td>$1,400</td><td>$1,400</td><td>$0</td><td>ƒÆ'' ¢ƒâEUR¦¢â'¬Å"ƒ ¢¢âEURš ¬...âEURœ</td></tr>
+      <tr><td>Utilities</td><td>$250</td><td>$230</td><td>$20</td><td>ƒÆ'' ¢ƒâEUR¦¢â'¬Å"ƒ ¢¢âEURš ¬...âEURœ</td></tr>
+      <tr><td>Groceries</td><td>$600</td><td>$420</td><td>$180</td><td>ƒÆ'' ¢ƒâEUR¦¢â'¬Å"ƒ ¢¢âEURš ¬...âEURœ</td></tr>
+      <tr><td>Transportation</td><td>$300</td><td>$275</td><td>$25</td><td>ƒÆ'' ¢ƒâEUR¦¢â'¬Å"ƒ ¢¢âEURš ¬...âEURœ</td></tr>
+      <tr><td>Savings</td><td>$500</td><td>$500</td><td>$0</td><td>ƒÆ'' ¢ƒâEUR¦¢â'¬Å"ƒ ¢¢âEURš ¬...âEURœ</td></tr>
+      <tr><td>Investments</td><td>$500</td><td>$500</td><td>$0</td><td>ƒÆ'' ¢ƒâEUR¦¢â'¬Å"ƒ ¢¢âEURš ¬...âEURœ</td></tr>
       <tr><td><strong>TOTAL</strong></td><td><strong>$5,000</strong></td><td><strong>$4,825</strong></td><td><strong>$175</strong></td><td></td></tr>
       <tr><td><strong>ZERO BALANCE CHECK</strong></td><td><strong>$0</strong></td><td></td><td></td><td></td></tr>
     </table>
@@ -195,10 +195,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       B13: =SUM(B2:B12) <span class="comment">'Total planned allocations</span><br>
       C13: =SUM(C2:C12) <span class="comment">'Total spent so far</span><br>
       D13: =SUM(D2:D12) <span class="comment">'Total remaining</span><br>
-      B15: =B2-B13 <span class="comment">'Zero balance check Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â should equal 0</span>
+      B15: =B2-B13 <span class="comment">'Zero balance check ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  should equal 0</span>
     </div>
 
-    <p>The <strong>zero balance check</strong> is the most important formula in your spreadsheet. It subtracts your total planned spending from your total income. If the result is $0, every dollar has a job. If it's positive, you have unallocated money. If it's negative, you've planned to spend more than you earn Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â a critical red flag.</p>
+    <p>The <strong>zero balance check</strong> is the most important formula in your spreadsheet. It subtracts your total planned spending from your total income. If the result is $0, every dollar has a job. If it's positive, you have unallocated money. If it's negative, you've planned to spend more than you earn ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  a critical red flag.</p>
 
     <div class="highlight-box">
       <p><strong>Pro Tip:</strong> Use conditional formatting on the Zero Balance Check cell. Green fill if the value is 0 (you're balanced). Red fill if it's anything else (something is off). This gives you an instant visual cue.</p>
@@ -242,11 +242,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     <p>The Dashboard gives you a one-glance overview of your financial health. Keep it simple:</p>
 
     <ul>
-      <li><strong>Monthly Income</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Reference your Budget sheet income cell</li>
-      <li><strong>Total Spent</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â SUM of all spent values from the Budget sheet</li>
-      <li><strong>Remaining to Budget</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Income minus total spent</li>
-      <li><strong>Top 3 Spending Categories</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Use LARGE and INDEX/MATCH to show where most money goes</li>
-      <li><strong>Savings Rate</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Total savings / Total income, displayed as a percentage</li>
+      <li><strong>Monthly Income</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Reference your Budget sheet income cell</li>
+      <li><strong>Total Spent</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  SUM of all spent values from the Budget sheet</li>
+      <li><strong>Remaining to Budget</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Income minus total spent</li>
+      <li><strong>Top 3 Spending Categories</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Use LARGE and INDEX/MATCH to show where most money goes</li>
+      <li><strong>Savings Rate</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Total savings / Total income, displayed as a percentage</li>
     </ul>
 
     <p>Add a pie chart showing the percentage breakdown of your spending categories. Visualizing your spending makes it easier to identify areas where you're overspending. Most people who create this chart are shocked to see how much they spend on dining out or subscriptions.</p>
@@ -265,7 +265,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       <tr><td>Dining Out</td><td>$340</td><td>$290</td><td>$380</td><td>$210</td><td></td></tr>
     </table>
 
-    <p>At the end of each month, copy your final budget numbers into this sheet. Over time, you'll be able to spot trends Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â maybe your grocery spending creeps up in winter, or your dining out spikes during certain months. This historical data is invaluable for setting more accurate budgets.</p>
+    <p>At the end of each month, copy your final budget numbers into this sheet. Over time, you'll be able to spot trends ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  maybe your grocery spending creeps up in winter, or your dining out spikes during certain months. This historical data is invaluable for setting more accurate budgets.</p>
 
     <div class="highlight-box">
       <p><strong>Pro Tip:</strong> Add a line chart to your Monthly Summary sheet showing income vs. spending over time. A widening gap between the two lines means your savings are growing. A narrowing gap means you need to cut back. It's the most motivating chart you'll ever create.</p>
@@ -282,12 +282,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     <p>Review your Dashboard. Check your remaining balances in each category. If you're trending toward overspending in one category (e.g., groceries at $450 of $600 with two weeks left), adjust your behavior early. Also review the zero balance check to ensure everything is still aligned.</p>
 
     <h3>Monthly (20 minutes)</h3>
-    <p>At the end of the month, reconcile every transaction against your bank and credit card statements. Correct any errors. Then copy your final numbers into the Monthly Summary sheet. Finally, build next month's budget from scratch Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â starting at zero Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â using what you learned from this month's spending.</p>
+    <p>At the end of the month, reconcile every transaction against your bank and credit card statements. Correct any errors. Then copy your final numbers into the Monthly Summary sheet. Finally, build next month's budget from scratch ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  starting at zero ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  using what you learned from this month's spending.</p>
 
     <h2>Advanced Excel Features to Level Up Your Budget</h2>
 
     <h3>Data Validation for Categories</h3>
-    <p>On the Transactions sheet, use Data Validation on column B (Category) to create a dropdown list of your categories. This prevents typos and ensures your SUMIF formulas catch every transaction. Go to Data Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬Ã‚Â¢ÃƒÂ¢EURÃ…Â¾ Ã‚Â¢ Data Validation Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬Ã‚Â¢ÃƒÂ¢EURÃ…Â¾ Ã‚Â¢ List and select your category range.</p>
+    <p>On the Transactions sheet, use Data Validation on column B (Category) to create a dropdown list of your categories. This prevents typos and ensures your SUMIF formulas catch every transaction. Go to Data ƒÆ'' ¢ƒ ¢¢âEURš ¬'  ƒ ¢¢âEUR𠬢âEURž ¢ Data Validation ƒÆ'' ¢ƒ ¢¢âEURš ¬'  ƒ ¢¢âEUR𠬢âEURž ¢ List and select your category range.</p>
 
     <h3>Conditional Formatting Alerts</h3>
     <p>Set up conditional formatting so that any category where "Remaining" is less than $50 turns yellow, and any category where "Remaining" is negative (overspent) turns red with bold text. This gives you an immediate visual warning when a category is in danger.</p>
@@ -301,11 +301,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     <h2>Common Zero-Based Budget Tracking Mistakes</h2>
 
     <ul>
-      <li><strong>Not starting at zero each month</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Copying last month's budget is tempting, but it defeats the purpose of ZBB. Each month has unique needs. A high electricity bill in summer doesn't apply in fall. Build fresh every time.</li>
-      <li><strong>Forgetting irregular expenses</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Car insurance, annual subscriptions, holiday gifts, property tax. These hit quarterly or yearly. Calculate the annual cost, divide by 12, and set aside that amount monthly in a dedicated "Sinking Funds" category.</li>
-      <li><strong>Recording expenses inconsistently</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â If you log some transactions immediately and others weeks later, your budget will be inaccurate. Pick a system (daily app check, receipt collection, etc.) and stick to it.</li>
-      <li><strong>Skipping the reconciliation step</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â At the end of each month, compare your spreadsheet against your actual bank and credit card statements. Mistakes happen. This step catches them.</li>
-      <li><strong>Making it too complex</strong> Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â If you have 40 micro-categories (coffee, parking, snacks, etc.), you'll burn out tracking. Stick to 8Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ12 major categories and keep a "Miscellaneous" buffer of 5Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬...ÃƒÂ¢EURÃ…â€œ10% of income.</li>
+      <li><strong>Not starting at zero each month</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Copying last month's budget is tempting, but it defeats the purpose of ZBB. Each month has unique needs. A high electricity bill in summer doesn't apply in fall. Build fresh every time.</li>
+      <li><strong>Forgetting irregular expenses</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Car insurance, annual subscriptions, holiday gifts, property tax. These hit quarterly or yearly. Calculate the annual cost, divide by 12, and set aside that amount monthly in a dedicated "Sinking Funds" category.</li>
+      <li><strong>Recording expenses inconsistently</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  If you log some transactions immediately and others weeks later, your budget will be inaccurate. Pick a system (daily app check, receipt collection, etc.) and stick to it.</li>
+      <li><strong>Skipping the reconciliation step</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  At the end of each month, compare your spreadsheet against your actual bank and credit card statements. Mistakes happen. This step catches them.</li>
+      <li><strong>Making it too complex</strong> ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  If you have 40 micro-categories (coffee, parking, snacks, etc.), you'll burn out tracking. Stick to 8ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬...âEURœ12 major categories and keep a "Miscellaneous" buffer of 5ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬...âEURœ10% of income.</li>
     </ul>
 
     <h2>Downloadable Excel Template Structure</h2>
@@ -324,11 +324,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     Rows: key metrics. Columns: each month. Update at month-end.</p>
 
     <div class="highlight-box">
-      <p><strong>Final Word:</strong> A zero-based budget tracked in Excel is one of the most powerful financial tools you'll ever use. It gives you complete visibility, total control, and zero subscription fees. The setup takes about an hour. The daily tracking takes two minutes. The payoff Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â knowing exactly where every dollar goes and watching your savings grow month after month Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â is life-changing. Start building your spreadsheet today. Give every dollar a job. Take control of your financial future.</p>
+      <p><strong>Final Word:</strong> A zero-based budget tracked in Excel is one of the most powerful financial tools you'll ever use. It gives you complete visibility, total control, and zero subscription fees. The setup takes about an hour. The daily tracking takes two minutes. The payoff ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  knowing exactly where every dollar goes and watching your savings grow month after month ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  is life-changing. Start building your spreadsheet today. Give every dollar a job. Take control of your financial future.</p>
     </div>
 
     <div class="footer">
-      <p>ZeroBudgeting.com Ã†â€™Ãƒâ€ '' Ã‚Â¢Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢'Ã‚Â¬Ãƒâ€¦Ã‚Â¡' Ã‚Â¬Ã†â€™ Ã‚Â¢Ã‚Â¢ÃƒÂ¢EURÃ…Â¡ Ã‚Â¬' Ã‚Â Helping you master zero-based budgeting for financial freedom.</p>
+      <p>ZeroBudgeting.com ƒÆ'' ¢ƒ ¢¢â'¬Å¡' ¬ƒ ¢¢âEURš ¬'  Helping you master zero-based budgeting for financial freedom.</p>
     </div>
   </div>
 <div style="margin-top:40px;padding:20px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;text-align:center;color:white">
