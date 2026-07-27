@@ -7,14 +7,14 @@
 - **Agent:** website-architect subagent
 - **Status:** ✅ COMPLETE
 - **Summary of Fixes:**
-  - Fixed `&#xE2;EUR` mojibake encoding corruption (em dashes) across 362 HTML files
-  - Fixed `&#xE2;*&#x90;` mojibake arrow corruption across 86 files
+  - Fixed `âEUR` mojibake encoding corruption (em dashes) across 362 HTML files
+  - Fixed `â*` mojibake arrow corruption across 86 files
   - Fixed wrong Amazon affiliate tag `dogekingus20-20` → `zerobudgeting-20` across 237 files
   - Removed leftover PHP `$slug = $matches[N]` artifacts from 338 files
   - Fixed nav-toggle class mismatch (nav-toggle → nav-hamburger, .open → .show) in index.html
   - Fixed empty OG meta title on 50-30-20-budget-rule-2026.html
   - Added missing CSS styles for nav-search, nav-hamburger, hero-icon, breadcrumbs, stats, article-grid, pagination, CTA section, and skip-nav to crown-design-system.css
-  - **Known remaining:** 320 `&#xE2;` occurrences in 42 articles with severely garbled body text (alternative corruption pattern `&#x192;&#xC6;`) — needs content regeneration for those articles
+  - **Known remaining:** 320 `â` occurrences in 42 articles with severely garbled body text (alternative corruption pattern `ƒÆ`) — needs content regeneration for those articles
 
 ### Article 1: inflation-proof-budgeting-2026.html
 - **Date:** 2026-05-19

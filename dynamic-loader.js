@@ -252,7 +252,7 @@ function populateCategoryFilter() {
         categories.forEach(cat => {
             const opt = document.createElement('option');
             opt.value = cat;
-            opt.textContent = cat.replace('-', ' ').replace(/\w/g, l => l.toUpperCase());
+            opt.textContent = cat.replace('-', ' ').replace(/\w/g, l => l.toUpperCase());
             filter.appendChild(opt);
         });
     }

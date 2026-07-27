@@ -1,4 +1,4 @@
-﻿# Deployment
+# Deployment
 This site deploys via **GitHub Pages** from the main branch.
 
 ## How it works

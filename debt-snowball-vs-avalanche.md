@@ -34,7 +34,7 @@ this smallest debt until it's fully paid off.
 next smallest and repeat the process.
 
 ### Example
-Let’s say you have three debts:
+Let's say you have three debts:
 - Credit Card 1: $200 balance at 18% interest
 - Personal Loan 1: $3,000 balance at 9.5% interest
 - Personal Loan 2: $6,000 balance at 7.5% interest
@@ -56,7 +56,7 @@ interest rate.
 3. **Make Minimum Payments:** Pay the minimum required on each debt except 
 for the one with the highest interest rate.
 4. **Focus on Highest Interest Rate Debt:** Apply any extra funds towards t
-this debt until it’s fully paid off.
+this debt until it's fully paid off.
 5. **Repeat Process:** Once you've cleared the highest-interest-rate debt, 
 move to the next highest and repeat.
 
@@ -158,7 +158,7 @@ progress.
 
 ## Can You Combine Both Methods?
 The hybrid approach involves using a combination of the snowball and avalan
-avalanche methods. Here’s how:
+avalanche methods. Here's how:
 1. **First Half: Snowball Approach**: Focus on paying off smaller debts qui
 quickly to build momentum.
 2. **Second Half: Avalanche Approach**: Apply the remaining funds to target
@@ -192,7 +192,7 @@ psychological wins.
 snowball for initial quick wins and then switching to avalanche when they h
 have more funds available.
 
-### Q3: What if I can’t afford minimum payments on all debts?
+### Q3: What if I can't afford minimum payments on all debts?
 **A:** Prioritize paying minimums on essential debts like mortgages or car 
 loans. For other debts, use a combination approach or focus on those with t
 the highest interest rates.
