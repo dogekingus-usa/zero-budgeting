@@ -38,7 +38,7 @@
 <h2>The Best Free Google Sheets Budget Templates</h2>
 
 <h3>1. Monthly Budget Template (Google Sheets Template Gallery)</h3>
-<p><strong>Where to find it:</strong> Open Google Sheets &larr;' Template Gallery &larr;' Budget. Google also offers a "Monthly Budget" template in the gallery.</p>
+<p><strong>Where to find it:</strong> Open Google Sheets ←' Template Gallery ←' Budget. Google also offers a "Monthly Budget" template in the gallery.</p>
 <p><strong>Best for:</strong> Anyone starting their budgeting journey. This is the most straightforward template with income, fixed expenses, variable expenses, savings, and debt payments.</p>
 <p><strong>Features:</strong> The template includes pre-filled categories like Rent/Mortgage, Utilities, Groceries, Dining Out, Transportation, Insurance, Entertainment, Subscriptions, Savings, and Debt Payments. Each category has columns for Budgeted Amount, Actual Amount, and Difference. The template automatically calculates totals and highlights overspending in red using conditional formatting. A simple bar chart shows spending by category.</p>
 <p><strong>How to customize:</strong> Replace the sample categories with your actual spending categories. Adjust the budget amounts based on your income. Add or remove rows as needed.</p>
@@ -102,10 +102,10 @@
 <p>At the bottom of each section, use =SUM() to total the column. For Total Income: =SUM(B2:B10). For Total Expenses: =SUM(B12:B30). For Remaining Balance: =TotalIncome - TotalExpenses.</p>
 
 <h3>Step 5: Add Conditional Formatting</h3>
-<p>Highlight the Difference column. Go to Format &larr;' Conditional Formatting. Set a rule: "If cell is greater than 0" &larr;' fill red (overspent). Add another rule: "If cell is less than 0" &larr;' fill green (under budget). This color coding makes it instantly obvious where you are overspending.</p>
+<p>Highlight the Difference column. Go to Format ←' Conditional Formatting. Set a rule: "If cell is greater than 0" ←' fill red (overspent). Add another rule: "If cell is less than 0" ←' fill green (under budget). This color coding makes it instantly obvious where you are overspending.</p>
 
 <h3>Step 6: Create Charts</h3>
-<p>Select your expense categories and actual amounts. Click Insert &larr;' Chart. Choose a pie chart to see the percentage breakdown of your spending. Create a second chart with a bar chart comparing budgeted vs. actual amounts for each category. Place these charts near the top of your sheet for a visual dashboard.</p>
+<p>Select your expense categories and actual amounts. Click Insert ←' Chart. Choose a pie chart to see the percentage breakdown of your spending. Create a second chart with a bar chart comparing budgeted vs. actual amounts for each category. Place these charts near the top of your sheet for a visual dashboard.</p>
 
 <h3>Step 7: Add Automation with Google Apps Script</h3>
 <p>For advanced users, Google Apps Script can automate bank data import. You can write a script that parses a CSV export from your bank and populates the Actual Amount column automatically. Here is a basic example:</p>
@@ -125,9 +125,9 @@
 <h2>Pro Tips for Google Sheets Budgeting</h2>
 
 <ul>
-<li><strong>Use data validation</strong> &mdash; Create dropdown menus for categories to prevent typos. Go to Data &larr;' Data Validation and create a list of your expense categories.</li>
-<li><strong>Name your ranges</strong> &mdash; Instead of using cell references like B2:B10, name the range "Income" for easier formula writing. Select the cells, go to Data &larr;' Named Ranges.</li>
-<li><strong>Freeze header rows</strong> &mdash; Select Row 1, go to View &larr;' Freeze &larr;' 1 row. This keeps your headers visible when scrolling.</li>
+<li><strong>Use data validation</strong> &mdash; Create dropdown menus for categories to prevent typos. Go to Data ←' Data Validation and create a list of your expense categories.</li>
+<li><strong>Name your ranges</strong> &mdash; Instead of using cell references like B2:B10, name the range "Income" for easier formula writing. Select the cells, go to Data ←' Named Ranges.</li>
+<li><strong>Freeze header rows</strong> &mdash; Select Row 1, go to View ←' Freeze ←' 1 row. This keeps your headers visible when scrolling.</li>
 <li><strong>Use =GOOGLEFINANCE() for investment tracking</strong> &mdash; If you include investment accounts in your net worth tracker, use =GOOGLEFINANCE("VTI","price") to auto-update stock and ETF prices.</li>
 <li><strong>Share with your partner</strong> &mdash; Click Share in the top right and add your partner's email. They can view and edit the budget in real time from their own Google account.</li>
 <li><strong>Set up bank CSV import</strong> &mdash; Most banks let you download transactions as CSV. Create a separate "Raw Data" sheet tab, paste the CSV, and use =VLOOKUP or =XLOOKUP to match transactions to your budget categories.</li>
