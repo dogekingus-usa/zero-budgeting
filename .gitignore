@@ -1,8 +1,5 @@
 node_modules/
-.wrangler/
-.openclaw/
-.env
-__pycache__/
-*.pyc
+dist/
+.astro/
+*.local
 .DS_Store
-*.log
