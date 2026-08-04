@@ -5,5 +5,5 @@ export default defineConfig({
   site: 'https://zerobudgeting.com',
   output: 'static',
   integrations: [tailwind()],
-  build: { format: 'directory' },
+  build: { format: 'file' },
 });

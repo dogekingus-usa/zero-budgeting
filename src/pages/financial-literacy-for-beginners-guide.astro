@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/financial-literacy-for-beginners-guide.html?raw';
+
+const title = "Financial Literacy for Beginners: The Complete Guide to Money Basics | zerobudgeting.com";
+const description = "New to personal finance? This beginner-friendly guide covers budgeting, saving, investing, credit scores, and everything you need to build financial confid";
+const canonical = "https://zerobudgeting.com/financial-literacy-for-beginners-guide";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

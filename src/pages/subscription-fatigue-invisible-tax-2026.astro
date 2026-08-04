@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/subscription-fatigue-invisible-tax-2026.html?raw';
+
+const title = "The Invisible Tax 2026: How Subscription Fatigue Is Quietly Draining Your Budget — and How to Fix It in 30 Minutes";
+const description = "The average American spends $273/month on subscriptions — most of which they don\u0027t fully use. This \u0027invisible tax\u0027 costs $3,276/year in after-tax money. Complete guide to auditing your subscriptions, cutting the waste, and reclaiming your budget in 30 minutes.";
+const canonical = "https://zerobudgeting.com/subscription-fatigue-invisible-tax-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

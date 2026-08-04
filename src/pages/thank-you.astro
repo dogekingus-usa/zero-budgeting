@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import body from '../bodies/thank-you.html?raw';
+
+const title = "Thank You | Zero Budgeting";
+const description = "Thank you for subscribing to Zero Budgeting.";
+const canonical = "https://zerobudgeting.com/thank-you";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <div class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+  </div>
+</BaseLayout>

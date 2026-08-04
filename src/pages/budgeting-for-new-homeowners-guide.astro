@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/budgeting-for-new-homeowners-guide.html?raw';
+
+const title = "Budgeting for New Homeowners: Hidden Costs and How to Prepare Financially | Zero Budgeting";
+const description = "The complete guide to budgeting for new homeowners. Discover the hidden costs of homeownership that catch first-time buyers off guard — from property taxes and insurance to maintenance and emergency repairs. Includes a sample homeowner budget template and tips for building a home maintenance fund on a zero-based budget.";
+const canonical = "https://zerobudgeting.com/budgeting-for-new-homeowners-guide";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

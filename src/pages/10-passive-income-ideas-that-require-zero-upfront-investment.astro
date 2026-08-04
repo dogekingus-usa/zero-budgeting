@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/10-passive-income-ideas-that-require-zero-upfront-investment.html?raw';
+
+const title = "10 Passive Income Ideas That Require Zero Upfront Investment | zerobudgeting.com";
+const description = "Are you looking to start earning passive income without having to invest any money upfront? You\u0027ve come to the right place! In this article, we will exp...";
+const canonical = "https://zerobudgeting.com/10-passive-income-ideas-that-require-zero-upfront-investment";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

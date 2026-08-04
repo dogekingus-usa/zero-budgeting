@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/understanding-compound-interest-and-how-to-make-it-work-for-you.html?raw';
+
+const title = "Understanding Compound Interest and How to Make It Work for You | ZeroBudgeting.com";
+const description = "Learn how compound interest works and how to make it work for you. Simple explanations, real examples, and strategies to harness the power of compounding for wealth building.";
+const canonical = "https://zerobudgeting.com/understanding-compound-interest-and-how-to-make-it-work-for-you";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

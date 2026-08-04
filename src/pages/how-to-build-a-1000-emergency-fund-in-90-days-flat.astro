@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/how-to-build-a-1000-emergency-fund-in-90-days-flat.html?raw';
+
+const title = "How to Build a $1000 Emergency Fund in 90 Days Flat | zerobudgeting.com";
+const description = "Building an emergency fund is crucial to secure your financial future. But what if you\u0027re starting from scratch with no extra income? Fear not, as build...";
+const canonical = "https://zerobudgeting.com/how-to-build-a-1000-emergency-fund-in-90-days-flat";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

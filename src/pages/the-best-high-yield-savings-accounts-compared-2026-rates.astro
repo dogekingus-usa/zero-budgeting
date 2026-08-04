@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/the-best-high-yield-savings-accounts-compared-2026-rates.html?raw';
+
+const title = "The Best High-Yield Savings Accounts Compared 2026 Rates | zerobudgeting.com";
+const description = "When considering high-yield savings accounts in 2026, it\u0027s crucial to compare different options to ensure you\u0027re maximizing your returns while maintaini...";
+const canonical = "https://zerobudgeting.com/the-best-high-yield-savings-accounts-compared-2026-rates";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

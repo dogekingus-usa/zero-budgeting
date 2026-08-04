@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/zb-wave19-article2-wedding-budget-guide.html?raw';
+
+const title = "The Complete Wedding Budget Guide 2026: How to Plan Your Dream Wedding Without Going Into Debt | Zero Budgeting";
+const description = "The average wedding costs $30,000 in 2026. Learn how to create a realistic wedding budget, prioritize spending, save strategically, and celebrate your day without starting married life in debt.";
+const canonical = "https://zerobudgeting.com/zb-wave19-article2-wedding-budget-guide";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

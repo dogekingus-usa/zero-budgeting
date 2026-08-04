@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/30-day-money-cleanse-reset-spending-habits-reclaim-control-2026.html?raw';
+
+const title = "The 30-Day Money Cleanse: Reset Your Spending Habits and Reclaim Control of Your Finances in 2026";
+const description = "Break the spending cycle with our 30-Day Money Cleanse. A complete step-by-step program to reset your financial habits, eliminate impulse purchases, and reclaim control of your money in 2026.";
+const canonical = "https://zerobudgeting.com/30-day-money-cleanse-reset-spending-habits-reclaim-control-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

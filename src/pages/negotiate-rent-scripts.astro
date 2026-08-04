@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/negotiate-rent-scripts.html?raw';
+
+const title = "How to Negotiate Your Rent: Complete Scripts, Strategies \u0026 Timing for 2026";
+const description = "Stop paying full price for rent. This guide covers rent negotiation scripts for lease renewal, new lease signing, and market downturns. Includes research prep, timing strategies, concessions to ask for, landlord psychology, and 3 complete scripts with placeholder variables.";
+const canonical = "https://zerobudgeting.com/negotiate-rent-scripts";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

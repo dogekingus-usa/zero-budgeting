@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/ultimate-subscription-audit-guide-cut-costs-2026.html?raw';
+
+const title = "The Ultimate Subscription Audit Guide: How to Cut $500+ Per Year on Unused Services | Zero Budgeting";
+const description = "Learn how to audit your subscriptions and cut $500+ per year on unused services. Step-by-step guide to finding, evaluating, and canceling subscriptions you don\u0027t need in 2026.";
+const canonical = "https://zerobudgeting.com/ultimate-subscription-audit-guide-cut-costs-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

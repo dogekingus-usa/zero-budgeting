@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/pet-ownership-budget-guide-vet-bills-insurance-2026.html?raw';
+
+const title = "Budgeting for Pet Ownership: Complete Guide to Vet Bills, Food, Insurance, and Emergency Care | Zero Budgeting";
+const description = "Complete guide to budgeting for pet ownership in 2026. Learn how to save for vet bills, pet food, insurance, and emergency care without breaking your budget.";
+const canonical = "https://zerobudgeting.com/pet-ownership-budget-guide-vet-bills-insurance-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

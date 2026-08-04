@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/expense-tracking-apps-small-business.html?raw';
+
+const title = "Best Expense Tracking Apps for Small Business 2026 — Full Comparison";
+const description = "Compare QuickBooks, FreshBooks, Wave, Expensify, and Zoho Expense for small business. 10+ criteria comparison table, pricing, receipt scanning, mileage tracking, and tax categorization features.";
+const canonical = "https://zerobudgeting.com/expense-tracking-apps-small-business";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>
