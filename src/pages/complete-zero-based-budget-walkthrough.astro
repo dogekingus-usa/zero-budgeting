@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/complete-zero-based-budget-walkthrough.html?raw';
+
+const title = "The Complete Zero-Based Budget Walkthrough | ZeroBudgeting.com";
+const description = "Master zero-based budgeting with our complete step-by-step walkthrough. Learn how to give every dollar a job, track spending, build sinking funds, and automate your ZBB system in 2026.";
+const canonical = "https://zerobudgeting.com/complete-zero-based-budget-walkthrough.html";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

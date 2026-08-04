@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/strategic-frugality-guide.html?raw';
+
+const title = "Strategic Frugality: The Art of Knowing Where to Save and Where to Splurge | Zero Budgeting";
+const description = "Strategic frugality is the smart alternative to extreme budgeting. Learn how to save money where it matters most and spend generously on what truly brings you joy. This guide shows you how to create a personalized frugality plan that maximizes happiness per dollar without deprivation or guilt.";
+const canonical = "https://zerobudgeting.com/strategic-frugality-guide";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

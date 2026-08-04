@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/how-to-save-money-on-prescriptions-and-healthcare-costs.html?raw';
+
+const title = "How to Save Money on Prescriptions and Healthcare Costs | zerobudgeting.com";
+const description = "Managing prescription costs can be challenging, especially when trying to balance your budget while ensuring you stay healthy. However, there are several s";
+const canonical = "https://zerobudgeting.com/how-to-save-money-on-prescriptions-and-healthcare-costs";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

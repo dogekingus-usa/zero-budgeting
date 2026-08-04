@@ -1,0 +1,23 @@
+---
+export interface Props {
+  href?: string;
+  text?: string;
+  variant?: 'primary' | 'secondary';
+  productId?: string;
+}
+
+const { href = '#', text = 'Get Started', variant = 'primary', productId } = Astro.props;
+const isPrimary = variant === 'primary';
+---
+
+<a
+  href={href}
+  data-gumroad={productId || undefined}
+  class={`inline-block rounded-lg px-6 py-3 font-semibold text-sm transition-all ${
+    isPrimary
+      ? 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-lg shadow-brand-500/20'
+      : 'border border-brand-500/40 text-brand-300 hover:bg-brand-500/10 hover:text-brand-300'
+  }`}
+>
+  {text}
+</a>

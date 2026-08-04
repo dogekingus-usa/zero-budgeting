@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/financial-safety-net-paycheck-to-paycheck.html?raw';
+
+const title = "How to Create a Financial Safety Net When You\u0027re Living Paycheck to Paycheck | Zero Budgeting";
+const description = "Learn how to build a financial safety net even when you\u0027re living paycheck to paycheck. This practical guide covers micro-savings strategies, side hustles, expense reduction, and community resources to help you create a cushion that protects you from unexpected expenses — starting with as little as $5 per week.";
+const canonical = "https://zerobudgeting.com/financial-safety-net-paycheck-to-paycheck";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

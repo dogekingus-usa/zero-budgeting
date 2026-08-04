@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/how-to-teach-kids-about-money-age-appropriate-financial-lessons.html?raw';
+
+const title = "How to Teach Kids About Money Age-Appropriate Financial Lessons | zerobudgeting.com";
+const description = "Teaching kids about money at an early age is one of the most valuable lessons they can learn. Not only does it help them develop financial literacy, but it";
+const canonical = "https://zerobudgeting.com/how-to-teach-kids-about-money-age-appropriate-financial-lessons";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

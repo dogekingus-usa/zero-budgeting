@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/zb-credit-card-churning-guide-2026.html?raw';
+
+const title = "Credit Card Churning Guide 2026: How to Earn $5,000+ in Sign-Up Bonuses and Travel Rewards Without Going Into Debt";
+const description = "Credit card churning guide 2026: Learn how to earn $5,000+ in sign-up bonuses without going into debt. Chase Sapphire, Amex Gold, 5/24 rule, fee math explained.";
+const canonical = "https://zerobudgeting.com/zb-credit-card-churning-guide-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

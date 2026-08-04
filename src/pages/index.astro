@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import body from '../bodies/index.html?raw';
+
+const title = "Zero Budgeting — Master Your Money, Transform Your Life";
+const description = "Master Your Money, Transform Your Life — curated guides, tools, and systems to help you level up.";
+const canonical = "https://zerobudgeting.com";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <div class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+  </div>
+</BaseLayout>

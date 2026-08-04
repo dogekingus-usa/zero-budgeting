@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import body from '../bodies/checklist.html?raw';
+
+const title = "The Complete Zero-Based Budget Setup Checklist — zerobudgeting.com";
+const description = "Everything you need to start budgeting from zero — and stick with it. Downloadable interactive checklist for zerobudgeting.com.";
+const canonical = "https://zerobudgeting.com/checklist.html";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <div class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+  </div>
+</BaseLayout>

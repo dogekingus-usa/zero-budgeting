@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/grocery-budget-guide-2026.html?raw';
+
+const title = "The Ultimate Grocery Budget Guide 2026: How to Feed Your Family on $50-$100 Per Week Without Couponing | Zero Budgeting";
+const description = "Cut your grocery bill to $50-$100 per week with strategies that don\u0027t require extreme couponing. Learn meal planning, bulk buying, store selection, and kitchen efficiency tips.";
+const canonical = "https://zerobudgeting.com/grocery-budget-guide-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'ZeroBudgeting' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

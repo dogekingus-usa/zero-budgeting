@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import body from '../bodies/disclaimer.html?raw';
+
+const title = "Disclaimer | ZeroBudgeting";
+const description = "Disclaimer for ZeroBudgeting. Legal disclaimers regarding financial information, affiliate links, and use of our content.";
+const canonical = "https://zerobudgeting.com/disclaimer.html";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <div class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+  </div>
+</BaseLayout>
