@@ -36,6 +36,10 @@ export async function onRequest(context) {
   if (ext && !['html', 'htm'].includes(ext) && !path.endsWith('/')) {
     return next();
   }
+  // CTO 2026-08-05: magnet deliverable pages — no Kit form injection, preserve noindex
+  if (path.startsWith('/downloads/')) {
+    return next();
+  }
   const response = await next();
   const contentType = response.headers.get('content-type') || '';
   if (!contentType.includes('text/html')) return response;
