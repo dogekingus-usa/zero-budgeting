@@ -1,0 +1,84 @@
+﻿---
+// EmailCapture.astro â€” article-footer + homepage email capture (CTO build 2026-08-05)
+// Per EMAIL-CAPTURE-DEPLOYMENT-PLAN Â§4: one per page view, article footers + homepage.
+// Posts to /api/subscribe (Cloudflare edge route -> fleet-email-subscribe worker).
+// Excluded on utility pages (about/contact/legal/hub/redirect/etc.).
+const SITE_SLUG = "zerobudgeting";
+const MAGNET_NAME = "Zero-Budget Spreadsheet";
+const VALUE_PROP = "Get the free Zero-Budget Spreadsheet — your money map in one simple page.";
+const DOWNLOAD_URL = "/downloads/crypto-starter-guide.html";
+
+const path = (Astro.url.pathname || "/").replace(/\.html$/, "").replace(/\/$/, "") || "/";
+const EXCLUDE = [
+  "/about", "/contact", "/privacy", "/privacy-policy", "/terms", "/terms-of-service",
+  "/disclaimer", "/affiliate-disclosure", "/all-articles", "/checklist", "/crypto-guide",
+  "/tools-comparison", "/thank-you", "/lead-magnet", "/downloads", "/category", "/l/",
+  "/short", "/digital-products", "/og-images", "/assets", "/sitemap", "/feed",
+  "/404", "/crypto-guide",
+];
+const excluded = EXCLUDE.some((p) => path === p || path.startsWith(p + "/") || path.startsWith(p));
+if (excluded) return;
+---
+
+<div class="email-capture" style="margin:2rem auto;max-width:42rem;padding:1.5rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;text-align:center;">
+  <h3 style="margin:0 0 0.4rem;font-size:1.15rem;color:#0f172a;">Get the Free {MAGNET_NAME}</h3>
+  <p style="margin:0 0 1rem;font-size:0.95rem;color:#334155;">{VALUE_PROP}</p>
+  <form class="email-capture-form" action="/api/subscribe" method="POST" data-site={SITE_SLUG}>
+    <input type="email" name="email" placeholder="Your email address" required
+           style="padding:10px 14px;border:1px solid #cbd5e1;border-radius:6px;width:60%;max-width:300px;color:#0f172a;" />
+    <button type="submit" style="padding:10px 20px;background:#0f172a;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Get It Free â†’</button>
+  </form>
+  <p style="margin:0.6rem 0 0;font-size:0.75em;color:#64748b;">No spam. Unsubscribe anytime.</p>
+  <p class="email-capture-msg" style="font-size:0.85em;color:#059669;display:none;margin:0.6rem 0 0;"></p>
+</div>
+
+<script is:inline>
+(function () {
+  document.querySelectorAll(".email-capture-form").forEach(function (form) {
+    form.addEventListener("submit", async function (ev) {
+      ev.preventDefault();
+      var email = form.querySelector('input[name="email"]').value.trim();
+      var site = form.getAttribute("data-site");
+      var msg = form.parentElement.querySelector(".email-capture-msg");
+      var btn = form.querySelector("button");
+      btn.disabled = true;
+      btn.textContent = "Sendingâ€¦";
+      try {
+        var resp = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email, site: site, source: "article-footer" }),
+        });
+        var data = await resp.json();
+        if (data.ok) {
+          form.style.display = "none";
+          msg.textContent = "âœ“ Check your inbox!";
+          msg.style.display = "block";
+          if (typeof gtag === "function") {
+            gtag("event", "generate_lead", { site: site, source: "article-footer" });
+          }
+        } else if (resp.status === 409) {
+          msg.textContent = "You're already subscribed â€” check your inbox!";
+          msg.style.display = "block";
+          btn.disabled = false;
+          btn.textContent = "Get It Free â†’";
+        } else {
+          msg.textContent = "Something went wrong. Please try again.";
+          msg.style.color = "#dc2626";
+          msg.style.display = "block";
+          btn.disabled = false;
+          btn.textContent = "Get It Free â†’";
+        }
+      } catch (e) {
+        msg.textContent = "Network error. Please try again.";
+        msg.style.color = "#dc2626";
+        msg.style.display = "block";
+        btn.disabled = false;
+        btn.textContent = "Get It Free â†’";
+      }
+    });
+  });
+})();
+</script>
+
+
