@@ -1,0 +1,14 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import body from '../bodies/affiliate-disclosure.html?raw';
+
+const title = "Affiliate Disclosure | Zero Budgeting";
+const description = "Affiliate disclosure for zerobudgeting.com. How we earn commissions and our FTC compliance statement.";
+const canonical = "https://zerobudgeting.com/affiliate-disclosure.html";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <div class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+  </div>
+</BaseLayout>
