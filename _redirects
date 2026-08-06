@@ -1,7 +1,4 @@
 # Security - block leaked files and directory listings
-# CWOC 2026-08-06: trailing-slash -> clean URL (SEO consistency, all-articles/about/products etc.)
-/*/ /:splat 301
-
 /.env /404 404
 /.git/* /404 404
 /node_modules/* /404 404
