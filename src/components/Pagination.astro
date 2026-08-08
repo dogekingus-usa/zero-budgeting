@@ -1,0 +1,90 @@
+---
+// Pagination.astro — shared pagination (M6 §2.7)
+// <nav aria-label="Pagination"> + list; prev/next labeled; current page
+// aria-current="page". Page numbers ≥44px targets.
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath?: string; // e.g. '/all-articles' (page 1 = basePath, others = basePath/page/N)
+  getHref?: (page: number) => string;
+}
+
+const { currentPage, totalPages, basePath = '', getHref } = Astro.props;
+
+const hrefFor = (page: number): string => {
+  if (getHref) return getHref(page);
+  if (page === 1) return `${basePath}/`;
+  return `${basePath}/page/${page}/`;
+};
+
+const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+const showNumbers = totalPages <= 7; // simple numbered set; longer sets use prev/next + ellipsis
+---
+
+{
+  totalPages > 1 ? (
+    <nav aria-label="Pagination" class="mt-10">
+      <ul class="flex flex-wrap items-center justify-center gap-2">
+        <li>
+          {currentPage > 1 ? (
+            <a
+              href={hrefFor(currentPage - 1)}
+              rel="prev"
+              class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border border-line px-3 text-sm text-ink transition hover:border-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+            >
+              <span aria-hidden="true">←</span>
+              <span class="sr-only">Previous page</span>
+            </a>
+          ) : (
+            <span class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border border-line px-3 text-sm text-ink-soft opacity-40" aria-hidden="true">
+              ←
+            </span>
+          )}
+        </li>
+
+        {showNumbers
+          ? pageNumbers.map((p) => (
+              <li key={p}>
+                {p === currentPage ? (
+                  <span
+                    aria-current="page"
+                    class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md bg-brand px-3 text-sm font-semibold text-on-brand"
+                  >
+                    {p}
+                  </span>
+                ) : (
+                  <a
+                    href={hrefFor(p)}
+                    class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border border-line px-3 text-sm text-ink transition hover:border-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                  >
+                    {p}
+                  </a>
+                )}
+              </li>
+            ))
+          : (
+            <li class="text-sm text-ink-soft" aria-current="page">
+              Page {currentPage} of {totalPages}
+            </li>
+          )}
+
+        <li>
+          {currentPage < totalPages ? (
+            <a
+              href={hrefFor(currentPage + 1)}
+              rel="next"
+              class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border border-line px-3 text-sm text-ink transition hover:border-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+            >
+              <span aria-hidden="true">→</span>
+              <span class="sr-only">Next page</span>
+            </a>
+          ) : (
+            <span class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border border-line px-3 text-sm text-ink-soft opacity-40" aria-hidden="true">
+              →
+            </span>
+          )}
+        </li>
+      </ul>
+    </nav>
+  ) : null
+}

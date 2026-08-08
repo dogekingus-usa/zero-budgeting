@@ -1,23 +1,56 @@
 ---
-export interface Props {
+// CTA.astro — shared CTA (M6 §2.3)
+// Renders as <a> (Stripe deep-link / internal) or <button> — never div-with-click.
+// Verbatim `text` rendering (fixes [object Object] regression). Accessible name
+// = visible text (2.5.3). On-brand contrast via token utilities.
+interface Props {
   href?: string;
   text?: string;
   variant?: 'primary' | 'secondary';
-  productId?: string;
+  size?: 'sm' | 'md' | 'lg';
+  type?: 'link' | 'button';
+  buttonType?: 'button' | 'submit';
+  onClick?: string;
+  ariaLabel?: string;
 }
 
-const { href = '#', text = 'Get Started', variant = 'primary', productId } = Astro.props;
-const isPrimary = variant === 'primary';
+const {
+  href = '#',
+  text = 'Get Started',
+  variant = 'primary',
+  size = 'md',
+  type = 'link',
+  buttonType = 'button',
+  onClick,
+  ariaLabel,
+} = Astro.props;
+
+const sizeClasses: Record<string, string> = {
+  sm: 'px-4 py-2 text-xs min-h-[36px]',
+  md: 'px-6 py-3 text-sm min-h-[44px]',
+  lg: 'px-8 py-4 text-base min-h-[48px]',
+};
+
+// NOTE: primary = brand fill + on-brand text (verified pair per site tokens).
+//       secondary = outline with ink text.
+const variantClasses =
+  variant === 'primary'
+    ? 'bg-brand text-on-brand hover:opacity-90'
+    : 'border border-line text-ink hover:bg-elevated';
+
+const baseClasses =
+  'inline-flex items-center justify-center gap-2 rounded-md font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring';
+const classNames = `${baseClasses} ${sizeClasses[size]} ${variantClasses}`;
 ---
 
-<a
-  href={href}
-  data-gumroad={productId || undefined}
-  class={`inline-block rounded-lg px-6 py-3 font-semibold text-sm transition-all ${
-    isPrimary
-      ? 'bg-brand-500 text-dark-900 hover:bg-brand-400 shadow-lg shadow-brand-500/20'
-      : 'border border-brand-500/40 text-brand-300 hover:bg-brand-500/10 hover:text-brand-300'
-  }`}
->
-  {text}
-</a>
+{
+  type === 'link' ? (
+    <a href={href} class={classNames} aria-label={ariaLabel}>
+      {text}
+    </a>
+  ) : (
+    <button type={buttonType} class={classNames} aria-label={ariaLabel} set:html={onClick ? `onclick="${onClick}"` : undefined}>
+      {text}
+    </button>
+  )
+}

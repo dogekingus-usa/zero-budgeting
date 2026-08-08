@@ -1,0 +1,47 @@
+---
+// TableOfContents.astro — shared TOC (M6 §2.12)
+// <nav aria-label="Table of contents"> + list of anchor links to heading ids.
+// Targets get scroll-margin via a small style rule (no layout shift).
+interface Props {
+  headings: { id: string; text: string; depth?: 2 | 3 }[];
+  title?: string;
+}
+
+const { headings = [], title = 'Table of contents' } = Astro.props;
+const tocId = 'toc';
+---
+
+{
+  headings.length > 1 ? (
+    <nav aria-label={title} id={tocId} class="mb-6 rounded-lg border border-line bg-elevated p-4">
+      <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-ink-soft">{title}</h2>
+      <ul class="space-y-1.5 text-sm">
+        {headings.map((h) => (
+          <li class={h.depth === 3 ? 'pl-4' : ''}>
+            <a
+              href={`#${h.id}`}
+              class="block rounded-sm py-1 text-ink-soft transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+            >
+              {h.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  ) : null
+}
+
+<style>
+  /* Smooth anchor scrolling with sticky-header offset (no trap, no layout shift) */
+  html {
+    scroll-behavior: smooth;
+  }
+  :target {
+    scroll-margin-top: 96px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>

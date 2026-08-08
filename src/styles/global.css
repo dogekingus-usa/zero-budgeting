@@ -18,3 +18,27 @@
   --font-heading: var(--font-sans);
   --font-body: var(--font-sans);
 }
+
+/* ============================================================
+   COMPONENT ALIAS LAYER (Phase 1.2 - astro-specialist)
+   Clean utility names over canonical semantic tokens (tokens.css
+   stays authoritative). Shared .astro components use these.
+   ============================================================ */
+@theme {
+  --color-surface: var(--color-bg-surface);
+  --color-elevated: var(--color-bg-elevated);
+  --color-inverse: var(--color-bg-inverse);
+  --color-ink: var(--color-text-primary);
+  --color-ink-soft: var(--color-text-secondary);
+  --color-on-brand: var(--color-text-on-brand);
+  --color-brand: var(--color-brand-primary);
+  --color-brand-cta: var(--color-brand-cta, var(--color-brand-primary));
+  --color-brand-on: var(--color-brand-on, var(--color-text-on-brand));
+  --color-line: var(--color-border-default);
+  --color-focus-ring: var(--color-border-focus);
+  --color-success: var(--color-state-success);
+  --color-error: var(--color-state-error);
+  --color-warning: var(--color-state-warning);
+  --font-heading: var(--font-display);
+  --font-body: var(--font-sans);
+}

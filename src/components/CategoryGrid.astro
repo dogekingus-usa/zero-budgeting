@@ -1,0 +1,54 @@
+---
+// CategoryGrid.astro — shared category index (M6 §2.5)
+// ul/li semantics, heading hierarchy (h2 cards under h1 page), card links
+// purpose clear in context.
+import ArticleCard from './ArticleCard.astro';
+
+export interface CategoryItem {
+  href: string;
+  title: string;
+  excerpt?: string;
+  date?: string;
+  image?: string;
+  imageAlt?: string;
+  readingTime?: string;
+}
+
+interface Props {
+  items: CategoryItem[];
+  columns?: 2 | 3;
+}
+
+const { items = [], columns = 3 } = Astro.props;
+const gridClass = columns === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3';
+---
+
+{
+  items.length > 0 ? (
+    <ul class={`grid grid-cols-1 gap-6 ${gridClass}`}>
+      {items.map((item) => (
+        <li class="h-full">
+          <ArticleCard
+            href={item.href}
+            title={item.title}
+            excerpt={item.excerpt}
+            date={item.date}
+            image={item.image}
+            imageAlt={item.imageAlt}
+            readingTime={item.readingTime}
+          />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <div class="rounded-lg border border-line bg-elevated p-8 text-center">
+      <p class="text-ink">No articles here yet.</p>
+      <a
+        href="/all-articles/"
+        class="mt-2 inline-block font-medium text-brand hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+      >
+        Browse all articles
+      </a>
+    </div>
+  )
+}

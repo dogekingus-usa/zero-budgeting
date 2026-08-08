@@ -1,0 +1,55 @@
+---
+// Breadcrumb.astro — shared breadcrumb (M6 §2.6)
+// <nav aria-label="Breadcrumb"> + <ol>; current page = aria-current="page",
+// NOT a link. JSON-LD breadcrumbList emitted alongside visible semantics.
+export interface Crumb {
+  name: string;
+  href?: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs = [] } = Astro.props;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    ...(c.href ? { item: c.href } : {}),
+  })),
+};
+---
+
+{
+  crumbs.length > 1 ? (
+    <nav aria-label="Breadcrumb" class="mb-4">
+      <ol class="flex flex-wrap items-center gap-1.5 text-sm text-ink-soft">
+        {crumbs.map((crumb, i) => {
+          const isLast = i === crumbs.length - 1;
+          return (
+            <li class="flex items-center gap-1.5">
+              {isLast ? (
+                <span aria-current="page" class="font-medium text-ink">{crumb.name}</span>
+              ) : (
+                <>
+                  <a
+                    href={crumb.href}
+                    class="rounded-sm transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                  >
+                    {crumb.name}
+                  </a>
+                  <span aria-hidden="true">/</span>
+                </>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    </nav>
+  ) : null
+}

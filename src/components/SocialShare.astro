@@ -1,0 +1,68 @@
+---
+// SocialShare.astro — shared social share buttons (M6 §2.13)
+// Each button has aria-label = "Share on X"; copy-link button with
+// role=status feedback. Uses share URLs (no JS SDKs).
+interface Props {
+  url?: string;
+  title?: string;
+}
+
+const { url = Astro.url.href, title = '' } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+const platforms = [
+  { name: 'X', label: 'Share on X', href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}` },
+  { name: 'Facebook', label: 'Share on Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}` },
+  { name: 'LinkedIn', label: 'Share on LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}` },
+  { name: 'Telegram', label: 'Share on Telegram', href: `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}` },
+  { name: 'Email', label: 'Share via email', href: `mailto:?subject=${encodedTitle}&body=${encodedUrl}` },
+];
+const statusId = 'share-status';
+---
+
+<div class="flex items-center gap-2">
+  <span class="text-sm font-medium text-ink-soft">Share:</span>
+  <ul class="flex flex-wrap gap-1.5">
+    {platforms.map((p) => (
+      <li>
+        <a
+          href={p.href}
+          target="_blank"
+          rel="noopener"
+          aria-label={p.label}
+          class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border border-line px-3 text-sm font-medium text-ink transition hover:border-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+        >
+          {p.name}
+        </a>
+      </li>
+    ))}
+    <li>
+      <button
+        type="button"
+        data-copy-url={url}
+        aria-label="Copy link"
+        class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border border-line px-3 text-sm font-medium text-ink transition hover:border-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+      >
+        Copy
+      </button>
+    </li>
+  </ul>
+  <p id={statusId} role="status" class="sr-only"></p>
+</div>
+
+<script>
+  (function () {
+    const btn = document.querySelector('[data-copy-url]');
+    const status = document.getElementById('share-status');
+    if (!btn || !status) return;
+    btn.addEventListener('click', async () => {
+      const url = btn.getAttribute('data-copy-url');
+      try {
+        await navigator.clipboard.writeText(url);
+        status.textContent = 'Link copied to clipboard.';
+      } catch (err) {
+        status.textContent = 'Could not copy link.';
+      }
+    });
+  })();
+</script>

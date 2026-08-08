@@ -1,0 +1,78 @@
+---
+// CheckoutThankYou.astro — shared /thank-you page body (M6 §2.11)
+// H1 + role=status "Order confirmed" announcement; order details as dl;
+// next steps list; email capture; links back; no dead ends.
+import NewsletterForm from './NewsletterForm.astro';
+import type { SiteConfig } from '../config/site';
+
+interface OrderLine {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  site: SiteConfig;
+  orderLines?: OrderLine[];
+  nextSteps?: string[];
+  supportHref?: string;
+}
+
+const {
+  site,
+  orderLines = [
+    { label: 'Product', value: 'Your order' },
+    { label: 'Delivery', value: 'Check your inbox' },
+  ],
+  nextSteps = [
+    'Check your email for the download link and receipt.',
+    'Save the confirmation email for future reference.',
+    'Questions? Contact support — we reply within 24 hours.',
+  ],
+  supportHref = '/contact/',
+} = Astro.props;
+---
+
+<section class="mx-auto max-w-2xl px-4 py-12">
+  <div class="rounded-lg border border-line bg-elevated p-6 sm:p-8">
+    <p class="text-sm font-medium text-success" role="status">
+      ✓ Order confirmed
+    </p>
+    <h1 class="mt-2 font-heading text-2xl font-bold text-ink sm:text-3xl">Thank you, {site.name} customer!</h1>
+    <p class="mt-2 text-ink-soft">Your order was received. Here’s what happens next:</p>
+
+    <dl class="mt-6 rounded-md border border-line bg-surface p-4">
+      {orderLines.map((line) => (
+        <div class="flex flex-col gap-0.5 py-1.5 sm:flex-row sm:justify-between sm:gap-4">
+          <dt class="text-sm font-medium text-ink-soft">{line.label}</dt>
+          <dd class="text-sm font-semibold text-ink">{line.value}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <h2 class="mt-8 font-heading text-lg font-semibold text-ink">Next steps</h2>
+    <ol class="mt-3 list-decimal space-y-2 pl-5 text-sm text-ink-soft">
+      {nextSteps.map((step) => (
+        <li>{step}</li>
+      ))}
+    </ol>
+
+    <div class="mt-8">
+      <NewsletterForm site={site} heading="Stay in the loop" submitLabel="Subscribe" />
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-4 text-sm">
+      <a
+        href="/"
+        class="inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand px-6 py-2.5 font-semibold text-on-brand transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+      >
+        Continue browsing
+      </a>
+      <a
+        href={supportHref}
+        class="inline-flex min-h-[44px] items-center justify-center rounded-md border border-line px-6 py-2.5 font-medium text-ink transition hover:bg-elevated focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+      >
+        Contact support
+      </a>
+    </div>
+  </div>
+</section>

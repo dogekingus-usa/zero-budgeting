@@ -1,0 +1,127 @@
+---
+// NewsletterForm.astro — shared email capture (M6 §2.9)
+// POST /api/subscribe (in-house Email Worker). Visible label, required marked,
+// inline error with aria-describedby + role=alert, success role=status polite.
+// Consent note for data (post-checkout consent basis, email-monetizer R8).
+import type { SiteConfig } from '../config/site';
+
+interface Props {
+  site: SiteConfig;
+  heading?: string;
+  submitLabel?: string;
+}
+
+const { site, heading = 'Get the free guide', submitLabel = 'Get It Free' } = Astro.props;
+const formId = 'newsletter-form';
+const emailId = 'newsletter-email';
+const errorId = 'newsletter-error';
+const statusId = 'newsletter-status';
+---
+
+<section class="mx-auto my-8 max-w-2xl rounded-lg border border-line bg-elevated p-6 text-center" aria-labelledby="newsletter-heading">
+  <h2 id="newsletter-heading" class="mb-2 font-heading text-lg font-semibold text-ink">{heading}</h2>
+  <p class="mb-4 text-sm text-ink-soft">{site.newsletter.valueProp}</p>
+
+  <form
+    id={formId}
+    class="newsletter-form"
+    action="/api/subscribe"
+    method="POST"
+    data-site={site.name.toLowerCase().replace(/[^a-z0-9]/g, '')}
+    novalidate
+  >
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-start">
+      <div class="flex-1 text-left">
+        <label for={emailId} class="mb-1 block text-sm font-medium text-ink">
+          Email address <span aria-hidden="true" class="text-error">*</span>
+          <span class="sr-only">(required)</span>
+        </label>
+        <input
+          id={emailId}
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder="you@example.com"
+          aria-describedby={errorId}
+          class="w-full rounded-md border border-line bg-surface px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+        />
+        <p id={errorId} class="mt-1 hidden text-left text-sm text-error" role="alert"></p>
+      </div>
+      <button
+        type="submit"
+        class="inline-flex min-h-[44px] items-center justify-center rounded-md bg-brand px-6 py-2.5 text-sm font-semibold text-on-brand transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+      >
+        {submitLabel}
+      </button>
+    </div>
+
+    <p id={statusId} class="mt-3 text-sm text-success" role="status"></p>
+    <p class="mt-2 text-xs text-ink-soft">No spam. Unsubscribe anytime.</p>
+  </form>
+</section>
+
+<script>
+  (function () {
+    const form = document.getElementById('newsletter-form');
+    if (!form) return;
+    const email = document.getElementById('newsletter-email');
+    const error = document.getElementById('newsletter-error');
+    const status = document.getElementById('newsletter-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      error.classList.add('hidden');
+      error.textContent = '';
+      status.textContent = '';
+
+      const value = email.value.trim();
+      if (!value) {
+        error.textContent = 'Please enter your email address.';
+        error.classList.remove('hidden');
+        email.focus();
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        error.textContent = 'Please enter a valid email address.';
+        error.classList.remove('hidden');
+        email.focus();
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: value,
+            site: form.dataset.site,
+            source: window.location.pathname,
+            consent: 'newsletter',
+          }),
+        });
+        if (res.status === 409) {
+          status.textContent = 'You are already subscribed — thanks!';
+          form.reset();
+        } else if (res.ok) {
+          status.textContent = 'Thanks — check your inbox to confirm your subscription.';
+          form.reset();
+        } else {
+          error.textContent = 'Something went wrong. Please try again.';
+          error.classList.remove('hidden');
+        }
+      } catch (err) {
+        error.textContent = 'Network error. Please try again.';
+        error.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    });
+  })();
+</script>

@@ -1,20 +1,25 @@
 ---
-// BaseLayout.astro â€” ZeroBudgeting shared head, meta, fonts, header, footer
-import EmailCapture from '../components/EmailCapture.astro';
+// BaseLayout.astro — ZeroBudgeting (Phase 1.2 shared library)
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { site } from '../config/site';
+
 export interface Props {
   title: string;
   description: string;
   image?: string;
   canonical?: string;
+  showNewsletter?: boolean;
 }
 
-const { title, description, image, canonical } = Astro.props;
-const siteTitle = 'ZeroBudgeting â€” Personal Finance & Budgeting';
+const { title, description, image, canonical, showNewsletter = true } = Astro.props;
+const siteTitle = site.name;
 const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
-const canonicalUrl = canonical || `https://zerobudgeting.com${cleanPath}`;
-const ogImage = image || 'https://zerobudgeting.com/assets/og-image.svg';
+const canonicalUrl = canonical || `${site.url}${cleanPath}`;
+const ogImage = image || `${site.url}/assets/og-image.svg`;
 ---
 
 <!doctype html>
@@ -25,10 +30,8 @@ const ogImage = image || 'https://zerobudgeting.com/assets/og-image.svg';
     <meta name="description" content={description} />
     <title>{fullTitle}</title>
 
-    <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Open Graph -->
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
@@ -39,68 +42,23 @@ const ogImage = image || 'https://zerobudgeting.com/assets/og-image.svg';
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Preconnect fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Crown design system (legacy article content styling) -->
     <link rel="stylesheet" href="/crown-design-system.css" />
 
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   </head>
-  <body class="bg-dark-800 text-gray-100 font-['Inter']">
-    <header class="sticky top-0 z-50 border-b border-gray-700 bg-dark-800/95 backdrop-blur-sm">
-      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href="/" class="text-xl font-bold text-brand-500">ZeroBudgeting</a>
-        <ul class="hidden md:flex gap-6 text-sm font-medium text-gray-300">
-          <li><a href="/" class="hover:text-brand-500 transition">Home</a></li>
-          <li><a href="/all-articles" class="hover:text-brand-500 transition">Articles</a></li>
-          <li><a href="/about" class="hover:text-brand-500 transition">About</a></li>
-        </ul>
-      </nav>
-    </header>
+  <body class="bg-surface text-ink font-body">
+    <Header site={site} currentPath={Astro.url.pathname} />
 
-    <main>
+    <main id="main" class="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
       <slot />
     </main>
 
-    <EmailCapture />
+    {showNewsletter ? <NewsletterForm site={site} /> : null}
 
-    <footer class="border-t border-gray-700 bg-dark-800 py-8">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm text-gray-400">
-          <div>
-            <h3 class="text-brand-500 mb-3 font-semibold">ZeroBudgeting</h3>
-            <p>Master your money with zero-based budgeting. Personal finance guides, tools, and strategies.</p>
-          </div>
-          <div>
-            <h4 class="text-gray-200 mb-3 font-medium">Quick Links</h4>
-            <ul class="space-y-2">
-              <li><a href="/all-articles" class="hover:text-brand-500 transition">All Articles</a></li>
-              <li><a href="/about" class="hover:text-brand-500 transition">About</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-gray-200 mb-3 font-medium">Resources</h4>
-            <ul class="space-y-2">
-              <li><a href="/checklist" class="hover:text-brand-500 transition">Checklist</a></li>
-              <li><a href="/products" class="hover:text-brand-500 transition">Products</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-gray-200 mb-3 font-medium">Legal</h4>
-            <ul class="space-y-2">
-              <li><a href="/privacy" class="hover:text-brand-500 transition">Privacy</a></li>
-              <li><a href="/disclaimer" class="hover:text-brand-500 transition">Disclaimer</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="mt-8 border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} ZeroBudgeting. All rights reserved.
-        </div>
-      </div>
-    </footer>
+    <Footer site={site} currentPath={Astro.url.pathname} />
   </body>
 </html>
-

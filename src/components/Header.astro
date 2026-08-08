@@ -1,0 +1,145 @@
+---
+// Header.astro — shared sticky header (M6 §2.1)
+// Disclosure mega-menu pattern (button aria-expanded/aria-controls), mobile
+// hamburger drawer = dialog pattern with focus trap + Escape + focus restore.
+import type { SiteConfig } from '../config/site';
+
+interface Props {
+  site: SiteConfig;
+  currentPath?: string;
+}
+
+const { site, currentPath = '/' } = Astro.props;
+const cleanPath = currentPath.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const isActive = (href: string) => {
+  const h = href.replace(/\/$/, '') || '/';
+  return h === cleanPath || (h !== '/' && cleanPath.startsWith(h));
+};
+const navId = 'site-nav';
+const panelId = 'site-nav-panel';
+const btnId = 'site-nav-toggle';
+---
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-2 focus:left-2 focus:rounded-md focus:bg-surface focus:px-4 focus:py-2 focus:text-ink focus:ring-2 focus:ring-focus-ring">
+  Skip to main content
+</a>
+
+<header class="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur-sm">
+  <nav id={navId} class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3" aria-label="Main">
+    <a href="/" class="flex items-center gap-2 rounded-md font-heading text-xl font-bold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring">
+      {site.logo ? <img src={site.logo.src} alt={site.logo.alt} class="h-8 w-8" /> : null}
+      <span>{site.name}</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden items-center gap-6 text-sm font-medium text-ink-soft md:flex">
+      {site.nav.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class="block rounded-md px-1 py-2 transition hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile hamburger (dialog pattern: focus trap + Escape + restore) -->
+    <button
+      id={btnId}
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-line text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring md:hidden"
+      aria-expanded="false"
+      aria-controls={panelId}
+      aria-label="Open navigation menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="7" x2="20" y2="7" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div id={panelId} class="hidden border-t border-line bg-elevated px-4 py-4 md:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <ul class="flex flex-col gap-1 text-sm font-medium text-ink-soft">
+      {site.nav.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class="block rounded-md px-3 py-3 transition hover:bg-elevated hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  // Hamburger drawer: dialog pattern — aria-expanded, focus trap, Escape, focus restore.
+  (function () {
+    const btn = document.getElementById('site-nav-toggle');
+    const panel = document.getElementById('site-nav-panel');
+    if (!btn || !panel) return;
+
+    const links = Array.from(panel.querySelectorAll('a'));
+    const focusables = [btn, ...links];
+    let lastFocused = null;
+
+    function open() {
+      lastFocused = document.activeElement;
+      panel.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Close navigation menu');
+      // focus first link
+      if (links.length) links[0].focus();
+    }
+
+    function close(restore = true) {
+      panel.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open navigation menu');
+      if (restore && lastFocused instanceof HTMLElement) lastFocused.focus();
+    }
+
+    btn.addEventListener('click', () => {
+      panel.classList.contains('hidden') ? open() : close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (panel.classList.contains('hidden')) return;
+      if (e.key === 'Escape') {
+        close();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      // focus trap within [btn, ...links]
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
+    // close on outside click
+    document.addEventListener('click', (e) => {
+      if (panel.classList.contains('hidden')) return;
+      if (!panel.contains(e.target) && !btn.contains(e.target)) close();
+    });
+
+    // close on route change (link click)
+    links.forEach((l) =>
+      l.addEventListener('click', () => close(false))
+    );
+  })();
+</script>

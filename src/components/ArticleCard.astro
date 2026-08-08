@@ -1,0 +1,53 @@
+---
+// ArticleCard.astro — shared article card (M6 §2.4)
+// Whole-card link, accessible name = title, image alt meaningful or empty if
+// decorative, aspect-ratio container (CLS 0). No nested interactive elements.
+interface Props {
+  href: string;
+  title: string;
+  excerpt?: string;
+  category?: string;
+  date?: string;
+  image?: string;
+  imageAlt?: string;
+  readingTime?: string;
+}
+
+const { href, title, excerpt, category, date, image, imageAlt = '', readingTime } = Astro.props;
+---
+
+<article class="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-elevated transition hover:border-focus-ring">
+  <a href={href} class="flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring">
+    {image ? (
+      <div class="aspect-video w-full overflow-hidden bg-surface">
+        <img
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+          class="h-full w-full object-cover transition group-hover:scale-[1.02]"
+        />
+      </div>
+    ) : null}
+
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <div class="flex items-center gap-2 text-xs text-ink-soft">
+        {category ? <span class="font-medium text-brand">{category}</span> : null}
+        {date ? (
+          <>
+            <span aria-hidden="true">·</span>
+            <time datetime={date}>{date}</time>
+          </>
+        ) : null}
+        {readingTime ? (
+          <>
+            <span aria-hidden="true">·</span>
+            <span>{readingTime}</span>
+          </>
+        ) : null}
+      </div>
+      <h3 class="font-heading text-lg font-semibold leading-snug text-ink">{title}</h3>
+      {excerpt ? <p class="text-sm text-ink-soft">{excerpt}</p> : null}
+      <span class="mt-auto pt-2 text-sm font-medium text-brand" aria-hidden="true">Read more →</span>
+    </div>
+  </a>
+</article>
