@@ -3,6 +3,8 @@
 // Renders as <a> (Stripe deep-link / internal) or <button> — never div-with-click.
 // Verbatim `text` rendering (fixes [object Object] regression). Accessible name
 // = visible text (2.5.3). On-brand contrast via token utilities.
+// No onClick prop: inline handlers are CSP-hostile (Wyatt F3) — interactive
+// behavior belongs to the consuming page's own <script>, not the component.
 interface Props {
   href?: string;
   text?: string;
@@ -10,7 +12,6 @@ interface Props {
   size?: 'sm' | 'md' | 'lg';
   type?: 'link' | 'button';
   buttonType?: 'button' | 'submit';
-  onClick?: string;
   ariaLabel?: string;
 }
 
@@ -21,12 +22,12 @@ const {
   size = 'md',
   type = 'link',
   buttonType = 'button',
-  onClick,
   ariaLabel,
 } = Astro.props;
 
+// G4: every interactive target >= 44px (sm uses min-h-[44px] too — Wyatt F1).
 const sizeClasses: Record<string, string> = {
-  sm: 'px-4 py-2 text-xs min-h-[36px]',
+  sm: 'px-4 py-2.5 text-xs min-h-[44px]',
   md: 'px-6 py-3 text-sm min-h-[44px]',
   lg: 'px-8 py-4 text-base min-h-[48px]',
 };
@@ -49,7 +50,7 @@ const classNames = `${baseClasses} ${sizeClasses[size]} ${variantClasses}`;
       {text}
     </a>
   ) : (
-    <button type={buttonType} class={classNames} aria-label={ariaLabel} set:html={onClick ? `onclick="${onClick}"` : undefined}>
+    <button type={buttonType} class={classNames} aria-label={ariaLabel}>
       {text}
     </button>
   )

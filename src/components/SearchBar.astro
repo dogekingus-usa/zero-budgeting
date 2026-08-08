@@ -4,6 +4,9 @@
 // results; arrow keys navigate; Escape closes. Results region role=region
 // aria-label + aria-live=polite count. Visible label (placeholder is not the
 // sole label).
+// APG-clean listbox (Wyatt F2): each <li role=option> is a plain option with
+// data-url — NO nested <a> (nested-interactive). Activation: Enter on the
+// active option (aria-activedescendant) or mousedown on the option.
 // NOTE: consumes a JSON search index at /search-index.json (emitted by
 // build-toolchain-specialist's Pagefind or the astro build). Graceful empty
 // state if index absent.
@@ -77,6 +80,10 @@ const resultsId = 'site-search-results';
         .slice(0, 10);
     }
 
+    function goTo(url) {
+      if (url) window.location.href = url;
+    }
+
     function render(query) {
       const items = visibleItems(query);
       listbox.innerHTML = '';
@@ -96,21 +103,21 @@ const resultsId = 'site-search-results';
         li.id = `search-result-${i}`;
         li.setAttribute('role', 'option');
         li.setAttribute('aria-selected', 'false');
+        li.dataset.url = item.url || '#';
         li.className = 'cursor-pointer px-3.5 py-2.5 text-sm text-ink hover:bg-surface';
-        const a = document.createElement('a');
-        a.href = item.url || '#';
-        a.className = 'block';
-        a.textContent = item.title;
+        const title = document.createElement('span');
+        title.textContent = item.title;
+        li.appendChild(title);
         if (item.category) {
           const span = document.createElement('span');
           span.className = 'ml-2 text-xs text-ink-soft';
           span.textContent = item.category;
-          a.appendChild(span);
+          li.appendChild(span);
         }
-        li.appendChild(a);
+        // mousedown (not click) so the input blur doesn't close the listbox first
         li.addEventListener('mousedown', (e) => {
           e.preventDefault();
-          window.location.href = a.href;
+          goTo(li.dataset.url);
         });
         listbox.appendChild(li);
       });
@@ -157,8 +164,8 @@ const resultsId = 'site-search-results';
         setActive(activeIndex - 1);
       } else if (e.key === 'Enter') {
         if (activeIndex >= 0 && options[activeIndex]) {
-          const a = options[activeIndex].querySelector('a');
-          if (a) window.location.href = a.href;
+          e.preventDefault();
+          goTo(options[activeIndex].dataset.url);
         }
       } else if (e.key === 'Escape') {
         listbox.classList.add('hidden');
