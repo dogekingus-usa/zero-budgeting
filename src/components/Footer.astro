@@ -16,11 +16,12 @@ const isActive = (href: string) => {
   return h === cleanPath || (h !== '/' && cleanPath.startsWith(h));
 };
 const year = new Date().getFullYear();
-// Bottom-nav core links (<480px): Home, Browse, Tools/Products, CTA
+// Bottom-nav core links (<480px): Home, Browse, About — derive from site.nav
+// (extensionless per URL-parity L2; never hardcode trailing-slash hrefs).
 const bottomNav = [
   { href: '/', label: 'Home' },
-  { href: '/all-articles/', label: 'Browse' },
-  { href: '/about/', label: 'About' },
+  site.nav.find((n) => n.href.includes('articles')) || { href: '/all-articles', label: 'Browse' },
+  site.nav.find((n) => n.href.includes('about')) || { href: '/about', label: 'About' },
 ];
 ---
 
