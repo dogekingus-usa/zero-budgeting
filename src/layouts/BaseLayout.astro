@@ -9,12 +9,15 @@ import { site } from '../config/site';
 export interface Props {
   title: string;
   description: string;
+  // M6 G9: explicit page H1 (40-70 chars, distinct from title). Legacy pages
+  // omit it - their bodies carry their own H1 (the legacy fallback per spec).
+  h1?: string;
   image?: string;
   canonical?: string;
   showNewsletter?: boolean;
 }
 
-const { title, description, image, canonical, showNewsletter = true } = Astro.props;
+const { title, description, h1, image, canonical, showNewsletter = true } = Astro.props;
 const siteTitle = site.name;
 const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
@@ -54,6 +57,7 @@ const ogImage = image || `${site.url}/assets/og-image.svg`;
     <Header site={site} currentPath={Astro.url.pathname} />
 
     <main id="main" class="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+      {h1 ? <h1 class="font-heading text-3xl font-bold text-ink sm:text-4xl">{h1}</h1> : null}
       <slot />
     </main>
 
