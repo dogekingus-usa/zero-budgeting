@@ -1,0 +1,20 @@
+/* zerobudgeting.com — global.css (Tailwind v4, thin entry per V4-MIGRATION-PACKAGE)
+   tokens.css is self-contained (imports tailwindcss + all @theme blocks). */
+@import "./tokens.css";
+
+/* ============================================================
+   LEGACY COMPAT LAYER (temporary — remove at Phase 1.2)
+   Literal v3 values from git HEAD tailwind.config.mjs.
+   ============================================================ */
+@theme {
+  /* old `brand-*` scale — literal v3 values (orange) */
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  /* old `dark-*` scale — literal v3 values (slate) */
+  --color-dark-800: #0f172a;
+  --color-dark-900: #020617;
+  /* old font names — map to token fonts (Inter both) */
+  --font-heading: var(--font-sans);
+  --font-body: var(--font-sans);
+}

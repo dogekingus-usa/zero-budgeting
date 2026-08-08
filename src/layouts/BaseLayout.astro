@@ -1,6 +1,7 @@
 ---
-// BaseLayout.astro — ZeroBudgeting shared head, meta, fonts, header, footer
+// BaseLayout.astro â€” ZeroBudgeting shared head, meta, fonts, header, footer
 import EmailCapture from '../components/EmailCapture.astro';
+import '../styles/global.css';
 export interface Props {
   title: string;
   description: string;
@@ -9,7 +10,7 @@ export interface Props {
 }
 
 const { title, description, image, canonical } = Astro.props;
-const siteTitle = 'ZeroBudgeting — Personal Finance & Budgeting';
+const siteTitle = 'ZeroBudgeting â€” Personal Finance & Budgeting';
 const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 const canonicalUrl = canonical || `https://zerobudgeting.com${cleanPath}`;
@@ -102,3 +103,4 @@ const ogImage = image || 'https://zerobudgeting.com/assets/og-image.svg';
     </footer>
   </body>
 </html>
+

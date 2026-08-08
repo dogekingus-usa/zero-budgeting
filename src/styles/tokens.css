@@ -1,0 +1,120 @@
+/* ============================================================
+   zerobudgeting.com — tokens.css (Tailwind v4 CSS-first @theme)
+   Canonical source: DESIGN-SYSTEM-SPEC-v2.md v2.0.1 (Ula) §2-§8
+   Contrast pairs: deliverables/contrast-pairs/zerobudgeting.com.json
+   Theme: LIGHT (adjusted) | font: Inter + Lora
+   CTA fill #047857 (NOT #059669); amber badge pairs per spec
+   No tailwind.config.mjs — Commander pin 2026-08-08 (BOARD #312)
+   ============================================================ */
+@import "tailwindcss";
+
+/* ---------- 1. PRIMITIVES (Layer 1 — raw values) ---------- */
+@theme {
+  /* brand (ruling #308) */
+  --color-green-600:  #059669;  /* brand.primary — headers/decor, LARGE-only */
+  --color-green-700:  #047857;  /* CTA fill — 5.48:1 AA */
+  --color-amber-500:  #F59E0B;  /* brand.accent */
+  --color-amber-100:  #FCD34D;  /* soft badge bg */
+  --color-amber-950:  #451a03;  /* badge text on amber 6.97:1 */
+  --color-amber-900:  #78350f;  /* soft badge text 6.29:1 */
+
+  /* neutrals (shared fleet set) */
+  --color-surface-0: #ffffff;
+  --color-gray-50:   #f8fafc;
+  --color-gray-200:  #e2e8f0;
+  --color-gray-500:  #64748b;
+  --color-gray-700:  #334155;
+}
+
+/* ---------- 2. SEMANTIC (Layer 2 — meaning) ---------- */
+@theme {
+  --color-bg-surface:  var(--color-surface-0);
+  --color-bg-elevated: var(--color-gray-50);
+  --color-bg-inverse:  var(--color-green-700);
+
+  --color-text-primary:   #0f172a;
+  --color-text-secondary: var(--color-gray-500);
+  --color-text-on-brand:  #ffffff;  /* on CTA fill 5.48:1 AA */
+
+  --color-brand-primary: var(--color-green-600); /* NEVER body text — large/decor only */
+  --color-brand-cta:     var(--color-green-700); /* the CTA fill */
+  --color-brand-on:      #ffffff;
+
+  --color-border-default: var(--color-gray-200);
+  --color-border-focus:   var(--color-green-700);
+
+  --color-state-error:   #dc2626;
+  --color-state-success: #047857;
+  --color-state-warning: #b45309;
+}
+
+/* ---------- 3. TYPOGRAPHY (spec §5) ---------- */
+@theme {
+  --font-sans:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Lora", ui-serif, Georgia, serif;
+
+  --text-display-1: 2.5rem;
+  --text-display-2: 2rem;
+  --text-heading-1: 1.5rem;
+  --text-heading-2: 1.25rem;
+  --text-heading-3: 1.125rem;
+  --text-body-lg:   1.125rem;
+  --text-body:      1rem;
+  --text-body-sm:   0.875rem;
+  --text-label:     0.8125rem;
+}
+
+/* ---------- 4. LAYOUT (spec §2.3 / §3.0) ---------- */
+@theme {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+
+  --radius-input: 4px;
+  --radius-card: 8px;
+  --radius-button: 6px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 3px rgb(15 23 42 / 0.08);
+  --shadow-dropdown: 0 8px 24px rgb(15 23 42 / 0.12);
+  --shadow-modal: 0 16px 48px rgb(15 23 42 / 0.18);
+}
+
+/* ---------- 5. MOTION (spec §6) ---------- */
+@theme {
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter:    cubic-bezier(0.05, 0.7, 0.1, 1);
+  --ease-exit:     cubic-bezier(0.3, 0, 0.8, 0.15);
+  --duration-fast: 200ms;
+  --duration-med:  300ms;
+  --duration-slow: 500ms;
+}
+
+/* ---------- 6. THEME HOOK (canary #4) + FOCUS (spec §7) ---------- */
+html.theme-zerobudgeting {
+  color-scheme: light;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- 7. REDUCED MOTION (spec §6, WCAG 2.3.3 — canary) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
