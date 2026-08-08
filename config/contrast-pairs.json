@@ -1,0 +1,20 @@
+{
+  "site": "zerobudgeting.com",
+  "theme": "light",
+  "pairs": [
+    { "fg": "#ffffff", "bg": "#047857", "minRatio": 4.5, "ratio": 5.48, "usage": "CTA buttons (CTA fill replaces #059669)" },
+    { "fg": "#451a03", "bg": "#F59E0B", "minRatio": 4.5, "ratio": 6.97, "usage": "badge text on amber" },
+    { "fg": "#78350f", "bg": "#FCD34D", "minRatio": 4.5, "ratio": 6.29, "usage": "soft badge variant" },
+    { "fg": "#ffffff", "bg": "#059669", "minRatio": 3.0, "large": true, "ratio": 3.77, "usage": "headers/decor large text ONLY - never body text" }
+  ],
+  "forbidden": [
+    { "fg": "#F59E0B", "bg": "#ffffff", "reason": "amber on white 2.15:1 FAIL" },
+    { "fg": "#ffffff", "bg": "#059669", "reason": "3.77:1 below 4.5 for normal text - large-only" }
+  ],
+  "nonText": [
+    { "fg": "#047857", "bg": "#ffffff", "minRatio": 3.0, "usage": "focus ring / borders / icons" }
+  ],
+  "generated": "2026-08-08",
+  "by": "tailwind-specialist",
+  "source": "DESIGN-SYSTEM-SPEC-v2.md ┬º4.3 (brand-designer script-verified, re-verified 08-08)"
+}

@@ -21,6 +21,17 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Canary gates (7 assertions - deploy-blocking)
+        run: node scripts/ci/canary.mjs
+      - name: L2 gate - source encoding (deploy-blocking)
+        run: node scripts/ci/source-encoding-check.mjs
+      - name: L2 gate - URL parity (deploy-blocking)
+        run: node scripts/ci/url-parity.mjs
+      - name: L3 gate - axe L1 (deploy-blocking, 0 critical + 0 serious)
+        run: |
+          npm install --no-save --no-audit --no-fund axe-core@^4.10.2 playwright@1.61.1
+          npx playwright install chromium
+          node scripts/ci/a11y-l1.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
