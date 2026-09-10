@@ -1,0 +1,24 @@
+/* zerobudgeting.com — global.css (Tailwind v4 thin entry)
+   tokens.css is self-contained (imports tailwindcss + all @theme blocks). */
+@import "./tokens.css";
+
+/* ============================================================
+   COMPONENT ALIAS LAYER (clean utility names over semantic tokens)
+   tokens.css stays authoritative.
+   ============================================================ */
+@theme {
+  --color-surface: var(--color-bg-surface);
+  --color-elevated: var(--color-bg-elevated);
+  --color-inverse: var(--color-bg-inverse);
+  --color-ink: var(--color-text-primary);
+  --color-ink-soft: var(--color-text-secondary);
+  --color-on-brand: var(--color-text-on-brand);
+  --color-brand: var(--color-brand-primary);
+  --color-line: var(--color-border-default);
+  --color-focus-ring: var(--color-border-focus);
+  --color-success: var(--color-state-success);
+  --color-error: var(--color-state-error);
+  --color-warning: var(--color-state-warning);
+  --font-heading: var(--font-display);
+  --font-body: var(--font-sans);
+}

@@ -20,16 +20,16 @@ const excluded = EXCLUDE.some((p) => path === p || path.startsWith(p + "/") || p
 if (excluded) return;
 ---
 
-<div class="email-capture" style="margin:2rem auto;max-width:42rem;padding:1.5rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;text-align:center;">
-  <h3 style="margin:0 0 0.4rem;font-size:1.15rem;color:#0f172a;">Get the Free {MAGNET_NAME}</h3>
-  <p style="margin:0 0 1rem;font-size:0.95rem;color:#334155;">{VALUE_PROP}</p>
+<div class="email-capture bg-elevated border border-line rounded-card max-w-2xl mx-auto my-8 p-6 text-center">
+  <h3 class="text-ink text-lg font-semibold mb-1">Get the Free {MAGNET_NAME}</h3>
+  <p class="text-ink-soft text-sm mb-4">{VALUE_PROP}</p>
   <form class="email-capture-form" action="/api/subscribe" method="POST" data-site={SITE_SLUG}>
     <input type="email" name="email" placeholder="Your email address" required
-           style="padding:10px 14px;border:1px solid #cbd5e1;border-radius:6px;width:60%;max-width:300px;color:#0f172a;" />
-    <button type="submit" style="padding:10px 20px;background:#0f172a;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Get It Free â†’</button>
+           class="px-3 py-2 border border-line rounded-input w-3/5 max-w-xs text-ink" />
+    <button type="submit" class="px-4 py-2 bg-inverse text-on-brand rounded-button font-semibold cursor-pointer border-0">Get It Free &rarr;</button>
   </form>
-  <p style="margin:0.6rem 0 0;font-size:0.75em;color:#64748b;">No spam. Unsubscribe anytime.</p>
-  <p class="email-capture-msg" style="font-size:0.85em;color:#059669;display:none;margin:0.6rem 0 0;"></p>
+  <p class="mt-2 text-xs text-ink-soft">No spam. Unsubscribe anytime.</p>
+  <p class="email-capture-msg text-sm text-success mt-2" style="display:none;"></p>
 </div>
 
 <script is:inline>
@@ -64,14 +64,14 @@ if (excluded) return;
           btn.textContent = "Get It Free â†’";
         } else {
           msg.textContent = "Something went wrong. Please try again.";
-          msg.style.color = "#dc2626";
+          msg.style.color = "var(--color-state-error)";
           msg.style.display = "block";
           btn.disabled = false;
           btn.textContent = "Get It Free â†’";
         }
       } catch (e) {
         msg.textContent = "Network error. Please try again.";
-        msg.style.color = "#dc2626";
+        msg.style.color = "var(--color-state-error)";
         msg.style.display = "block";
         btn.disabled = false;
         btn.textContent = "Get It Free â†’";
